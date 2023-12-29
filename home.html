@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <!-- Style Sheet import-->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <nav id="navBigScreen">
+        <div>
+            <a href="index.html"><img src="/resources/logos/logoIsotypeDark.png" alt="home logo"></a>
+            <div id="navLinksBigScreen">
+                <a href="http://127.0.0.1:5500/templates.html">Templates</a>
+                <button class="navButton" href="http://127.0.0.1:5500/index.html">Log out</button>
+            </div>
+        </div>
+    </nav>
+    <nav id="navSmallScreen">
+        <a href="index.html" id="navSmallScreenLogo"><img src="/resources/logos/logoIsotypeDark.png"
+                alt="home logo"></a>
+        <div id="navLinksSmallScreen">
+            <a href="http://127.0.0.1:5500/templates.html">Templates</a>
+            <a href="http://127.0.0.1:5500/index.html">Log out</a>
+        </div>
+        <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa-solid fa-bars"></i>
+        </a>
+    </nav>
+    <main>
+        <div id="imageHeroHome">
+            <div>
+                <h1>Welcome to Cater Pro</h1>
+                <h4>We take immense pride in crafting extraordinary experiences through our dedication to exceptional
+                    service and exquisite cuisine</h4>
+            </div>
+        </div>
+        <div id="todayEventsHome">
+            <h2>Eventos de hoy</h2>
+            <div class="flipCard">
+                <div class="flipCardContent">
+                    <div class="flipCardFront">
+                        <h3>Cena Navideña Empresa 1</h3>
+                    </div>
+                    <div class="flipCardBack">
+                        <h4>Cena navideña "Empresa 1"</h4>
+                        <p>Hora: 19:00</p>
+                        <p>Lugar: Salón Bellas Artes</p>
+                        <p># Invitados: 250 personas</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer id="footer">
+        <span>© 2024 CaterPro / All copyrigths reserved.</span>
+    </footer>
+    <!-- JavaScipt file import-->
+    <script src="./js/script.js"></script>
+    <script src="https://kit.fontawesome.com/0cc55d25c2.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

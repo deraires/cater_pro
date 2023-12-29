@@ -1,0 +1,377 @@
+/* Initial format*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+/*Import text fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;800&display=swap');
+
+/* General content styles */
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.1em;
+}
+
+:root {
+    --dark-background: black;
+    --light-background: white;
+    --accent-yellow: #FEB837;
+    --light-gray: #C6C9CD;
+    --dark-gray: #37444C;
+}
+
+h1 {
+    font-size: 5.5em;
+    text-decoration-style: bold;
+}
+
+h2 {
+    font-size: 4em;
+    text-decoration-style: bold;
+}
+
+h3 {
+    font-size: 2.5em;
+    text-decoration-style: bold;
+}
+
+h4 {
+    font-size: 1.5em;
+    text-decoration-style: bold;
+}
+
+/*Navigation bar for laptop and big screens*/
+#navBigScreen {
+    background-color: var(--dark-background);
+    overflow: hidden;
+    height: 60px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    font-weight: bold;
+}
+
+#navBigScreen>div {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    z-index: 5;
+}
+
+#navBigScreen a {
+    color: white;
+    padding: 0 20px;
+    cursor: pointer;
+}
+
+.navButton {
+    border: none;
+    border-radius: 4px;
+    padding: 7px 15px;
+    cursor: pointer;
+    background-color: var(--accent-yellow);
+    color: black;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+#navButton:hover {
+    background-color: white;
+    color: black;
+}
+
+#navBigScreen img {
+    height: 60px;
+}
+
+/*Navigation bar for pads and phones*/
+#navSmallScreen {
+    overflow: hidden;
+    background-color: var(--dark-background);
+    position: fixed;
+    width: 100%;
+    z-index: 5;
+}
+
+#navSmallScreenLogo {
+    padding: 0px 4px !important;
+}
+
+#navSmallScreenLogo img {
+    height: 40px;
+}
+
+#navSmallScreen #navLinksSmallScreen {
+    display: none;
+}
+
+#navSmallScreen a {
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+}
+
+#navSmallScreen a.icon {
+    background: black;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+#navSmallScreen a:hover {
+    background-color: var(--dark-background);
+    color: white;
+}
+
+.active {
+    background-color: #04AA6D;
+    color: white;
+}
+
+/*Styles for footer*/
+footer {
+    font-size: 1em;
+    font-weight: bold;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 2rem;
+    flex-wrap: wrap;
+    background-color: var(--dark-background);
+    color: white;
+}
+
+/*Styles for Home page content*/
+#imageHeroHome {
+    background-image: url(/resources/img/hero-image-home-chef-pro-1900px.png);
+    height: 50vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: black;
+    display: grid;
+    text-decoration-style: bold;
+    place-items: center;
+    padding: 2rem;
+    text-align: center;
+}
+
+/*Styles for "Eventos de hoy"*/
+#todayEventsHome {
+    padding: 2rem 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#todayEventsHome h2 {
+    width: 100%;
+}
+
+/*Cards for events seen on Home page*/
+.flipCard {
+    background: transparent;
+    width: 300px;
+    height: 200px;
+    perspective: 1000px;
+    margin: 80px 30px;
+}
+
+.flipCardContent {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flipCardContent h4 {
+    margin-bottom: 10px;
+}
+
+.flipCard:hover .flipCardContent {
+    transform: rotateY(180deg);
+}
+
+.flipCardFront,
+.flipCardBack {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.flipCardFront {
+    background-color: rgb(38, 38, 39);
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+.flipCardBack {
+    background-color: rgb(38, 38, 39);
+    color: white;
+    transform: rotateY(180deg);
+    padding: 30px;
+}
+
+/* Styles for templates pages input */
+.templatesContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.customizeTemplateForms {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 4px;
+    box-shadow:
+        0 0 0 2px rgb(255, 255, 255),
+        0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+    gap: 1rem;
+}
+
+.selectTemplateForm {
+    width: 100%;
+    position: relative;
+    margin-bottom: 30px;
+
+}
+
+hr {
+    border: 1px #8f8c8c;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+label {
+    padding: 12px 12px 12px 0;
+    display: list-item;
+}
+
+.uploadFile {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1rem;
+}
+
+/* Styles for Template View in templates page*/
+.templateView {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0 1rem 1rem 1rem;
+    align-items: center;
+}
+
+/* Styles for Tool Bar in templates page */
+.toolBar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 100%;
+    gap: 1rem;
+
+}
+
+.btnIcon {
+    background-color: rgb(146, 147, 148);
+    border: none;
+    padding: 12px 16px;
+    cursor: pointer;
+    /* Mouse pointer on hover */
+    border-radius: 4px;
+    width: 100%;
+}
+
+.btnIcon:hover {
+    background-color: #8f8c8c;
+}
+
+/*Tooltip styles */
+.toolTip {
+    position: relative;
+    display: inline;
+    border-bottom: 1px dotted black;
+}
+
+.toolTip .toolTipText {
+    visibility: hidden;
+    width: 120px;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    bottom: 90%;
+    left: 20%;
+}
+
+.toolTip:hover .toolTipText {
+    visibility: visible;
+}
+
+/* Styles for Template Preview in templates page*/
+.templatePreview {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 4px;
+    box-shadow:
+        0 0 0 2px rgb(255, 255, 255),
+        0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+}
+
+/*All media query */
+
+/*Media query for Nav bar*/
+@media only screen and (max-width: 600px) {
+    #navBigScreen {
+        display: none;
+    }
+
+    .templatesContainer {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media only screen and (min-width:601px) {
+    #navSmallScreen {
+        display: none;
+    }
+
+    main {
+        margin-top: 60px;
+    }
+
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plantilla Factura</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <nav>
+
+    </nav>
+
+    <main>
+        <h1>Editor de formularios</h1>
+        <div class="templatesContainer">
+            <div class="customizeTemplateForms">
+                <form action="selectTemplate" class="selectTemplateForm">
+                    <label for="selectTemplate">Seleccione el documento a editar</label>
+                    <select name="selectTemplate" id="selectTemplate">
+                        <option value="Factura">Factura</option>
+                        <option value="Contrato">Contrato</option>
+                        <option value="Menu">Menú de evento</option>
+                        <option value="Invitación a evento">Invitación a evento</option>
+                    </select>
+                </form>
+                <hr>
+                <form action="inputInformation" class="inputInformationForm">
+                    <label for="title">Título</label>
+                    <input type="text" name="" id="title" placeholder="Título...">
+
+                    <label for="name">Nombre del cliente</label>
+                    <input type="text" name="" id="name" placeholder="Nombre del cliente...">
+
+                    <label for="companyName">Nombre de la empresa</label>
+                    <input type="text" name="" id="companyName" placeholder="Nombre de la empresa...">
+
+                    <label for="address">Dirección</label>
+                    <input type="text" name="" id="address" placeholder="Dirección...">
+
+                    <label for="phone">Teléfono</label>
+                    <input type="phone" name="" id="phone" placeholder="Teléfono...">
+
+                    <label for="email">E-mail</label>
+                    <input type="email" name="" id="email" placeholder="E-mail...">
+                </form>
+                <span>Adjuntar documentos:</span>
+                <form action="uploadFile" class="uploadFile">
+                    
+                    <input type="file" name="" id="uploadFile">
+                    <input type="submit">
+                </form>
+            </div>
+            <div class="templateView">
+                <div class="toolBar">
+
+                    <div class="toolTip">
+                        <button class="btnIcon"><i class="fa-solid fa-file-arrow-down fa-2xl"></i></button>
+                        <span class="toolTipText">Download file</span>
+                    </div>
+                    <div class="toolTip">
+                        <button class="btnIcon"><i class="fa-solid fa-file-export fa-2xl"></i></button>
+                        <span class="toolTipText">Export file</span>
+                    </div>
+                    <div class="toolTip">
+                        <button class="btnIcon"><i class="fa-solid fa-share fa-2xl"></i></button>
+                        <span class="toolTipText">Share file</span>
+                    </div>
+                    <div class="toolTip">
+                        <button class="btnIcon"><i class="fa-solid fa-floppy-disk fa-2xl"></i></button>
+                        <span class="toolTipText">Save file</span>
+                    </div>
+                </div>
+                <div class="templatePreview">
+                    <img src="/resources/img/logo.png" alt="">
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer></footer>
+    <!--Java Script import-->
+    <script src="./script.js"></script>
+    <script src="https://kit.fontawesome.com/0cc55d25c2.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
