@@ -8,12 +8,11 @@
 }
 
 /*Import text fonts*/
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;800&display=swap');
 
 /* General content styles */
 body {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 1.1em;
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+    font-size: 1.1rem;
 }
 
 :root {
@@ -25,22 +24,24 @@ body {
 }
 
 h1 {
-    font-size: 5.5em;
+    font-size: 4.5rem;
     text-decoration-style: bold;
+    text-align: center;
+    line-height: 5rem;
 }
 
 h2 {
-    font-size: 4em;
+    font-size: 3rem;
     text-decoration-style: bold;
 }
 
 h3 {
-    font-size: 2.5em;
+    font-size: 2.3rem;
     text-decoration-style: bold;
 }
 
 h4 {
-    font-size: 1.5em;
+    font-size: 1.5rem;
     text-decoration-style: bold;
 }
 
@@ -77,7 +78,7 @@ h4 {
     cursor: pointer;
     background-color: var(--accent-yellow);
     color: black;
-    font-size: 1.1em;
+    font-size: 0.9em;
     font-weight: bold;
 }
 
@@ -140,15 +141,11 @@ h4 {
 /*Styles for footer*/
 footer {
     font-size: 1em;
-    font-weight: bold;
-    display: flex;
     width: 100%;
-    justify-content: center;
-    align-items: center;
     padding: 1rem 2rem;
-    flex-wrap: wrap;
     background-color: var(--dark-background);
     color: white;
+    text-align: center;
 }
 
 /*Styles for Home page content*/
@@ -229,6 +226,19 @@ footer {
 }
 
 /* Styles for templates pages input */
+.templatesMain {
+    padding: 1rem;
+}
+.templatesMain h1{
+    margin-bottom: 1rem;
+}
+.templatesMain h3{
+    font-size: 1.3rem;
+}
+.templatesMain p {
+    margin-bottom: 1rem;
+}
+
 .templatesContainer {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -239,7 +249,7 @@ footer {
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding: 1rem;
+    padding: 2rem;
     border-radius: 4px;
     box-shadow:
         0 0 0 2px rgb(255, 255, 255),
@@ -252,10 +262,6 @@ footer {
     position: relative;
     margin-bottom: 30px;
 
-}
-
-hr {
-    border: 1px #8f8c8c;
 }
 
 input,
@@ -274,6 +280,10 @@ label {
     display: list-item;
 }
 
+#inputInformationForm ::placeholder {
+    font-size: 1.1em;
+}
+
 .uploadFile {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -285,7 +295,6 @@ label {
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding: 0 1rem 1rem 1rem;
     align-items: center;
 }
 
@@ -316,7 +325,6 @@ label {
 .toolTip {
     position: relative;
     display: inline;
-    border-bottom: 1px dotted black;
 }
 
 .toolTip .toolTipText {
@@ -341,18 +349,47 @@ label {
 .templatePreview {
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
     width: 100%;
     margin-top: 1rem;
-    padding: 1rem;
+    padding: 2rem;
     border-radius: 4px;
     box-shadow:
         0 0 0 2px rgb(255, 255, 255),
         0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
 }
 
+.templatePreview img {
+    width: 200px;
+    padding: 10px
+}
+
+.templatePreview h2 {
+margin-bottom: 40px;
+}
+
+/*Styles for Calendar page*/
+
+
+/*Utility classes*/
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+br {
+    line-height: 150px;
+}
+.tab {
+    margin-left: 4em;
+}
+
+
 /*All media query */
 
 /*Media query for Nav bar*/
+/*Styles for small screen devices, less than 600 pixels*/
 @media only screen and (max-width: 600px) {
     #navBigScreen {
         display: none;
@@ -362,9 +399,17 @@ label {
         display: grid;
         grid-template-columns: 1fr;
     }
+    .templatesMain h1{
+        margin-top: 60px;
+    }
+    #imageHeroHome {
+height: 70vh;
+    }
+
 
 }
 
+/*Styles for big screen devices, 601 pixels and more*/
 @media only screen and (min-width:601px) {
     #navSmallScreen {
         display: none;
@@ -373,5 +418,6 @@ label {
     main {
         margin-top: 60px;
     }
+    
 
 }

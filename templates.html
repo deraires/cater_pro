@@ -4,58 +4,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plantilla Factura</title>
+    <title>Templates</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
-    <nav>
-
+    <nav id="navBigScreen">
+        <div>
+            <a href="index.html"><img src="/resources/logos/logoIsotypeDark.png" alt="home logo"></a>
+            <div id="navLinksBigScreen">
+                <a href="http://127.0.0.1:5500/templates.html">Templates</a>
+                <button class="navButton" href="http://127.0.0.1:5500/index.html">Log out</button>
+            </div>
+        </div>
     </nav>
-
-    <main>
-        <h1>Editor de formularios</h1>
+    <nav id="navSmallScreen">
+        <a href="index.html" id="navSmallScreenLogo"><img src="/resources/logos/logoIsotypeDark.png"
+                alt="home logo"></a>
+        <div id="navLinksSmallScreen">
+            <a href="http://127.0.0.1:5500/templates.html">Templates</a>
+            <a href="http://127.0.0.1:5500/index.html">Log out</a>
+        </div>
+        <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa-solid fa-bars"></i>
+        </a>
+    </nav>
+    <main class="templatesMain">
+        <h1>Templates editor</h1>
         <div class="templatesContainer">
             <div class="customizeTemplateForms">
-                <form action="selectTemplate" class="selectTemplateForm">
-                    <label for="selectTemplate">Seleccione el documento a editar</label>
+                <div class="selectTemplateForm">
+                    <label for="selectTemplate">Select the document to edit</label>
                     <select name="selectTemplate" id="selectTemplate">
-                        <option value="Factura">Factura</option>
-                        <option value="Contrato">Contrato</option>
-                        <option value="Menu">Menú de evento</option>
-                        <option value="Invitación a evento">Invitación a evento</option>
+                        <option value=""></option>
+                        <option value="Invoice">Invoice</option>
+                        <option value="Quotation">Quotation</option>
+                        <option value="Contract">Contract</option>
+                        <option value="EventFactSheet">Event Fact Sheet</option>
                     </select>
-                </form>
-                <hr>
-                <form action="inputInformation" class="inputInformationForm">
-                    <label for="title">Título</label>
-                    <input type="text" name="" id="title" placeholder="Título...">
-
-                    <label for="name">Nombre del cliente</label>
-                    <input type="text" name="" id="name" placeholder="Nombre del cliente...">
-
-                    <label for="companyName">Nombre de la empresa</label>
-                    <input type="text" name="" id="companyName" placeholder="Nombre de la empresa...">
-
-                    <label for="address">Dirección</label>
-                    <input type="text" name="" id="address" placeholder="Dirección...">
-
-                    <label for="phone">Teléfono</label>
-                    <input type="phone" name="" id="phone" placeholder="Teléfono...">
-
-                    <label for="email">E-mail</label>
-                    <input type="email" name="" id="email" placeholder="E-mail...">
-                </form>
-                <span>Adjuntar documentos:</span>
-                <form action="uploadFile" class="uploadFile">
+                </div>
+                <form id="inputInformationForm">
                     
-                    <input type="file" name="" id="uploadFile">
-                    <input type="submit">
                 </form>
             </div>
             <div class="templateView">
                 <div class="toolBar">
-
                     <div class="toolTip">
                         <button class="btnIcon"><i class="fa-solid fa-file-arrow-down fa-2xl"></i></button>
                         <span class="toolTipText">Download file</span>
@@ -74,14 +68,60 @@
                     </div>
                 </div>
                 <div class="templatePreview">
-                    <img src="/resources/img/logo.png" alt="">
+                    <img class="center" src="./resources/logos/logoFullWhite.png" alt="logoFullWhite">
+                    <h2 class="center">CONTRACT</h2>
+                    <p>This Catering Service Agreement is made on [Date], between Chef Pro, located at Charm Street,
+                        #567, Valencia, Spain ("Provider"), and [Client Name], contact information [E-mail] and
+                        [Phone]("Client").
+                    </p>
+                    <h3>Services:</h3>
+                    <p>Scope of Services: Provider agrees to render catering services for the event detailed below,
+                        including but not limited to food preparation, service, and cleanup.
+                    </p>
+
+                    <p>Event Details: The catering services will be provided for the event titled [Event Name] scheduled
+                        to take place at [Event Location] on [Event Date] from [Start Time] to [End Time].
+                    </p>
+
+                    <p>Menu Selection: [Menu number selected]<br>
+                        Number of guests: [Number] <br>
+                    </p>
+                    <h3>Payment</h3>
+                    <p>Fees and Payment Schedule: Client agrees to pay Provider the total agreed-upon fee of [Total
+                        Amount] for the catering services. Payment shall be made in the following installments: <br>
+                        [Advance/Deposit Amount]: Due upon signing this Agreement.<br>
+                        [Remaining Amount]: Due no later than [Due Date].<br>
+                        Additional Costs: Any additional services or items requested by the Client outside the agreed
+                        scope will incur extra charges as mutually agreed upon by both parties.
+                    </p>
+                    <h3>Terms and Conditions</h3>
+                    <p>Cancellation Policy: In the event of cancellation by the Client, the following terms apply: <br>
+                        Cancellation 30 days before the event: 50% refund of the total fee.<br>
+                        Cancellation within 15 days of the event: No refund provided.<br>
+                        Liability: Provider shall not be liable for any allergic reactions, health issues, or damages
+                        resulting from consumption or handling of the food provided.
+                    </p>
+                    <h3>Signatures</h3>
+                    <p>IN WITNESS WHEREOF, the parties hereto have executed this Agreement as of the date first above
+                        written. <br>
+                    </p>
+                    <p>
+                        Chef Pro: __________________ [Date] <br>
+                        <span class="tab">Mr. Matthew Miller, CEO</span>
+                    </p>
+                    <p>
+                        Client:__________________ [Date] <br>
+                        <span class="tab">[Client Name]</span>
+                    </p>
                 </div>
             </div>
         </div>
     </main>
-    <footer></footer>
+    <footer id="footer">
+        <span>© 2024 CaterPro / All copyrigths reserved.</span>
+    </footer>
     <!--Java Script import-->
-    <script src="./script.js"></script>
+    <script src="./js/script.js"></script>
     <script src="https://kit.fontawesome.com/0cc55d25c2.js" crossorigin="anonymous"></script>
 </body>
 

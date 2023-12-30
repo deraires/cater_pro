@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar</title>
+</head>
+
+<body>
+    <nav id="navBigScreen">
+        <div>
+            <a href="index.html"><img src="/resources/logos/logoIsotypeDark.png" alt="home logo"></a>
+            <div id="navLinksBigScreen">
+                <a href="http://127.0.0.1:5500/templates.html">Templates</a>
+                <button class="navButton" href="http://127.0.0.1:5500/index.html">Log out</button>
+            </div>
+        </div>
+    </nav>
+    <nav id="navSmallScreen">
+        <a href="index.html" id="navSmallScreenLogo"><img src="/resources/logos/logoIsotypeDark.png"
+                alt="home logo"></a>
+        <div id="navLinksSmallScreen">
+            <a href="http://127.0.0.1:5500/templates.html">Templates</a>
+            <a href="http://127.0.0.1:5500/index.html">Log out</a>
+        </div>
+        <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa-solid fa-bars"></i>
+        </a>
+    </nav>
+    <main>
+        <div class="calendarTitle">
+            <div></div>
+            <h1>Calendar</h1>
+            <form action="selectMonth">
+                <label for="selectMonth">Select month</label>
+                <select name="selectMonth" id="selectMonth">
+                    <option value="february">February</option>
+                    <option value="march">March</option>
+                    <option value="april">April</option>
+                </select>
+            </form>
+        </div>
+
+    </main>
+    <footer id="footer">
+        <span>© 2024 CaterPro / All copyrigths reserved.</span>
+    </footer>
+    <!--Java Script import-->
+    <!--<script src="./script.js"></script>-->
+    <script src="https://kit.fontawesome.com/0cc55d25c2.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
