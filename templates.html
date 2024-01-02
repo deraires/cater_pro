@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Templates</title>
+    <!-- Style Sheet import-->
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
@@ -30,7 +31,7 @@
             <i class="fa-solid fa-bars"></i>
         </a>
     </nav>
-    <main class="templatesMain">
+    <main class="templatesMain ">
         <h1>Templates editor</h1>
         <div class="templatesContainer">
             <div class="customizeTemplateForms">
@@ -45,75 +46,75 @@
                     </select>
                 </div>
                 <form id="inputInformationForm">
+                    <label for="contractSignatureDate">Date</label>
+                    <input type="date" name="contractSignatureDate" id="contractSignatureDate" placeholder="MM/DD/YYYY">
+                    <label for="clientName">Client name</label>
+                    <input type="text" name="clientName" id="clientName" placeholder="Sussan Johnson">
+                    <label for="clientEmail">Client e-mail</label>
+                    <input type="email" name="clientEmail" id="clientEmail" placeholder="email@example.com">
+                    <label for="clientPhone">Client Phone</label>
+                    <input type="tel" name="clientPhone" id="clientPhone" placeholder="623 45 67 98">
+                    <label for="eventTitle">Event title</label>
+                    <input type="text" name="eventTitle" id="eventTitle" placeholder="Birthday party for Mr. Johnson">
+                    <label for="eventDate">Event location</label>
+                    <input type="text" name="eventLocation" id="eventLocation" placeholder="Number, Street, City, Zip code">
+                    <label for="eventDate">Event date</label>
+                    <input type="date" name="eventDate" id="eventDate" placeholder="MM/DD/YYYY">
+                    <label for="selectEventMenu">Select event menu</label>
+                    <select name="selectEventMenu" id="selectEventMenu">
+                        <option value="menu1">Menu #1</option>
+                        <option value="menu1">Menu #2</option>
+                        <option value="menu1">Menu #3</option>
+                    </select>
+                    <select name="selectEventPackage" id="selectEventPackage">
+                        <option value="menu1">Silver package</option>
+                        <option value="menu1">Gold package</option>
+                        <option value="menu1">Diamond package</option>
+                        <option value="menu1">Platinum package</option>
+                    </select>
+                    <label for="guestsEventQuantity">Number of guests</label>
+                    <input type="number" name="guestsEventQuantity" id="guestsEventQuantity" placeholder="120">
                     
+                    <label for="eventCost">Total cost of the event</label>
+                    <input type="number" name="eventCost" id="eventCost" placeholder="4500">
+                    <label for="uploadFile">Attach document</label>
+                    <input type="file" name="uploadFile" id="uploadFile">
+                    <input class="buttonSubmit" type="submit" value="Generate Contract">                    
                 </form>
             </div>
-            <div class="templateView">
-                <div class="toolBar">
-                    <div class="toolTip">
-                        <button class="btnIcon"><i class="fa-solid fa-file-arrow-down fa-2xl"></i></button>
-                        <span class="toolTipText">Download file</span>
-                    </div>
-                    <div class="toolTip">
-                        <button class="btnIcon"><i class="fa-solid fa-file-export fa-2xl"></i></button>
-                        <span class="toolTipText">Export file</span>
-                    </div>
-                    <div class="toolTip">
-                        <button class="btnIcon"><i class="fa-solid fa-share fa-2xl"></i></button>
-                        <span class="toolTipText">Share file</span>
-                    </div>
-                    <div class="toolTip">
-                        <button class="btnIcon"><i class="fa-solid fa-floppy-disk fa-2xl"></i></button>
-                        <span class="toolTipText">Save file</span>
-                    </div>
-                </div>
-                <div class="templatePreview">
-                    <img class="center" src="./resources/logos/logoFullWhite.png" alt="logoFullWhite">
-                    <h2 class="center">CONTRACT</h2>
-                    <p>This Catering Service Agreement is made on [Date], between Chef Pro, located at Charm Street,
-                        #567, Valencia, Spain ("Provider"), and [Client Name], contact information [E-mail] and
-                        [Phone]("Client").
-                    </p>
-                    <h3>Services:</h3>
-                    <p>Scope of Services: Provider agrees to render catering services for the event detailed below,
-                        including but not limited to food preparation, service, and cleanup.
-                    </p>
+            <div id="templatePreview" class="templatePreview">
+                <img class="center" src="./resources/logos/logoFullWhite.png" alt="logoFullWhite">
+                <h2 class="center">INVOICE</h2>
+                <p class="right">Invoice Number 98675 <br>
+                    Date: [Today´s date]
+                </p>
+                <strong class="smallText">Chef Pro Catering Services</strong>
+                <p class="smallText">Charm Street, #567, Valencia, Spain <br>
+                    Phone:  888 00 00 00 <br>
+                    E-mail: info@chefpro.com
+                </p>
 
-                    <p>Event Details: The catering services will be provided for the event titled [Event Name] scheduled
-                        to take place at [Event Location] on [Event Date] from [Start Time] to [End Time].
-                    </p>
-
-                    <p>Menu Selection: [Menu number selected]<br>
-                        Number of guests: [Number] <br>
-                    </p>
-                    <h3>Payment</h3>
-                    <p>Fees and Payment Schedule: Client agrees to pay Provider the total agreed-upon fee of [Total
-                        Amount] for the catering services. Payment shall be made in the following installments: <br>
-                        [Advance/Deposit Amount]: Due upon signing this Agreement.<br>
-                        [Remaining Amount]: Due no later than [Due Date].<br>
-                        Additional Costs: Any additional services or items requested by the Client outside the agreed
-                        scope will incur extra charges as mutually agreed upon by both parties.
-                    </p>
-                    <h3>Terms and Conditions</h3>
-                    <p>Cancellation Policy: In the event of cancellation by the Client, the following terms apply: <br>
-                        Cancellation 30 days before the event: 50% refund of the total fee.<br>
-                        Cancellation within 15 days of the event: No refund provided.<br>
-                        Liability: Provider shall not be liable for any allergic reactions, health issues, or damages
-                        resulting from consumption or handling of the food provided.
-                    </p>
-                    <h3>Signatures</h3>
-                    <p>IN WITNESS WHEREOF, the parties hereto have executed this Agreement as of the date first above
-                        written. <br>
-                    </p>
-                    <p>
-                        Chef Pro: __________________ [Date] <br>
-                        <span class="tab">Mr. Matthew Miller, CEO</span>
-                    </p>
-                    <p>
-                        Client:__________________ [Date] <br>
-                        <span class="tab">[Client Name]</span>
-                    </p>
-                </div>
+                <strong class="smallText">Client information</strong>
+                <p class="smallText">
+                    Client name: [Client Name] <br>
+                    Client E-mail: [E-mail] <br>
+                    Client Phone: [Phone] <br>
+                    Event title: [Event title] <br>
+                    Event date: [Event date] <br>
+                </p>
+                
+                <h3>Services detail:</h3>
+                <p>Scope of Services: Provider agrees to render catering services for the event detailed below,
+                    including but not limited to food preparation, service, and cleanup.
+                </p>
+                
+                <p>Event Details: The catering services will be provided for the event titled [Event Name] scheduled
+                    to take place at [Event Location] on [Event Date] from [Start Time] to [End Time].
+                </p>
+                
+                <p>Menu Selection: [Menu number selected]<br>
+                    Number of guests: [Number] <br>
+                </p>
             </div>
         </div>
     </main>
@@ -123,6 +124,7 @@
     <!--Java Script import-->
     <script src="./js/script.js"></script>
     <script src="https://kit.fontawesome.com/0cc55d25c2.js" crossorigin="anonymous"></script>
+    <!--<script src="./js/contract.js"></script>-->
 </body>
 
 </html>

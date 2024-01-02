@@ -21,6 +21,8 @@ body {
     --accent-yellow: #FEB837;
     --light-gray: #C6C9CD;
     --dark-gray: #37444C;
+    --button-background-gray: #F0F0F0;
+    --button-hover-gray: #e0dfdf;
 }
 
 h1 {
@@ -28,6 +30,7 @@ h1 {
     text-decoration-style: bold;
     text-align: center;
     line-height: 5rem;
+    margin-bottom: 1rem;
 }
 
 h2 {
@@ -149,19 +152,18 @@ footer {
 }
 
 /*Styles for Home page content*/
-#imageHeroHome {
-    background-image: url(/resources/img/hero-image-home-chef-pro-1900px.png);
+#heroHomeContainer {
     height: 50vh;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    color: black;
+    color: white;
     display: grid;
-    text-decoration-style: bold;
     place-items: center;
     padding: 2rem;
     text-align: center;
 }
+
+.gradient {
+    background-image: linear-gradient(var(--dark-background), rgb(94, 93, 93));
+  }
 
 /*Styles for "Eventos de hoy"*/
 #todayEventsHome {
@@ -232,10 +234,10 @@ footer {
 .templatesMain h1{
     margin-bottom: 1rem;
 }
-.templatesMain h3{
-    font-size: 1.3rem;
+.templatePreview h3{
+    font-size: 1.9rem;
 }
-.templatesMain p {
+.templatePreview p {
     margin-bottom: 1rem;
 }
 
@@ -297,6 +299,13 @@ label {
     width: 100%;
     align-items: center;
 }
+.buttonSubmit {
+    margin-top: 1rem;
+}
+.buttonSubmit:hover {
+    cursor: pointer;
+    background-color: #e0dfdf;
+}
 
 /* Styles for Tool Bar in templates page */
 .toolBar {
@@ -304,11 +313,12 @@ label {
     grid-template-columns: repeat(4, 1fr);
     width: 100%;
     gap: 1rem;
+    margin-bottom: 1rem;
 
 }
 
 .btnIcon {
-    background-color: rgb(146, 147, 148);
+    background-color: var(--button-background-gray);
     border: none;
     padding: 12px 16px;
     cursor: pointer;
@@ -318,7 +328,7 @@ label {
 }
 
 .btnIcon:hover {
-    background-color: #8f8c8c;
+    background-color:var(--button-hover-gray);
 }
 
 /*Tooltip styles */
@@ -329,16 +339,15 @@ label {
 
 .toolTip .toolTipText {
     visibility: hidden;
-    width: 120px;
     background-color: rgba(0, 0, 0, 0.4);
     color: #fff;
     text-align: center;
-    padding: 5px 0;
+    padding: 3px 5px;
     border-radius: 6px;
     position: absolute;
     z-index: 1;
     bottom: 90%;
-    left: 20%;
+    left:50%
 }
 
 .toolTip:hover .toolTipText {
@@ -351,7 +360,6 @@ label {
     flex-direction: column;
     flex-grow: 1;
     width: 100%;
-    margin-top: 1rem;
     padding: 2rem;
     border-radius: 4px;
     box-shadow:
@@ -367,6 +375,7 @@ label {
 .templatePreview h2 {
 margin-bottom: 40px;
 }
+
 
 /*Styles for Calendar page*/
 
@@ -384,17 +393,32 @@ br {
 .tab {
     margin-left: 4em;
 }
+.maxWidth900px {
+    max-width: 900px;
+}
+
+.right {
+    text-align: right; 
+}
+.smallText {
+    font-size: 0.9rem;
+}
+
+/* De no utilizarse hr, eliminar...
+hr {
+    border: 1px solid var(--light-gray);
+}
 
 
 /*All media query */
 
-/*Media query for Nav bar*/
 /*Styles for small screen devices, less than 600 pixels*/
 @media only screen and (max-width: 600px) {
+    /*Media query for Nav bar*/
     #navBigScreen {
         display: none;
     }
-
+/*Adjusting templates content (inputInformationForm and templatePreview) to fit small screen devices*/
     .templatesContainer {
         display: grid;
         grid-template-columns: 1fr;
@@ -402,22 +426,29 @@ br {
     .templatesMain h1{
         margin-top: 60px;
     }
-    #imageHeroHome {
+    #heroHomeContainer {
 height: 70vh;
     }
-
+    /*Adjusting the visual properties of the toolbar to fit small screen devices*/
+    .toolBar {
+        margin-top: 4rem;
+    }
+    .toolTip .toolTipText {
+        left: 10%;
+        font-size: 1rem;
+    }
 
 }
 
 /*Styles for big screen devices, 601 pixels and more*/
 @media only screen and (min-width:601px) {
+    /*Media query for Nav bar*/
     #navSmallScreen {
         display: none;
     }
 
     main {
         margin-top: 60px;
-    }
-    
+    }    
 
 }
