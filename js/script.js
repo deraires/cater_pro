@@ -8,6 +8,12 @@ function myFunction() {
   }
 }
 
+// onkeydown function to make changes in real time to the Template being edited
+//function changeOnKeyPressFunction() {
+//  var inputInformation = document.getElementById("inputInformation");
+//  inputInformation.value = inputInformation.value.toUpperCase();
+//}
+
 /**
  * Initial Values for the templates.html page
  */
@@ -93,7 +99,175 @@ const contractTemplateInnerHTML = `
     <span class="tab">[Client Name]</span>
 </p>
 `
+/*HTML for inputInformationForm section, in particular for "Invoice" option*/
+const invoiceFormInnerHTML = `
+                    <label for="invoiceDate">Date</label>
+                    <input type="date" name="invoiceDate" id="invoiceDate" placeholder="MM/DD/YYYY">
+                    <label for="clientName">Client name</label>
+                    <input type="text" name="clientName" id="clientName" placeholder="Sussan Johnson">
+                    <label for="clientEmail">Client e-mail</label>
+                    <input type="email" name="clientEmail" id="clientEmail" placeholder="email@example.com">
+                    <label for="clientPhone">Client Phone</label>
+                    <input type="tel" name="clientPhone" id="clientPhone" placeholder="623 45 67 98">
+                    <label for="eventTitle">Event title</label>
+                    <input type="text" name="eventTitle" id="eventTitle" placeholder="Birthday party for Mr. Johnson">
+                    <label for="eventDate">Event location</label>
+                    <input type="text" name="eventLocation" id="eventLocation"
+                        placeholder="Number, Street, City, Zip code">
+                    <label for="eventDate">Event date</label>
+                    <input type="date" name="eventDate" id="eventDate" placeholder="MM/DD/YYYY">
+                    <table class="tableForm">
+                            <tr>
+                                <th>Description</th>
+                                <th>Quantity</th>
+                                <th>Rate</th>
+                            </tr>
+                            <tr>
+                                <td><label for="selectEventPackage">Select event package</label>
+                                    <select name="selectEventPackage" id="selectEventPackage">
+                                        <option value="menu1">Silver package</option>
+                                        <option value="menu1">Gold package</option>
+                                        <option value="menu1">Diamond package</option>
+                                        <option value="menu1">Platinum package</option>
+                                    </select>
+                                </td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><label for="selectEventMenu">Select event menu</label>
+                                    <select name="selectEventMenu" id="selectEventMenu">
+                                        <option value="menu1">Menu #1</option>
+                                        <option value="menu1">Menu #2</option>
+                                        <option value="menu1">Menu #3</option>
+                                    </select>
+                                </td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><label for="additionalDescription1">Additional 1</label>
+                                    <input type="text" name="additionalDescription1" id="additionalDescription1"
+                                        placeholder="Parking spaces">
+                                </td>
+                                <td><label for="additionalQuantity1">Input quantity</label>
+                                    <input type="number" name="additionalQuantity1" id="additionalQuantity1"
+                                        placeholder="100">
+                                </td>
+                                <td><label for="additionalRate1">Input rate</label>
+                                    <input type="text" name="additionalRate1" id="additionalRate1" placeholder="10">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label for="additionalDescription2">Additional 2</label>
+                                    <input type="text" name="additionalDescription2" id="additionalDescription2"
+                                        placeholder="Extra hours">
+                                </td>
+                                <td><label for="additionalQuantity2">Input quantity</label>
+                                    <input type="number" name="additionalQuantity2" id="additionalQuantity2"
+                                        placeholder="2">
+                                </td>
+                                <td><label for="additionalRate2">Input rate</label>
+                                    <input type="text" name="additionalRate2" id="additionalRate2" placeholder="150">
+                                </td>
+                            </tr>
+                        </table>
 
+                    <label for="guestsEventQuantity">Number of guests</label>
+                    <input type="number" name="guestsEventQuantity" id="guestsEventQuantity" placeholder="120">
+
+                    <label for="eventCost">Total cost of the event</label>
+                    <input type="number" name="eventCost" id="eventCost" placeholder="4500">
+                    <label for="uploadFile">Attach document</label>
+                    <input type="file" name="uploadFile" id="uploadFile">
+                    <input class="buttonSubmit" type="submit" value="Generate Invoice">
+`
+/*HTML for templatePreview section, in particular for "Invoice" option*/
+const invoiceTemplateInnerHTML = `
+                <img class="center" src="./resources/logos/logoFullWhite.png" alt="logoFullWhite">
+                <h2 class="center">INVOICE</h2>
+                <p class="right">Invoice Number 98675 <br>
+                    Date: [Today´s date]
+                </p>
+                <strong class="smallText">Chef Pro Catering Services</strong>
+                <p class="smallText">Charm Street, #567, Valencia, Spain <br>
+                    Phone: 888 00 00 00 <br>
+                    E-mail: info@chefpro.com
+                </p>
+
+                <strong class="smallText">Client information</strong>
+                <p class="smallText">
+                    Client name: [Client Name] <br>
+                    Client E-mail: [E-mail] <br>
+                    Client Phone: [Phone] <br>
+                    Event title: [Event title] <br>
+                    Event date: [Event date] <br>
+                </p>
+
+                <h3>Services detail:</h3>
+                <table class="tableForm">
+                    <tr>
+                        <th>Description</th>
+                        <th>Quantity</th>
+                        <th>Rate</th>
+                        <th>Amount</th>
+                    </tr>
+                    <tr>
+                        <td>Package selected</td>
+                        <td>1</td>
+                        <td>€ 500</td>
+                        <td>€ 500</td>
+                    </tr>
+                    <tr>
+                        <td>Menu selected</td>
+                        <td>100</td>
+                        <td>€ 30</td>
+                        <td>€ 3000</td>
+                    </tr>
+                    <tr>
+                        <td>Additional 1</td>
+                        <td>100</td>
+                        <td>€ 12</td>
+                        <td>€ 1200</td>
+                    </tr>
+                    <tr>
+                        <td>Additional 2</td>
+                        <td>20</td>
+                        <td>€ 10</td>
+                        <td>€ 200</td>
+                    </tr>
+                </table>
+                <hr>
+                <table class="tableForm">
+                    <tr>
+                        <td>Subtotal</td>
+                        <td>€ 4900</td>
+                    </tr>
+                    <tr>
+                        <td>Tax (15%)</td>
+                        <td>€ 735</td>
+                    </tr>
+                    <tr>
+                        <td>GRAND TOTAL</td>
+                        <td>€ 5635</td>
+                    </tr>
+                </table>
+                <h3>Terms and Conditions</h3>
+
+                <p>
+                    First payment (60% of Grand Total): € 3381 <br>
+                    To be paid 40 days before the event
+                </p>
+                <p>
+                    Second payment (40% of Grand Total): € 2254 <br>
+                    To be paid 7 days before the event
+                </p>
+                <p>
+                    Bank account: 345 678 946 0241 <br>
+                    IBAN Code: SSWXXCT <br>
+                    For any additional enquiries contact us on info@chefpro.com
+                </p>
+`
 /**
  * Updates the innerHTML of the specified element
  */
@@ -150,3 +324,4 @@ Object.keys(values).forEach(
 )
 
 // updateHTMLElement("contractSignatureDate", values.contractSignatureDate) 
+

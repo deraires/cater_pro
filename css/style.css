@@ -232,7 +232,7 @@ footer {
     padding: 1rem;
 }
 .templatesMain h1{
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 }
 .templatePreview h3{
     font-size: 1.9rem;
@@ -301,6 +301,8 @@ label {
 }
 .buttonSubmit {
     margin-top: 1rem;
+    font-weight: bold;
+    font-size: 1.2rem;
 }
 .buttonSubmit:hover {
     cursor: pointer;
@@ -369,13 +371,34 @@ label {
 
 .templatePreview img {
     width: 200px;
-    padding: 10px
+    padding: 10px;
+    text-align: left;
 }
 
 .templatePreview h2 {
 margin-bottom: 40px;
 }
+/*Styles for the table in the Invoice and Quotation forms*/
+.tableForm {
+    vertical-align: middle;
+    padding: 10px;
+    line-height: 2rem;
+}
+.tableForm th {
+text-align: left;
+padding: 5px 10px
+}
+.tableForm td {
+    padding: 5px 10px;
+}
+.tableForm tr:nth-child(odd) {
+    background-color: var(--light-background);
 
+}
+.tableForm tr:nth-child(even) {
+    background-color: var(--button-background-gray);
+
+}
 
 /*Styles for Calendar page*/
 
@@ -403,8 +426,12 @@ br {
 .smallText {
     font-size: 0.9rem;
 }
+.sectionThreeColumns {
+   display:grid;
+   columns: 1fr 1fr 1fr;
 
-/* De no utilizarse hr, eliminar...
+}
+
 hr {
     border: 1px solid var(--light-gray);
 }
