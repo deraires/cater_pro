@@ -37,9 +37,9 @@ const contractFormInnerHTML = `
   <input type="time" name="endEventTime" id="endEventTime" placeholder="12:30">
   <label for="selectEventMenu">Select event menu</label>
   <select name="selectEventMenu" id="selectEventMenu">
-      <option value="menu1">Menu #1</option>
-      <option value="menu1">Menu #2</option>
-      <option value="menu1">Menu #3</option>
+      <option value="Menu #1">Menu #1</option>
+      <option value="Menu #2">Menu #2</option>
+      <option value="Menu #3">Menu #3</option>
   </select>
   <label for="guestsEventQuantity">Number of guests</label>
   <input type="number" name="guestsEventQuantity" id="guestsEventQuantity" placeholder="120">
@@ -111,9 +111,6 @@ const invoiceFormInnerHTML = `
                     <input type="tel" name="clientPhone" id="clientPhone" placeholder="623 45 67 98">
                     <label for="eventTitle">Event title</label>
                     <input type="text" name="eventTitle" id="eventTitle" placeholder="Birthday party for Mr. Johnson">
-                    <label for="eventDate">Event location</label>
-                    <input type="text" name="eventLocation" id="eventLocation"
-                        placeholder="Number, Street, City, Zip code">
                     <label for="eventDate">Event date</label>
                     <input type="date" name="eventDate" id="eventDate" placeholder="MM/DD/YYYY">
                     <table class="tableForm">
@@ -125,10 +122,10 @@ const invoiceFormInnerHTML = `
                             <tr>
                                 <td><label for="selectEventPackage">Select event package</label>
                                     <select name="selectEventPackage" id="selectEventPackage">
-                                        <option value="menu1">Silver package</option>
-                                        <option value="menu1">Gold package</option>
-                                        <option value="menu1">Diamond package</option>
-                                        <option value="menu1">Platinum package</option>
+                                        <option value="Silver package">Silver package</option>
+                                        <option value="Gold package">Gold package</option>
+                                        <option value="Diamond package">Diamond package</option>
+                                        <option value="Platinum package">Platinum package</option>
                                     </select>
                                 </td>
                                 <td></td>
@@ -137,49 +134,41 @@ const invoiceFormInnerHTML = `
                             <tr>
                                 <td><label for="selectEventMenu">Select event menu</label>
                                     <select name="selectEventMenu" id="selectEventMenu">
-                                        <option value="menu1">Menu #1</option>
-                                        <option value="menu1">Menu #2</option>
-                                        <option value="menu1">Menu #3</option>
+                                        <option value="Menu 1">Menu #1</option>
+                                        <option value="Menu 2">Menu #2</option>
+                                        <option value="Menu 3">Menu #3</option>
                                     </select>
                                 </td>
                                 <td></td>
                                 <td></td>
                             </tr>
                             <tr>
-                                <td><label for="additionalDescription1">Additional 1</label>
-                                    <input type="text" name="additionalDescription1" id="additionalDescription1"
+                                <td><label for="descriptionAdditional1">Additional 1</label>
+                                    <input type="text" name="descriptionAdditional1" id="descriptionAdditional1"
                                         placeholder="Parking spaces">
                                 </td>
-                                <td><label for="additionalQuantity1">Input quantity</label>
-                                    <input type="number" name="additionalQuantity1" id="additionalQuantity1"
+                                <td><label for="quantityAdditional1">Input quantity</label>
+                                    <input type="number" name="quantityAdditional1" id="quantityAdditional1"
                                         placeholder="100">
                                 </td>
-                                <td><label for="additionalRate1">Input rate</label>
-                                    <input type="text" name="additionalRate1" id="additionalRate1" placeholder="10">
+                                <td><label for="rateAdditional1">Input rate</label>
+                                    <input type="text" name="rateAdditional1" id="rateAdditional1" placeholder="10">
                                 </td>
                             </tr>
                             <tr>
-                                <td><label for="additionalDescription2">Additional 2</label>
-                                    <input type="text" name="additionalDescription2" id="additionalDescription2"
+                                <td><label for="descriptionAdditional1">Additional 2</label>
+                                    <input type="text" name="descriptionAdditional1" id="descriptionAdditional1"
                                         placeholder="Extra hours">
                                 </td>
-                                <td><label for="additionalQuantity2">Input quantity</label>
-                                    <input type="number" name="additionalQuantity2" id="additionalQuantity2"
+                                <td><label for="quantityAdditional2">Input quantity</label>
+                                    <input type="number" name="quantityAdditional2" id="quantityAdditional2"
                                         placeholder="2">
                                 </td>
-                                <td><label for="additionalRate2">Input rate</label>
-                                    <input type="text" name="additionalRate2" id="additionalRate2" placeholder="150">
+                                <td><label for="rateAdditional2">Input rate</label>
+                                    <input type="text" name="rateAdditional2" id="rateAdditional2" placeholder="150">
                                 </td>
                             </tr>
                         </table>
-
-                    <label for="guestsEventQuantity">Number of guests</label>
-                    <input type="number" name="guestsEventQuantity" id="guestsEventQuantity" placeholder="120">
-
-                    <label for="eventCost">Total cost of the event</label>
-                    <input type="number" name="eventCost" id="eventCost" placeholder="4500">
-                    <label for="uploadFile">Attach document</label>
-                    <input type="file" name="uploadFile" id="uploadFile">
                     <input class="buttonSubmit" type="submit" value="Generate Invoice">
 `
 /*HTML for templatePreview section, in particular for "Invoice" option*/
@@ -214,52 +203,52 @@ const invoiceTemplateInnerHTML = `
                     </tr>
                     <tr>
                         <td>Package selected</td>
-                        <td>1</td>
-                        <td>€ 500</td>
-                        <td>€ 500</td>
+                        <td></td>
+                        <td>€  </td>
+                        <td>€  </td>
                     </tr>
                     <tr>
                         <td>Menu selected</td>
-                        <td>100</td>
-                        <td>€ 30</td>
-                        <td>€ 3000</td>
+                        <td></td>
+                        <td>€  </td>
+                        <td>€  </td>
                     </tr>
                     <tr>
                         <td>Additional 1</td>
-                        <td>100</td>
-                        <td>€ 12</td>
-                        <td>€ 1200</td>
+                        <td></td>
+                        <td>€  </td>
+                        <td>€  </td>
                     </tr>
                     <tr>
                         <td>Additional 2</td>
-                        <td>20</td>
-                        <td>€ 10</td>
-                        <td>€ 200</td>
+                        <td> </td>
+                        <td>€  </td>
+                        <td>€  </td>
                     </tr>
                 </table>
                 <hr>
                 <table class="tableForm">
                     <tr>
                         <td>Subtotal</td>
-                        <td>€ 4900</td>
+                        <td>€  </td>
                     </tr>
                     <tr>
                         <td>Tax (15%)</td>
-                        <td>€ 735</td>
+                        <td>€  </td>
                     </tr>
                     <tr>
                         <td>GRAND TOTAL</td>
-                        <td>€ 5635</td>
+                        <td>€ </td>
                     </tr>
                 </table>
                 <h3>Terms and Conditions</h3>
 
                 <p>
-                    First payment (60% of Grand Total): € 3381 <br>
+                    First payment (60% of Grand Total): €  <br>
                     To be paid 40 days before the event
                 </p>
                 <p>
-                    Second payment (40% of Grand Total): € 2254 <br>
+                    Second payment (40% of Grand Total): €  <br>
                     To be paid 7 days before the event
                 </p>
                 <p>
