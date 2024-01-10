@@ -401,6 +401,33 @@ padding: 5px 10px
 }
 
 /*Styles for Calendar page*/
+.calendarContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.calendarCard {
+    max-width: 1000px;
+    border-radius: 4px;
+    box-shadow:
+        0 0 0 2px rgb(255, 255, 255),
+        0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+}
+#monthName {
+    color: var(--accent-yellow);
+}
+#todayDayName {
+    color: white;
+}
+#calendarDaysHeader {
+    text-align: center;
+}
+
+.fa-angle-right, .fa-angle-left {
+    color: var(--light-gray)
+}
+
+
 
 
 /*Utility classes*/

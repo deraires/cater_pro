@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calendar</title>
+    <!-- Style Sheet import-->
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
@@ -31,17 +33,51 @@
     </nav>
     <main>
         <div class="calendarTitle">
-            <div></div>
             <h1>Calendar</h1>
-            <form action="selectMonth">
-                <label for="selectMonth">Select month</label>
-                <select name="selectMonth" id="selectMonth">
-                    <option value="february">February</option>
-                    <option value="march">March</option>
-                    <option value="april">April</option>
-                </select>
-            </form>
         </div>
+        
+        <div class="calendarContainer">
+
+            <div class="calendarCard">
+  
+              <div class="headerHeroBackground gradient">
+                <div class="calendarHeader">
+  
+                  <a class="prev-button" id="prev">
+                    <i class="fa-solid fa-angle-left fa-lg"></i>
+                  </a>
+                  <a class="next-button" id="next">
+                    <i class="fa-solid fa-angle-right fa-lg"></i>
+                  </a>
+  
+                  <div class="calendarHeaderTitle">                    
+                      <h3 id="monthName">February</h3>
+                      <h4 id="todayDayName">Today is Friday 7 Feb</h4>                 
+                  </div>
+                </div>
+              </div>
+  
+              <div class="calendarContent">
+                <div class="calendarMonth">
+  
+                  <div id="calendarDaysHeader">
+                    <div class="row">
+                      <div class="col">Mon</div>
+                      <div class="col">Tue</div>
+                      <div class="col">Wed</div>
+                      <div class="col">Thu</div>
+                      <div class="col">Fri</div>
+                      <div class="col">Sat</div>
+                      <div class="col">Sun</div>
+                    </div>
+                  </div>
+  
+                  <div id="calendarDaysContent" class="">
+  
+                  </div>
+  
+                </div>
+              </div>
 
     </main>
     <footer id="footer">

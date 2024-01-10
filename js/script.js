@@ -122,10 +122,9 @@ const invoiceFormInnerHTML = `
                             <tr>
                                 <td><label for="selectEventPackage">Select event package</label>
                                     <select name="selectEventPackage" id="selectEventPackage">
-                                        <option value="Silver package">Silver package</option>
-                                        <option value="Gold package">Gold package</option>
-                                        <option value="Diamond package">Diamond package</option>
                                         <option value="Platinum package">Platinum package</option>
+                                        <option value="Diamond package">Diamond package</option>
+                                        <option value="Gold package">Gold package</option>                                                                            
                                     </select>
                                 </td>
                                 <td></td>
