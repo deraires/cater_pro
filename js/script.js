@@ -1,11 +1,11 @@
 /* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
 function myFunction() {
-  var x = document.getElementById("navLinksSmallScreen");
-  if (x.style.display === "block") {
-    x.style.display = "none";
-  } else {
-    x.style.display = "block";
-  }
+    var x = document.getElementById("navLinksSmallScreen");
+    if (x.style.display === "block") {
+        x.style.display = "none";
+    } else {
+        x.style.display = "block";
+    }
 }
 
 // onkeydown function to make changes in real time to the Template being edited
@@ -260,36 +260,36 @@ const invoiceTemplateInnerHTML = `
  * Updates the innerHTML of the specified element
  */
 function updateHTMLElement(elementId, innerHTML) {
-  document.getElementById(elementId).innerHTML = innerHTML
+    document.getElementById(elementId).innerHTML = innerHTML
 }
 
 /**
  * Updates the action of the specified form element
  */
 function updateFormAction(elementId, action) {
-  document.getElementById(elementId).action = action
+    document.getElementById(elementId).action = action
 }
 
 function changeSelectedTemplate(event) {
-  const selectedTemplate = event.target.value;
-  if (selectedTemplate === "Contract") {
-    console.log("contract selected do stuff");
-    // grab the container of the form and replace the innerHTML inputInformationForm with the form selected
-    updateHTMLElement("inputInformationForm", contractFormInnerHTML)
-    updateHTMLElement("templatePreview", contractTemplateInnerHTML)
-    updateFormAction("inputInformationForm", "contract.html")
-  } else
-  if (selectedTemplate === "Invoice") {
-    console.log("invoice selected");
-    updateHTMLElement("inputInformationForm", invoiceFormInnerHTML)
-    updateHTMLElement("templatePreview", invoiceTemplateInnerHTML)
-    updateFormAction("inputInformationForm", "invoice.html")  
-  }
+    const selectedTemplate = event.target.value;
+    if (selectedTemplate === "Contract") {
+        console.log("contract selected do stuff");
+        // grab the container of the form and replace the innerHTML inputInformationForm with the form selected
+        updateHTMLElement("inputInformationForm", contractFormInnerHTML)
+        updateHTMLElement("templatePreview", contractTemplateInnerHTML)
+        updateFormAction("inputInformationForm", "contract.html")
+    } else
+        if (selectedTemplate === "Invoice") {
+            console.log("invoice selected");
+            updateHTMLElement("inputInformationForm", invoiceFormInnerHTML)
+            updateHTMLElement("templatePreview", invoiceTemplateInnerHTML)
+            updateFormAction("inputInformationForm", "invoice.html")
+        }
 }
 
 if (document.getElementById("selectTemplate")) document.getElementById("selectTemplate").addEventListener(
-  "change",
-  changeSelectedTemplate
+    "change",
+    changeSelectedTemplate
 )
 
 
@@ -305,11 +305,64 @@ console.log(values)
 // updateHTMLElement("clientEmail", values.clientEmail);
 
 Object.keys(values).forEach(
-  key => {
-      console.log(key);
-      updateHTMLElement(key, values[key].toString())
-  }
+    key => {
+        console.log(key);
+        updateHTMLElement(key, values[key].toString())
+    }
 )
 
 // updateHTMLElement("contractSignatureDate", values.contractSignatureDate) 
 
+
+//Saves flipCardContainer to use it later
+//const flipCardsContainer = document.getElementById("flipCardsContainer");
+
+//Generates flip cards html
+
+//function generateEventFlipCard(event) {
+//    return(
+//        `
+//    <div class="flipCard">
+//        <div class="flipCardContent">
+//            <div class="flipCardFront">
+//                <h3>${eventsDB.eventTitle}</h3>
+//            </div>
+//            <div class="flipCardBack">
+//                <h4>${eventsDB.eventTitle}</h4>
+//                <p>Start time: ${eventsDB.startEventTime}</p>
+//                <p>Location: ${eventsDB.eventLocation}</p>
+//                <p>No. of guests: ${eventsDB.guestsEventQuantity} people</p>
+//            </div>
+//        </div>
+//    </div>
+//    `)
+//}
+
+//console.log(getFlipCardDiv(eventsDB[0]))
+//const flipCards = eventsDB.map((event) => {
+//    return generateEventFlipCard(event)
+//}).join('');
+
+//flipCardsContainer.innerHTML = flipCards
+
+const flipCardsContainer = document.getElementById("flipCardsContainer");
+
+const eventFlipCards = eventsDB.map(event => {
+    return(
+           `
+            div class="flipCard">
+               <div class="flipCardContent">
+                   <div class="flipCardFront">
+                       <h3>${eventTitle}</h3>
+                   </div>
+                   <div class="flipCardBack">
+                       <h4>${eventTitle}</h4>
+                       <p>Start time: ${startEventTime}</p>
+                       <p>Location: ${eventLocation}</p>
+                       <p>No. of guests: ${guestsEventQuantity} people</p>
+                   </div>
+               </div>
+               </div>
+            `)
+}).join("")
+flipCardsContainer.innerHTML = eventFlipCards

@@ -178,6 +178,9 @@ footer {
 }
 
 /*Cards for events seen on Home page*/
+#flipCardContainer {
+    
+}
 .flipCard {
     background: transparent;
     width: 300px;
