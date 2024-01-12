@@ -314,52 +314,28 @@ Object.keys(values).forEach(
 // updateHTMLElement("contractSignatureDate", values.contractSignatureDate) 
 
 
-//Saves flipCardContainer to use it later
+
 //const flipCardsContainer = document.getElementById("flipCardsContainer");
 
-//Generates flip cards html
 
-//function generateEventFlipCard(event) {
-//    return(
-//        `
-//    <div class="flipCard">
-//        <div class="flipCardContent">
-//            <div class="flipCardFront">
-//                <h3>${eventsDB.eventTitle}</h3>
-//            </div>
-//            <div class="flipCardBack">
-//                <h4>${eventsDB.eventTitle}</h4>
-//                <p>Start time: ${eventsDB.startEventTime}</p>
-//                <p>Location: ${eventsDB.eventLocation}</p>
-//                <p>No. of guests: ${eventsDB.guestsEventQuantity} people</p>
-//            </div>
-//        </div>
-//    </div>
-//    `)
-//}
 
-//console.log(getFlipCardDiv(eventsDB[0]))
-//const flipCards = eventsDB.map((event) => {
-//    return generateEventFlipCard(event)
-//}).join('');
 
-//flipCardsContainer.innerHTML = flipCards
-
+//Saves flipCardContainer to use it later
 const flipCardsContainer = document.getElementById("flipCardsContainer");
-
+//Generates flip cards html
 const eventFlipCards = eventsDB.map(event => {
     return(
            `
-            div class="flipCard">
+            <div class="flipCard">
                <div class="flipCardContent">
                    <div class="flipCardFront">
-                       <h3>${eventTitle}</h3>
+                       <h3>${event.eventTitle}</h3>
                    </div>
                    <div class="flipCardBack">
-                       <h4>${eventTitle}</h4>
-                       <p>Start time: ${startEventTime}</p>
-                       <p>Location: ${eventLocation}</p>
-                       <p>No. of guests: ${guestsEventQuantity} people</p>
+                       <h4>${event.eventTitle}</h4>
+                       <p>Start time: ${event.startEventTime}</p>
+                       <p>Location: ${event.eventLocation}</p>
+                       <p>No. of guests: ${event.guestsEventQuantity} people</p>
                    </div>
                </div>
                </div>

@@ -163,24 +163,25 @@ footer {
 
 .gradient {
     background-image: linear-gradient(var(--dark-background), rgb(94, 93, 93));
-  }
-
-/*Styles for "Eventos de hoy"*/
-#todayEventsHome {
-    padding: 2rem 3rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
 }
 
+/*Styles for "Eventos de hoy"*/
+
 #todayEventsHome h2 {
-    width: 100%;
+    padding: 2rem 1.5rem 0rem 3rem;
 }
 
 /*Cards for events seen on Home page*/
-#flipCardContainer {
-    
+#flipCardsContainer {
+    display: flex;
+    padding: 0 3rem 5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+
 }
+
 .flipCard {
     background: transparent;
     width: 300px;
@@ -234,12 +235,15 @@ footer {
 .templatesMain {
     padding: 1rem;
 }
-.templatesMain h1{
+
+.templatesMain h1 {
     margin-bottom: 2rem;
 }
-.templatePreview h3{
+
+.templatePreview h3 {
     font-size: 1.9rem;
 }
+
 .templatePreview p {
     margin-bottom: 1rem;
 }
@@ -302,11 +306,13 @@ label {
     width: 100%;
     align-items: center;
 }
+
 .buttonSubmit {
     margin-top: 1rem;
     font-weight: bold;
     font-size: 1.2rem;
 }
+
 .buttonSubmit:hover {
     cursor: pointer;
     background-color: #e0dfdf;
@@ -333,7 +339,7 @@ label {
 }
 
 .btnIcon:hover {
-    background-color:var(--button-hover-gray);
+    background-color: var(--button-hover-gray);
 }
 
 /*Tooltip styles */
@@ -352,7 +358,7 @@ label {
     position: absolute;
     z-index: 1;
     bottom: 90%;
-    left:50%
+    left: 50%
 }
 
 .toolTip:hover .toolTipText {
@@ -379,28 +385,73 @@ label {
 }
 
 .templatePreview h2 {
-margin-bottom: 40px;
+    margin-bottom: 40px;
 }
+
 /*Styles for the table in the Invoice and Quotation forms*/
 .tableForm {
     vertical-align: middle;
     padding: 10px;
     line-height: 2rem;
 }
+
 .tableForm th {
-text-align: left;
-padding: 5px 10px
+    text-align: left;
+    padding: 5px 10px;
 }
+
 .tableForm td {
     padding: 5px 10px;
 }
+
 .tableForm tr:nth-child(odd) {
     background-color: var(--light-background);
 
 }
+
 .tableForm tr:nth-child(even) {
     background-color: var(--button-background-gray);
 
+}
+
+/*Styles for index.html page*/
+#loginContainer {
+    height: calc(100vh - 115px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#loginContainer h1 {
+    font-size: 3.5rem;
+    padding: 3rem;
+}
+
+#loginCard {
+    max-width: 600px;
+    padding: 2rem;
+    border-radius: 4px;
+    box-shadow:
+        0 0 0 2px rgb(255, 255, 255),
+        0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+}
+
+#loginCard h2 {
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+#loginCard label {
+    font-weight: bold;
+}
+
+#loginCard a {
+    color: gray;
+}
+
+#loginCard .buttonSubmit{
+    background-color: var(--accent-yellow);
 }
 
 /*Styles for Calendar page*/
@@ -409,6 +460,7 @@ padding: 5px 10px
     flex-direction: column;
     align-items: center;
 }
+
 .calendarCard {
     max-width: 1000px;
     border-radius: 4px;
@@ -416,17 +468,21 @@ padding: 5px 10px
         0 0 0 2px rgb(255, 255, 255),
         0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
 }
+
 #monthName {
     color: var(--accent-yellow);
 }
+
 #todayDayName {
     color: white;
 }
+
 #calendarDaysHeader {
     text-align: center;
 }
 
-.fa-angle-right, .fa-angle-left {
+.fa-angle-right,
+.fa-angle-left {
     color: var(--light-gray)
 }
 
@@ -443,22 +499,26 @@ padding: 5px 10px
 br {
     line-height: 150px;
 }
+
 .tab {
     margin-left: 4em;
 }
+
 .maxWidth900px {
     max-width: 900px;
 }
 
 .right {
-    text-align: right; 
+    text-align: right;
 }
+
 .smallText {
     font-size: 0.9rem;
 }
+
 .sectionThreeColumns {
-   display:grid;
-   columns: 1fr 1fr 1fr;
+    display: grid;
+    columns: 1fr 1fr 1fr;
 
 }
 
@@ -471,25 +531,40 @@ hr {
 
 /*Styles for small screen devices, less than 600 pixels*/
 @media only screen and (max-width: 600px) {
+
     /*Media query for Nav bar*/
     #navBigScreen {
         display: none;
     }
-/*Adjusting templates content (inputInformationForm and templatePreview) to fit small screen devices*/
+
+    /*Adjusting templates content (inputInformationForm and templatePreview) to fit small screen devices*/
     .templatesContainer {
         display: grid;
         grid-template-columns: 1fr;
     }
-    .templatesMain h1{
+
+    .templatesMain h1 {
         margin-top: 60px;
     }
+
     #heroHomeContainer {
-height: 70vh;
+        height: 70vh;
     }
+
+    #todayEventsHome h2 {
+        padding: 1rem 1rem 0;
+        text-align: center;
+    }
+
+    #flipCardsContainer {
+        padding: 0 1rem 5rem;
+    }
+
     /*Adjusting the visual properties of the toolbar to fit small screen devices*/
     .toolBar {
         margin-top: 4rem;
     }
+
     .toolTip .toolTipText {
         left: 10%;
         font-size: 1rem;
@@ -499,6 +574,7 @@ height: 70vh;
 
 /*Styles for big screen devices, 601 pixels and more*/
 @media only screen and (min-width:601px) {
+
     /*Media query for Nav bar*/
     #navSmallScreen {
         display: none;
@@ -506,6 +582,6 @@ height: 70vh;
 
     main {
         margin-top: 60px;
-    }    
+    }
 
 }
