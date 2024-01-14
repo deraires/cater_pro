@@ -101,6 +101,7 @@ h4 {
     position: fixed;
     width: 100%;
     z-index: 5;
+    height: 45px;
 }
 
 #navSmallScreenLogo {
@@ -143,16 +144,17 @@ h4 {
 
 /*Styles for footer*/
 footer {
-    font-size: 1em;
+    font-size: 1rem;
     width: 100%;
     padding: 1rem 2rem;
     background-color: var(--dark-background);
     color: white;
     text-align: center;
+    height: 65px;
 }
 
-/*Styles for Home page content*/
-#heroHomeContainer {
+/*Styles for Welcome page content*/
+#heroWelcomeContainer {
     height: 50vh;
     color: white;
     display: grid;
@@ -166,8 +168,11 @@ footer {
 }
 
 /*Styles for "Eventos de hoy"*/
+#heroWelcomeContainer h1 {
+    color: var(--accent-yellow)
+}
 
-#todayEventsHome h2 {
+#todayEventsWelcome h2 {
     padding: 2rem 1.5rem 0rem 3rem;
 }
 
@@ -178,8 +183,6 @@ footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-
-
 }
 
 .flipCard {
@@ -222,6 +225,7 @@ footer {
     color: white;
     padding: 30px;
     text-align: center;
+    cursor: pointer;
 }
 
 .flipCardBack {
@@ -229,6 +233,10 @@ footer {
     color: white;
     transform: rotateY(180deg);
     padding: 30px;
+}
+
+#upcommingEventsContainer {
+    padding: 0 3rem 5rem;
 }
 
 /* Styles for templates pages input */
@@ -416,19 +424,20 @@ label {
 
 /*Styles for index.html page*/
 #loginContainer {
-    height: calc(100vh - 115px);
+    height: calc(100vh - 125px);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 2rem;
 }
 
 #loginContainer h1 {
     font-size: 3.5rem;
-    padding: 3rem;
+    padding: 2.5rem;
 }
 
-#loginCard {
+#loginCardBigScreen {
     max-width: 600px;
     padding: 2rem;
     border-radius: 4px;
@@ -437,28 +446,31 @@ label {
         0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
 }
 
-#loginCard h2 {
+#loginContainer h2 {
     font-size: 2.5rem;
     text-align: center;
 }
 
-#loginCard label {
+#loginContainer label {
     font-weight: bold;
 }
 
-#loginCard a {
+#loginContainer a {
     color: gray;
 }
 
-#loginCard .buttonSubmit{
+#loginContainer .buttonSubmit {
     background-color: var(--accent-yellow);
 }
 
 /*Styles for Calendar page*/
-.calendarContainer {
-    display: flex;
+#calendarMain {
+    display: flex;    
+    height: calc(100vh - 125px);
     flex-direction: column;
-    align-items: center;
+}
+.calendarContainer {
+    flex-grow: 1;
 }
 
 .calendarCard {
@@ -530,11 +542,15 @@ hr {
 /*All media query */
 
 /*Styles for small screen devices, less than 600 pixels*/
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
 
     /*Media query for Nav bar*/
     #navBigScreen {
         display: none;
+    }
+
+    #navSmallScreen {
+        height: 45px;
     }
 
     /*Adjusting templates content (inputInformationForm and templatePreview) to fit small screen devices*/
@@ -547,11 +563,11 @@ hr {
         margin-top: 60px;
     }
 
-    #heroHomeContainer {
+    #heroWelcomeContainer {
         height: 70vh;
     }
 
-    #todayEventsHome h2 {
+    #todayEventsWelcome h2 {
         padding: 1rem 1rem 0;
         text-align: center;
     }
@@ -570,10 +586,23 @@ hr {
         font-size: 1rem;
     }
 
+    #loginContainer {
+        height: calc(100vh - 110px);
+    }
+
+    #loginContainer h1 {
+        font-size: 3rem;
+        line-height: 3rem;
+    }
+
+    #loginCardBigScreen {
+        display: none;
+    }
+
 }
 
 /*Styles for big screen devices, 601 pixels and more*/
-@media only screen and (min-width:601px) {
+@media only screen and (min-width:701px) {
 
     /*Media query for Nav bar*/
     #navSmallScreen {
@@ -582,6 +611,10 @@ hr {
 
     main {
         margin-top: 60px;
+    }
+
+    #loginCardSmallScreen {
+        display: none;
     }
 
 }

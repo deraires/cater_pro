@@ -1,3 +1,4 @@
+
 /**
  * Updates the innerHTML of the specified element
  */
@@ -19,12 +20,3 @@ Object.keys(values).forEach(
         updateHTMLElement(key, values[key].toString())
     }
 )
-
-// updateHTMLElement("contractSignatureDate", values.contractSignatureDate) 
-
-
-
-
-
-/* Initial Values for the templates.html page
-*/
