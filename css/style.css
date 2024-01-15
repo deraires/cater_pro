@@ -235,8 +235,63 @@ footer {
     padding: 30px;
 }
 
-#upcommingEventsContainer {
+/* Styles for Upcomming Events section and cards */
+#upcommingEvents {
+    padding: 0 0 5rem;
+}
+
+#upcommingEvents h2 {
+    padding: 2rem 1.5rem 0rem 3rem;
+}
+
+#upcommingEventsCardsContainer {
+    display: flex;
     padding: 0 3rem 5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.upcommingEventCard {
+    margin: 2rem;
+    padding: 2rem 4rem;
+    border-radius: 4px;
+    box-shadow:
+        0 0 0 2px rgb(255, 255, 255),
+        0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+}
+.upcommingEventCard p {
+    line-height: 1.7rem;
+}
+.tagContainer {
+    display: flex;
+    justify-content: end;
+    gap: 0.5rem;
+    margin-right: -2rem;
+}
+
+.cardTag {
+    padding: 5px 10px;
+    text-align: center;
+    font-size: 0.9rem;
+    border-radius: 4px;
+}
+
+.cardTag i {
+    margin-right: 5px;
+}
+
+.tagDate {
+    background-color: #feb837c4;
+}
+.tagLocation {
+    background-color: #feb83796;
+}
+.tagTime {
+    background-color: #feb83757;
+}
+.tagDuration {
+    background-color: #feb83736;
 }
 
 /* Styles for templates pages input */
@@ -465,10 +520,11 @@ label {
 
 /*Styles for Calendar page*/
 #calendarMain {
-    display: flex;    
+    display: flex;
     height: calc(100vh - 125px);
     flex-direction: column;
 }
+
 .calendarContainer {
     flex-grow: 1;
 }
@@ -565,11 +621,6 @@ hr {
 
     #heroWelcomeContainer {
         height: 70vh;
-    }
-
-    #todayEventsWelcome h2 {
-        padding: 1rem 1rem 0;
-        text-align: center;
     }
 
     #flipCardsContainer {
