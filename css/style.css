@@ -65,7 +65,6 @@ h4 {
     justify-content: space-between;
     align-items: center;
     padding: 0 2rem;
-    z-index: 5;
 }
 
 #navBigScreen a {
@@ -100,7 +99,6 @@ h4 {
     background-color: var(--dark-background);
     position: fixed;
     width: 100%;
-    z-index: 5;
     height: 45px;
 }
 
@@ -114,11 +112,14 @@ h4 {
 
 #navSmallScreen #navLinksSmallScreen {
     display: none;
+    position: fixed;
+    background-color: black;
+    width: 100%;
 }
 
 #navSmallScreen a {
     color: white;
-    padding: 14px 16px;
+    padding: 11px 16px;
     text-decoration: none;
     font-size: 17px;
     display: block;
@@ -246,7 +247,8 @@ footer {
 
 #upcommingEventsCardsContainer {
     display: flex;
-    padding: 0 3rem 5rem;
+    width: 100%;
+    padding: 0 1rem 5rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -261,9 +263,11 @@ footer {
         0 0 0 2px rgb(255, 255, 255),
         0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
 }
+
 .upcommingEventCard p {
     line-height: 1.7rem;
 }
+
 .tagContainer {
     display: flex;
     justify-content: end;
@@ -286,12 +290,15 @@ footer {
 .tagDate {
     background-color: #feb837c4;
 }
+
 .tagLocation {
-    background-color: #feb83796;
-}
-.tagTime {
     background-color: #feb83757;
 }
+
+.tagTime {
+    background-color: #feb83796;
+}
+
 .tagDuration {
     background-color: #feb83736;
 }
@@ -479,6 +486,10 @@ label {
 
 }
 
+table {
+    overflow-x: auto;
+}
+
 /*Styles for index.html page*/
 #loginContainer {
     height: calc(100vh - 125px);
@@ -520,45 +531,6 @@ label {
     background-color: var(--accent-yellow);
 }
 
-/*Styles for Calendar page*/
-#calendarMain {
-    display: flex;
-    height: calc(100vh - 125px);
-    flex-direction: column;
-}
-
-.calendarContainer {
-    flex-grow: 1;
-}
-
-.calendarCard {
-    max-width: 1000px;
-    border-radius: 4px;
-    box-shadow:
-        0 0 0 2px rgb(255, 255, 255),
-        0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
-}
-
-#monthName {
-    color: var(--accent-yellow);
-}
-
-#todayDayName {
-    color: white;
-}
-
-#calendarDaysHeader {
-    text-align: center;
-}
-
-.fa-angle-right,
-.fa-angle-left {
-    color: var(--light-gray)
-}
-
-
-
-
 /*Utility classes*/
 .center {
     display: block;
@@ -595,7 +567,6 @@ br {
 hr {
     border: 1px solid var(--light-gray);
 }
-
 
 /*All media query */
 
@@ -650,6 +621,12 @@ hr {
 
     #loginCardBigScreen {
         display: none;
+    }
+
+    #upcommingEvents {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
 }

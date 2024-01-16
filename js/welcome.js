@@ -1,3 +1,13 @@
+/* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
+function toggleMenu() {
+    var x = document.getElementById("navLinksSmallScreen");
+    if (x.style.display === "block") {
+        x.style.display = "none";
+    } else {
+        x.style.display = "block";
+    }
+}
+
 //Saves flipCardContainer to use it later
 const flipCardsContainer = document.getElementById("flipCardsContainer");
 
@@ -58,78 +68,81 @@ const calculateDuration = (startTime, endTime) => {
     return `${durationHours}:${durationMinutes}`
 }
 
-const searchedDate = "2024-03-16";
 
-const searchedEvents = eventsDB.filter(
-  (event) => event.eventDate === searchedDate,
-);
 
 let dateOptions = eventsDB
-  .map((event) => {
-    return new Date(event.eventDate);
-  })
-  // Ordena las fechas//
-  .sort((a, b) => a - b)
-  // Extrae las fechas únicas para tener un listado sin duplicados/
-  .map(
-    (date) =>
-    // agrega un cero antes del número de mes para estandarizar la fecha al formato original//
-      `${date.getFullYear()}-${(date.getMonth() + 1).toLocaleString("en-US", {
-        minimumIntegerDigits: 2,
-        useGrouping: false,
-      })}-${date.getDate().toLocaleString("en-US", {
-        minimumIntegerDigits: 2,
-        useGrouping: false,
-      })}`, // agrega un cero antes del número de día para estandarizar la fecha al formato original//
-  );
+    .map((event) => {
+        return new Date(event.eventDate);
+    })
+    // Ordena las fechas//
+    .sort((a, b) => a - b)
+    // Extrae las fechas únicas para tener un listado sin duplicados/
+    .map(
+        (date) =>
+            // agrega un cero antes del número de mes para estandarizar la fecha al formato original//
+            `${date.getFullYear()}-${(date.getMonth() + 1).toLocaleString("en-US", {
+                minimumIntegerDigits: 2,
+                useGrouping: false,
+            })}-${date.getDate().toLocaleString("en-US", {
+                minimumIntegerDigits: 2,
+                useGrouping: false,
+            })}`, // agrega un cero antes del número de día para estandarizar la fecha al formato original//
+    );
 
-  // Genera un array de fechas unicas para utilizar más adelante//
-dateOptions = [...new Set(dateOptions)];
+// Genera un array de fechas unicas para utilizar más adelante//
+dateOptions = [...new Set(dateOptions)].map((date) => `<option value="${date}">${date}</option>`).join("");
 
-console.log(dateOptions);
+const selectDate = document.getElementById("selectDate")
+selectDate.innerHTML = dateOptions;
+selectDate.addEventListener("change", (e) => {
+    updateEventCards(searchEvents(e.target.value))
+})
+
 
 const eventLocationArray = eventsDB.map(
-   (event) => event.eventLocation 
-
+    (event) => event.eventLocation
 )
-console.log(eventLocationArray);
 
-let shortEventLocation = eventLocationArray.split(",",1);
-
-console.log(shortEventLocation);
-
-
-
-
-/**
- * 
- */
-// Saves upcommingEventsCardsContainer to use it later
-const upcommingEventsCardsContainer = document.getElementById("upcommingEventsCardsContainer");
+const sanitizedEventsDB = eventsDB.map(
+    (event) => ({
+        ...event,
+        // eventLocationShort: event.eventLocation.match(/^.+?(?=,)/g)[0]
+        eventLocationShort: event.eventLocation.split(",")[0]
+    })
+);
 
 // Generates upcommingEventCards in HTML from eventsDB.js
-const eventCards = eventsDB
-.map (event => {
-    return (
-        `<div class="upcommingEventCard">
-        <div class="tagContainer">
-            <p class="cardTag tagDate"><i class="fa-regular fa-calendar-days fa-lg" style="color: #000000;"></i><span >${event.eventDate}</span></p>
-            <p class="cardTag tagLocation"><i class="fa-solid fa-location-dot fa-lg" style="color: #000000;"></i><span>${event.eventLocation}</span></p>                            
-            <p class="cardTag tagTime"><i class="fa-solid fa-clock fa-lg" style="color: #000000;"></i><span>${event.startEventTime}</span></p>
-            <p class="cardTag tagDuration"><i class="fa-solid fa-hourglass-half fa-lg" style="color: #000000;"></i><span>${calculateDuration(event.startEventTime,event.endEventTime)}h</span></p>
-        </div>
-        <h3>${event.eventTitle}</h3>
-        <p>Date: ${event.eventDate}</p>
-        <p>Location: ${event.startEventTime}</p>
-        <p>Number of guests: ${event.guestsEventQuantity}</p>
-        <p>Client: ${event.clientName}</p>
-        <p>E-mail: ${event.clientEmail}</p>
-        <p>Phone: ${event.clientPhone}</p>
-        <p>Service: Package type ${event.selectEventPackage} / Menu #${event.selectEventMenu} </p>
-    </div>        
-        `)
-}).join("")   
+const updateEventCards = (events) => {
+    // Saves upcomingEventsCardsContainer to use it later
+    const upcomingEventsCardsContainer = document.getElementById("upcomingEventsCardsContainer");
+    const eventCards = events.map(event => {
+            return (
+                `
+                    <div class="upcommingEventCard">
+                        <div class="tagContainer">
+                            <p class="cardTag tagDate"><i class="fa-regular fa-calendar-days fa-lg" style="color: #000000;"></i><span >${event.eventDate}</span></p>
+                            <p class="cardTag tagTime"><i class="fa-solid fa-clock fa-lg" style="color: #000000;"></i><span>${event.startEventTime}</span></p>
+                            <p class="cardTag tagLocation"><i class="fa-solid fa-location-dot fa-lg" style="color: #000000;"></i><span>${event.eventLocationShort}</span></p>                          
+                            <p class="cardTag tagDuration"><i class="fa-solid fa-hourglass-half fa-lg" style="color: #000000;"></i><span>${calculateDuration(event.startEventTime, event.endEventTime)}h</span></p>
+                        </div>
+                        <h3>${event.eventTitle}</h3>
+                        <p>Date: ${event.eventDate}</p>
+                        <p>Location: ${event.startEventTime}</p>
+                        <p>Number of guests: ${event.guestsEventQuantity}</p>
+                        <p>Client: ${event.clientName}</p>
+                        <p>E-mail: ${event.clientEmail}</p>
+                        <p>Phone: ${event.clientPhone}</p>
+                        <p>Service: Package type ${event.selectEventPackage} / Menu #${event.selectEventMenu} </p>
+                    </div>        
+                `
+            )
+        }).join("")
+    upcomingEventsCardsContainer.innerHTML = eventCards
+}
 
-console.log(eventCards)
+const searchEvents = (searchedDate) => sanitizedEventsDB.filter(
+    (event) => event.eventDate === searchedDate,
+);
 
-upcommingEventsCardsContainer.innerHTML = eventCards
+const initialDate = "2024-02-09";
+updateEventCards(searchEvents(initialDate))
