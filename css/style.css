@@ -253,6 +253,7 @@ footer {
 }
 
 .upcommingEventCard {
+    width: 100%;
     margin: 2rem;
     padding: 2rem 4rem;
     border-radius: 4px;
@@ -266,6 +267,7 @@ footer {
 .tagContainer {
     display: flex;
     justify-content: end;
+    flex-wrap: wrap;
     gap: 0.5rem;
     margin-right: -2rem;
 }

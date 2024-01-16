@@ -1,7 +1,7 @@
 //Saves flipCardContainer to use it later
 const flipCardsContainer = document.getElementById("flipCardsContainer");
 
-//Generates flip cards html
+//Generates flip cards HTML
 const eventFlipCards = eventsDB
     .filter(
         (event) => event.eventDate === "2024-03-16",
@@ -26,6 +26,7 @@ const eventFlipCards = eventsDB
     }).join("")
 
 flipCardsContainer.innerHTML = eventFlipCards
+
 
 /**
  * Calculates the duration in hh:mm format between to times
@@ -86,3 +87,49 @@ let dateOptions = eventsDB
 dateOptions = [...new Set(dateOptions)];
 
 console.log(dateOptions);
+
+const eventLocationArray = eventsDB.map(
+   (event) => event.eventLocation 
+
+)
+console.log(eventLocationArray);
+
+let shortEventLocation = eventLocationArray.split(",",1);
+
+console.log(shortEventLocation);
+
+
+
+
+/**
+ * 
+ */
+// Saves upcommingEventsCardsContainer to use it later
+const upcommingEventsCardsContainer = document.getElementById("upcommingEventsCardsContainer");
+
+// Generates upcommingEventCards in HTML from eventsDB.js
+const eventCards = eventsDB
+.map (event => {
+    return (
+        `<div class="upcommingEventCard">
+        <div class="tagContainer">
+            <p class="cardTag tagDate"><i class="fa-regular fa-calendar-days fa-lg" style="color: #000000;"></i><span >${event.eventDate}</span></p>
+            <p class="cardTag tagLocation"><i class="fa-solid fa-location-dot fa-lg" style="color: #000000;"></i><span>${event.eventLocation}</span></p>                            
+            <p class="cardTag tagTime"><i class="fa-solid fa-clock fa-lg" style="color: #000000;"></i><span>${event.startEventTime}</span></p>
+            <p class="cardTag tagDuration"><i class="fa-solid fa-hourglass-half fa-lg" style="color: #000000;"></i><span>${calculateDuration(event.startEventTime,event.endEventTime)}h</span></p>
+        </div>
+        <h3>${event.eventTitle}</h3>
+        <p>Date: ${event.eventDate}</p>
+        <p>Location: ${event.startEventTime}</p>
+        <p>Number of guests: ${event.guestsEventQuantity}</p>
+        <p>Client: ${event.clientName}</p>
+        <p>E-mail: ${event.clientEmail}</p>
+        <p>Phone: ${event.clientPhone}</p>
+        <p>Service: Package type ${event.selectEventPackage} / Menu #${event.selectEventMenu} </p>
+    </div>        
+        `)
+}).join("")   
+
+console.log(eventCards)
+
+upcommingEventsCardsContainer.innerHTML = eventCards
