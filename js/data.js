@@ -107,7 +107,7 @@ const eventsDB = [
         invoiceNumber: 3007,
         eventTitle: "Wedding Emily & Laura Perez",
         eventDate: "2024-03-02",
-        eventLocation: "Dr. Sanchis M., 900, # 46546",
+        eventLocation: "Sanchis Villa, 900, # 46546",
         startEventTime: "19:30",
         endEventTime: "24:00",
         guestsEventQuantity: 220,
@@ -296,5 +296,12 @@ const packageDB = [
         name: "gold",
         item: "Three course-dinner with white protein, plated or buffet",
         price: 45,
+    }
+]
+
+const galleryDB = [
+    {
+        image:
+        altText:
     }
 ]

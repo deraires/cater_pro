@@ -1,3 +1,5 @@
+console.log("hello")
+
 /* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
 function toggleMenu() {
     var x = document.getElementById("navLinksSmallScreen");
@@ -36,7 +38,7 @@ const eventFlipCards = eventsDB
     }).join("")
 
 flipCardsContainer.innerHTML = eventFlipCards
-
+console.log(eventFlipCards)
 
 /**
  * Calculates the duration in hh:mm format between to times
@@ -111,14 +113,14 @@ const sanitizedEventsDB = eventsDB.map(
     })
 );
 
-// Generates upcommingEventCards in HTML from eventsDB.js
+// Generates upcomingEventCards in HTML from eventsDB.js
 const updateEventCards = (events) => {
     // Saves upcomingEventsCardsContainer to use it later
     const upcomingEventsCardsContainer = document.getElementById("upcomingEventsCardsContainer");
     const eventCards = events.map(event => {
             return (
                 `
-                    <div class="upcommingEventCard">
+                    <div class="upcomingEventCard">
                         <div class="tagContainer">
                             <p class="cardTag tagDate"><i class="fa-regular fa-calendar-days fa-lg" style="color: #000000;"></i><span >${event.eventDate}</span></p>
                             <p class="cardTag tagTime"><i class="fa-solid fa-clock fa-lg" style="color: #000000;"></i><span>${event.startEventTime}</span></p>
@@ -146,3 +148,33 @@ const searchEvents = (searchedDate) => sanitizedEventsDB.filter(
 
 const initialDate = "2024-02-09";
 updateEventCards(searchEvents(initialDate))
+
+
+
+// Logic for Gallery carousel//
+let imageIndex = 1;
+showImage(imageIndex);
+
+function nextImage(n) {
+  showImage(imageIndex += n);
+}
+
+function currentImage(n) {
+  showImage(imageIndex = n);
+}
+
+function showImage(n) {
+  let i;
+  let images = document.getElementsByClassName("imageCarousel");
+  let dots = document.getElementsByClassName("dot");
+  if (n > images.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    images[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  images[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}

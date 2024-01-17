@@ -119,9 +119,9 @@ h4 {
 
 #navSmallScreen a {
     color: white;
-    padding: 11px 16px;
+    padding: 15px 30px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 1.1rem;
     display: block;
 }
 
@@ -236,16 +236,16 @@ footer {
     padding: 30px;
 }
 
-/* Styles for Upcomming Events section and cards */
-#upcommingEvents {
+/* Styles for Upcoming Events section and cards */
+#upcomingEvents {
     padding: 0 0 5rem;
 }
 
-#upcommingEvents h2 {
+#upcomingEvents h2 {
     padding: 2rem 1.5rem 0rem 3rem;
 }
 
-#upcommingEventsCardsContainer {
+#upcomingEventsCardsContainer {
     display: flex;
     width: 100%;
     padding: 0 1rem 5rem;
@@ -254,7 +254,7 @@ footer {
     justify-content: space-around;
 }
 
-.upcommingEventCard {
+.upcomingEventCard {
     width: 100%;
     margin: 2rem;
     padding: 2rem 4rem;
@@ -264,7 +264,7 @@ footer {
         0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
 }
 
-.upcommingEventCard p {
+.upcomingEventCard p {
     line-height: 1.7rem;
 }
 
@@ -298,14 +298,81 @@ footer {
 .tagTime {
     background-color: #feb83796;
 }
-
+ 
 .tagDuration {
     background-color: #feb83736;
+}
+
+/* Styles for Gallery section */
+.imageCarousel {display: none}
+img {vertical-align: middle;}
+
+.carouselContainer {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.previousImage, .nextImage {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 1rem;
+  margin-top: -2rem;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.nextImage {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: black;
+}
+
+/* The dots/bullets/indicators */
+.dotCarousel {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: var(--dark-gray);
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: var(--accent-yellow);
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
 }
 
 /* Styles for templates pages input */
 .templatesMain {
     padding: 1rem;
+    min-height: calc(100vh - 125px);
 }
 
 .templatesMain h1 {
@@ -498,6 +565,7 @@ table {
     justify-content: center;
     align-items: center;
     padding: 2rem;
+    width: 100%;
 }
 
 #loginContainer h1 {
@@ -531,11 +599,16 @@ table {
     background-color: var(--accent-yellow);
 }
 
+#loginCardSmallScreen {
+ width: 100%;
+}
+
 /*Utility classes*/
 .center {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
 }
 
 br {
@@ -571,7 +644,7 @@ hr {
 /*All media query */
 
 /*Styles for small screen devices, less than 600 pixels*/
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 980px) {
 
     /*Media query for Nav bar*/
     #navBigScreen {
@@ -583,6 +656,9 @@ hr {
     }
 
     /*Adjusting templates content (inputInformationForm and templatePreview) to fit small screen devices*/
+    .templatesMain {
+        min-height: calc(100vh - 65px);
+    }
     .templatesContainer {
         display: grid;
         grid-template-columns: 1fr;
@@ -609,9 +685,11 @@ hr {
         left: 10%;
         font-size: 1rem;
     }
-
+    /* Adjusting the visual properties of welcome.html page*/
     #loginContainer {
-        height: calc(100vh - 110px);
+        height: fit-content;
+        min-height: calc(100vh - 65px);
+        padding: 1.5rem;
     }
 
     #loginContainer h1 {
@@ -623,16 +701,25 @@ hr {
         display: none;
     }
 
-    #upcommingEvents {
+    #upcomingEvents {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+    }
+    .upcomingEventCard h3 {
+        font-size: 2rem;
+        line-height: 2.1rem;
+        margin: 10px 0 10px;
+    }
+    .upcomingEventCard p {
+        font-size: 1rem;
+        line-height: 1.5rem;
     }
 
 }
 
 /*Styles for big screen devices, 601 pixels and more*/
-@media only screen and (min-width:701px) {
+@media only screen and (min-width:981px) {
 
     /*Media query for Nav bar*/
     #navSmallScreen {
