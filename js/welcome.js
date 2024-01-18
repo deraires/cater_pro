@@ -1,5 +1,3 @@
-console.log("hello")
-
 /* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
 function toggleMenu() {
     var x = document.getElementById("navLinksSmallScreen");
@@ -71,27 +69,27 @@ const calculateDuration = (startTime, endTime) => {
 }
 
 
-
+// Function to organize dates for the upcoming section selector in the welcome.html page
 let dateOptions = eventsDB
     .map((event) => {
         return new Date(event.eventDate);
     })
-    // Ordena las fechas//
+    // Organizes dates chronologically //
     .sort((a, b) => a - b)
-    // Extrae las fechas únicas para tener un listado sin duplicados/
+    // Extracts unique dates for a duplicate-free listing //
     .map(
         (date) =>
-            // agrega un cero antes del número de mes para estandarizar la fecha al formato original//
+            // Adds a zero before the month number to standardize the date to the original format //
             `${date.getFullYear()}-${(date.getMonth() + 1).toLocaleString("en-US", {
                 minimumIntegerDigits: 2,
                 useGrouping: false,
             })}-${date.getDate().toLocaleString("en-US", {
                 minimumIntegerDigits: 2,
                 useGrouping: false,
-            })}`, // agrega un cero antes del número de día para estandarizar la fecha al formato original//
+            })}`, 
     );
 
-// Genera un array de fechas unicas para utilizar más adelante//
+// Generates an array of unique dates for later use //
 dateOptions = [...new Set(dateOptions)].map((date) => `<option value="${date}">${date}</option>`).join("");
 
 const selectDate = document.getElementById("selectDate")
@@ -152,6 +150,29 @@ updateEventCards(searchEvents(initialDate))
 
 
 // Logic for Gallery carousel//
+//Saves carouselContainer tu use it later//
+const carouselContainer = document.getElementById("carouselContainer");
+
+// Generates gallery carousel slides //
+const imagesCarousel = galleryDB
+ .map(imageDetail => {
+    return (
+        `
+        <div class="imageCarousel fade">
+                    <img src="${imageDetail.image}" alt="${imageDetail.altText}" style="width:100%">
+                </div> 
+                <div>              
+                <a class="previousImage" onclick="nextImage(-1)"><i class="fa-solid fa-chevron-left fa-xl" style="color: #feb837;"></i></a>
+                <a class="nextImage" onclick="nextImage(1)"><i class="fa-solid fa-chevron-right fa-xl" style="color: #feb837;"></i></a>
+                </div>
+                <div class=center>
+                    <span class="dotCarousel center" onclick="currentImage(${imageDetail.id})"></span>
+                </div>`)
+ }).join("")
+ console.log(imagesCarousel)
+
+carouselContainer.innerHTML = imagesCarousel
+
 let imageIndex = 1;
 showImage(imageIndex);
 
@@ -166,15 +187,16 @@ function currentImage(n) {
 function showImage(n) {
   let i;
   let images = document.getElementsByClassName("imageCarousel");
-  let dots = document.getElementsByClassName("dot");
-  if (n > images.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
+  let dots = document.getElementsByClassName("dotCarousel");
+  if (n > images.length) {imageIndex = 1}    
+  if (n < 1) {imageIndex = images.length}
+  for (i = 0; i < images.length; i++) {
     images[i].style.display = "none";  
   }
   for (i = 0; i < dots.length; i++) {
     dots[i].className = dots[i].className.replace(" active", "");
   }
-  images[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " active";
+  images[imageIndex-1].style.display = "block";  
+  dots[imageIndex-1].className += "active";
 }
+
