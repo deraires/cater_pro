@@ -85,9 +85,9 @@ const invoiceFormInnerHTML = `
                             <tr>
                                 <td><label for="selectEventMenu">Select event menu</label>
                                     <select name="selectEventMenu" id="selectEventMenu">
-                                        <option value="Menu 1">Menu #1</option>
-                                        <option value="Menu 2">Menu #2</option>
-                                        <option value="Menu 3">Menu #3</option>
+                                        <option value="1">Menu #1</option>
+                                        <option value="2">Menu #2</option>
+                                        <option value="3">Menu #3</option>
                                     </select>
                                 </td>
                                 <td></td>
@@ -120,6 +120,12 @@ const invoiceFormInnerHTML = `
                                 </td>
                             </tr>
                         </table>
+                        <fieldset>
+                            <legend>Additional 2:</legend>
+                            <input type="text" name="descriptionAdditional1" id="descriptionAdditional1" placeholder="Parking spaces">
+                            <input type="number" name="quantityAdditional1" id="quantityAdditional1" placeholder="100">                        
+                            <input type="text" name="rateAdditional1" id="rateAdditional1" placeholder="10">
+                        </fieldset>
                     <input class="buttonSubmit" type="submit" value="Generate Invoice">
 `
 /*HTML for templatePreview section, in particular for "Invoice" option*/

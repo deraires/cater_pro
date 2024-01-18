@@ -548,13 +548,14 @@ const eventsDB = [
   }
 ]
 
-const menuDB = [
-    {
-        "menu1": "Tomato soup, Rissoto al fungi, Stuffed Slices Turkey",
-        "menu2": "Spring salad, Roasted potatoes, Roasted Pork Loin",
-        "menu3": "Roasted veggies, Roasted potatoes, Prime Rib Roast",
-    }
-]
+const menuDB = {
+    "1": {
+        pricePerPerson: 30
+    },
+    "2": {
+        pricePerPerson: 40
+    },
+}
 
 const packageDB = [
     {

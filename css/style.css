@@ -59,7 +59,7 @@ h4 {
     font-weight: bold;
 }
 
-#navBigScreen>div {
+#navBigScreen > div {
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -608,7 +608,6 @@ table {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    text-align: center;
 }
 
 br {
@@ -714,6 +713,10 @@ hr {
     .upcomingEventCard p {
         font-size: 1rem;
         line-height: 1.5rem;
+    }
+
+    .tableForm {
+        font-size: 50%;
     }
 
 }
