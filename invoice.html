@@ -29,7 +29,7 @@
             <a href="http://127.0.0.1:5500/index.html">Log out</a>
         </div>
         <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
             <i class="fa-solid fa-bars"></i>
         </a>
     </nav>
@@ -72,72 +72,11 @@
                     Client E-mail: <span id="clientEmail"></span> <br>
                     Client Phone: <span id="clientPhone"></span> <br>
                     Event title: <span id="eventTitle"></span> <br>
-                    Event date: <span id="eventDate"></span>
+                    Event date: <span id="eventDate"></span> <br>
                 </p>
-
-                <h3>Services detail:</h3>
-                <table class="tableForm">
-                    <tr>
-                        <th>Description</th>
-                        <th>Quantity</th>
-                        <th>Rate</th>
-                        <th>Amount</th>
-                    </tr>
-                    <tr>
-                        <td><span id="selectEventPackage"></span></td>
-                        <td> </td>
-                        <td>€  </td>
-                        <td>€  </td>
-                    </tr>
-                    <tr>
-                        <td><span id="selectEventMenu"></span></td>
-                        <td> </td>
-                        <td>€  </td>
-                        <td>€  </td>
-                    </tr>
-                    <tr>
-                        <td><span id="descriptionAdditional1"></span></td>
-                        <td><span id="quantityAdditional1"></span></td>
-                        <td><span id="rateAdditional1"></span></td>
-                        <td>€  </td>
-                    </tr>
-                    <tr>
-                        <td><span id="descriptionAdditional2"></span></td>
-                        <td><span id="quantityAdditional2"></span></td>
-                        <td><span id="rateAdditional2"></span></td>
-                        <td>€  </td>
-                    </tr>
-                </table>
-                <hr>
-                <table class="tableForm">
-                    <tr>
-                        <td>Subtotal</td>
-                        <td>€  </td>
-                    </tr>
-                    <tr>
-                        <td>Tax (15%)</td>
-                        <td>€  </td>
-                    </tr>
-                    <tr>
-                        <td>GRAND TOTAL</td>
-                        <td>€  </td>
-                    </tr>
-                </table>
-                <h3>Terms and Conditions</h3>
-
-                <p>
-                    First payment (60% of Grand Total): € 3381 <br>
-                    To be paid 40 days before the event
-                </p>
-                <p>
-                    Second payment (40% of Grand Total): € 2254 <br>
-                    To be paid 7 days before the event
-                </p>
-                <p>
-                    Bank account: 345 678 946 0241 <br>
-                    IBAN Code: SSWXXCT <br>
-                    For any additional enquiries contact us on info@chefpro.com
-                </p>
+                <div id="invoiceDetails">
+                    
+                </div>
             </div>
         </div>
     </main>

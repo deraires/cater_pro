@@ -53,79 +53,87 @@ const values = Object.fromEntries(new URLSearchParams(window.location.search))
 /* Initial Values for the templates.html page
 /*HTML for inputInformationForm section, in particular for "Invoice" option*/
 const invoiceFormInnerHTML = `
-                    <label for="invoiceDate">Date</label>
-                    <input type="date" name="invoiceDate" id="invoiceDate" placeholder="MM/DD/YYYY">
-                    <label for="clientName">Client name</label>
-                    <input type="text" name="clientName" id="clientName" placeholder="Sussan Johnson">
-                    <label for="clientEmail">Client e-mail</label>
-                    <input type="email" name="clientEmail" id="clientEmail" placeholder="email@example.com">
-                    <label for="clientPhone">Client Phone</label>
-                    <input type="tel" name="clientPhone" id="clientPhone" placeholder="623 45 67 98">
+                    <label for="invoiceDate">Invoice date</label>
+                    <input type="date" name="invoiceDate" id="invoiceDate" placeholder="MM/DD/YYYY" required>
                     <label for="eventTitle">Event title</label>
-                    <input type="text" name="eventTitle" id="eventTitle" placeholder="Birthday party for Mr. Johnson">
-                    <label for="eventDate">Event date</label>
-                    <input type="date" name="eventDate" id="eventDate" placeholder="MM/DD/YYYY">
-                    <table class="tableForm">
-                            <tr>
-                                <th>Description</th>
-                                <th>Quantity</th>
-                                <th>Rate</th>
-                            </tr>
-                            <tr>
-                                <td><label for="selectEventPackage">Select event package</label>
-                                    <select name="selectEventPackage" id="selectEventPackage">
-                                        <option value="Platinum package">Platinum package</option>
-                                        <option value="Diamond package">Diamond package</option>
-                                        <option value="Gold package">Gold package</option>                                                                            
-                                    </select>
-                                </td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td><label for="selectEventMenu">Select event menu</label>
-                                    <select name="selectEventMenu" id="selectEventMenu">
-                                        <option value="1">Menu #1</option>
-                                        <option value="2">Menu #2</option>
-                                        <option value="3">Menu #3</option>
-                                    </select>
-                                </td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td><label for="descriptionAdditional1">Additional 1</label>
-                                    <input type="text" name="descriptionAdditional1" id="descriptionAdditional1"
-                                        placeholder="Parking spaces">
-                                </td>
-                                <td><label for="quantityAdditional1">Input quantity</label>
-                                    <input type="number" name="quantityAdditional1" id="quantityAdditional1"
-                                        placeholder="100">
-                                </td>
-                                <td><label for="rateAdditional1">Input rate</label>
-                                    <input type="text" name="rateAdditional1" id="rateAdditional1" placeholder="10">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><label for="descriptionAdditional1">Additional 2</label>
-                                    <input type="text" name="descriptionAdditional1" id="descriptionAdditional1"
-                                        placeholder="Extra hours">
-                                </td>
-                                <td><label for="quantityAdditional2">Input quantity</label>
-                                    <input type="number" name="quantityAdditional2" id="quantityAdditional2"
-                                        placeholder="2">
-                                </td>
-                                <td><label for="rateAdditional2">Input rate</label>
-                                    <input type="text" name="rateAdditional2" id="rateAdditional2" placeholder="150">
-                                </td>
-                            </tr>
-                        </table>
-                        <fieldset>
-                            <legend>Additional 2:</legend>
-                            <input type="text" name="descriptionAdditional1" id="descriptionAdditional1" placeholder="Parking spaces">
-                            <input type="number" name="quantityAdditional1" id="quantityAdditional1" placeholder="100">                        
+                        <input type="text" name="eventTitle" id="eventTitle"
+                            placeholder="Birthday party for Mr. Johnson" required>
+                    <fieldset class="twoColumns">
+                        
+                        <legend>Client details:</legend>
+                        <div>
+                            <label for="clientName">Client name</label>
+                            <input type="text" name="clientName" id="clientName" placeholder="Sussan Johnson" required>
+                        </div>
+                        <div>
+                            <label for="clientEmail">Client e-mail</label>
+                            <input type="email" name="clientEmail" id="clientEmail" placeholder="email@example.com"
+                                required>
+                        </div>
+                        <div>
+                            <label for="clientPhone">Client Phone</label>
+                            <input type="tel" name="clientPhone" id="clientPhone" placeholder="623 45 67 98" required>
+                        </div>
+                    </fieldset>
+                    <fieldset class="twoColumns">
+                        <legend>Event details:</legend>
+                        <div><label for="guestsEventQuantity">Number of guests</label>
+                            <input type="number" name="guestsEventQuantity" id="guestsEventQuantity" placeholder="120"
+                                required>
+                        </div>
+                        <div>
+                            <label for="eventDate">Event date</label>
+                            <input type="date" name="eventDate" id="eventDate" placeholder="MM/DD/YYYY" required>
+                        </div>
+                        <div>
+                            <label for="eventPackage">Select package</label>
+                            <select name="eventPackage" id="eventPackage">
+                                <option value="1">Platinum package</option>
+                                <option value="2">Diamond package</option>
+                                <option value="3">Gold package</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="eventMenu">Select menu</label>
+                            <select name="eventMenu" id="eventMenu">
+                                <option value="1">Menu #1</option>
+                                <option value="2">Menu #2</option>
+                                <option value="3">Menu #3</option>
+                            </select>
+                        </div>
+                    </fieldset>
+                    <fieldset class="twoColumns">
+                        <legend>Additional 1:</legend>
+                        <div>
+                            <label for="descriptionAdditional1">Description</label>
+                            <input type="text" name="descriptionAdditional1" id="descriptionAdditional1"
+                                placeholder="Extra hours">
+                        </div>
+                        <div>
+                            <label for="quantityAdditional1">Input quantity</label>
+                            <input type="number" name="quantityAdditional1" id="quantityAdditional1" placeholder="100">
+                        </div>
+                        <div>
+                            <label for="rateAdditional1">Input rate</label>
                             <input type="text" name="rateAdditional1" id="rateAdditional1" placeholder="10">
-                        </fieldset>
+                        </div>
+                    </fieldset>
+                    <fieldset class="twoColumns">
+                        <legend>Additional 2:</legend>
+                        <div>
+                            <label for="descriptionAdditional2">Description</label>
+                            <input type="text" name="descriptionAdditional2" id="descriptionAdditional2"
+                                placeholder="Parking spaces">
+                        </div>
+                        <div>
+                            <label for="quantityAdditional2">Input quantity</label>
+                            <input type="number" name="quantityAdditional2" id="quantityAdditional2" placeholder="100">
+                        </div>
+                        <div>
+                            <label for="rateAdditional2">Input rate</label>
+                            <input type="text" name="rateAdditional2" id="rateAdditional2" placeholder="10">
+                        </div>
+                    </fieldset>
                     <input class="buttonSubmit" type="submit" value="Generate Invoice">
 `
 /*HTML for templatePreview section, in particular for "Invoice" option*/
@@ -233,11 +241,11 @@ const contractFormInnerHTML = `
  <input type="time" name="startEventTime" id="startEventTime" placeholder="19:30">
  <label for="endEventTime">End Time for the event</label>
  <input type="time" name="endEventTime" id="endEventTime" placeholder="12:30">
- <label for="selectEventMenu">Select event menu</label>
- <select name="selectEventMenu" id="selectEventMenu">
-     <option value="Menu #1">Menu #1</option>
-     <option value="Menu #2">Menu #2</option>
-     <option value="Menu #3">Menu #3</option>
+ <label for="eventMenu">Select menu</label>
+ <select name="eventMenu" id="eventMenu">
+     <option value="1">Menu #1</option>
+     <option value="2">Menu #2</option>
+     <option value="3">Menu #3</option>
  </select>
  <label for="guestsEventQuantity">Number of guests</label>
  <input type="number" name="guestsEventQuantity" id="guestsEventQuantity" placeholder="120">

@@ -59,7 +59,7 @@ h4 {
     font-weight: bold;
 }
 
-#navBigScreen > div {
+#navBigScreen>div {
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -298,80 +298,95 @@ footer {
 .tagTime {
     background-color: #feb83796;
 }
- 
+
 .tagDuration {
     background-color: #feb83736;
 }
 
 /* Styles for Gallery section */
-#galleryContainer h2{
+#galleryContainer h2 {
     padding: 2rem 1.5rem 1rem 2rem;
 }
+
 #galleryContainer {
     padding: 1rem;
 }
-.imageCarousel {display: none}
-img {vertical-align: middle;}
+
+.imageCarousel {
+    display: none
+}
+
+img {
+    vertical-align: middle;
+}
 
 #carouselContainer {
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
 }
 
 /* Next & previous buttons */
-.previousImage, .nextImage {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 1rem;
-  margin-top: -2rem;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
+.previousImage,
+.nextImage {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 1rem;
+    margin-top: -2rem;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
 }
 
 /* Position the "next button" to the right */
 .nextImage {
-  right: 0;
+    right: 0;
 }
 
 /* On hover, add a black background color with a little bit see-through */
-.previousImage:hover, .nextImage:hover {
-  background-color: rgba(0, 0, 0, 0.308);
+.previousImage:hover,
+.nextImage:hover {
+    background-color: rgba(0, 0, 0, 0.308);
 }
 
 /* The dots/bullets/indicators */
 .dotCarousel {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: var(--dark-gray);
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: var(--dark-gray);
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
 }
 
-.active, .dotCarousel:hover {
-  background-color: var(--accent-yellow);
+.active,
+.dotCarousel:hover {
+    background-color: var(--accent-yellow);
 }
 
 /* Fading animation */
 .fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
 }
 
 @keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
 }
 
 /* Styles for templates pages input */
 .templatesMain {
-    padding: 1rem;
+    padding: 4rem;
     min-height: calc(100vh - 125px);
 }
 
@@ -384,7 +399,7 @@ img {vertical-align: middle;}
 }
 
 .templatePreview p {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 .templatesContainer {
@@ -527,11 +542,16 @@ label {
     margin-bottom: 40px;
 }
 
+#invoiceDetails {
+    width: 100%;
+}
+
 /*Styles for the table in the Invoice and Quotation forms*/
 .tableForm {
     vertical-align: middle;
     padding: 10px;
     line-height: 2rem;
+    width: 100%;
 }
 
 .tableForm th {
@@ -600,7 +620,7 @@ table {
 }
 
 #loginCardSmallScreen {
- width: 100%;
+    width: 100%;
 }
 
 /*Utility classes*/
@@ -640,10 +660,26 @@ hr {
     border: 1px solid var(--light-gray);
 }
 
+.twoColumns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+fieldset {
+    border-color: var(--button-hover-gray);
+    border-radius: 4px;
+    padding: 0 1rem 1rem;
+}
+
+legend {
+    padding: 1rem;
+}
+
 /*All media query */
 
 /*Styles for small screen devices, less than 600 pixels*/
-@media only screen and (max-width: 980px) {
+@media only screen and (max-width: 600px) {
 
     /*Media query for Nav bar*/
     #navBigScreen {
@@ -657,7 +693,9 @@ hr {
     /*Adjusting templates content (inputInformationForm and templatePreview) to fit small screen devices*/
     .templatesMain {
         min-height: calc(100vh - 65px);
+        padding: 1rem 1rem 2rem;
     }
+
     .templatesContainer {
         display: grid;
         grid-template-columns: 1fr;
@@ -684,6 +722,7 @@ hr {
         left: 10%;
         font-size: 1rem;
     }
+
     /* Adjusting the visual properties of welcome.html page*/
     #loginContainer {
         height: fit-content;
@@ -705,11 +744,13 @@ hr {
         flex-wrap: wrap;
         justify-content: center;
     }
+
     .upcomingEventCard h3 {
         font-size: 2rem;
         line-height: 2.1rem;
         margin: 10px 0 10px;
     }
+
     .upcomingEventCard p {
         font-size: 1rem;
         line-height: 1.5rem;
@@ -719,10 +760,16 @@ hr {
         font-size: 50%;
     }
 
+    .twoColumns {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+
 }
 
 /*Styles for big screen devices, 601 pixels and more*/
-@media only screen and (min-width:981px) {
+@media only screen and (min-width:601px) {
 
     /*Media query for Nav bar*/
     #navSmallScreen {

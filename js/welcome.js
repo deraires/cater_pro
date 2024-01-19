@@ -124,7 +124,7 @@ function toggleMenu() {
                           <p>Client: ${event.clientName}</p>
                           <p>E-mail: ${event.clientEmail}</p>
                           <p>Phone: ${event.clientPhone}</p>
-                          <p>Service: Package type ${event.selectEventPackage} / Menu #${event.selectEventMenu} </p>
+                          <p>Service: Package type ${event.eventPackage} / Menu #${event.eventMenu} </p>
                       </div>        
                   `;
       })
