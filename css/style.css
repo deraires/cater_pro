@@ -226,7 +226,6 @@ footer {
     color: white;
     padding: 30px;
     text-align: center;
-    cursor: pointer;
 }
 
 .flipCardBack {
@@ -238,7 +237,7 @@ footer {
 
 /* Styles for Upcoming Events section and cards */
 #upcomingEvents {
-    padding: 0 0 5rem;
+    padding: 0 0 2rem;
 }
 
 #upcomingEvents h2 {
@@ -248,7 +247,7 @@ footer {
 #upcomingEventsCardsContainer {
     display: flex;
     width: 100%;
-    padding: 0 1rem 5rem;
+    padding: 0 1rem 1rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -352,6 +351,10 @@ img {
 }
 
 /* The dots/bullets/indicators */
+#galleryDots {
+    text-align: center;
+    padding-bottom: 4rem;
+}
 .dotCarousel {
     cursor: pointer;
     height: 15px;
@@ -640,6 +643,9 @@ br {
 
 .maxWidth900px {
     max-width: 900px;
+}
+.maxWidth550px {
+    max-width: 550px;
 }
 
 .right {

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quotation template</title>
+    <title>Invoice template</title>
     <!-- Add favicon-->
     <link rel="icon" href="/resources/logos/favicon.png">
     <!-- Style Sheet import-->
@@ -29,12 +29,12 @@
             <a href="http://127.0.0.1:5500/index.html">Log out</a>
         </div>
         <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
             <i class="fa-solid fa-bars"></i>
         </a>
     </nav>
-    <main>
-        <div class="templatePreview">
+    <main class="templatesMain ">
+
         <div class="templateView maxWidth900px center">
             <div class="toolBar">
                 <div class="toolTip">
@@ -56,7 +56,7 @@
             </div>
             <div class="templatePreview">
                 <img class="center" src="./resources/logos/logoFullWhite.png" alt="logoFullWhite">
-                <h2 class="center">Quotation</h2>
+                <h2 class="center">QUOTATION</h2>
                 <p class="right">Quotation Number 98675 <br>
                     Date: <span id="invoiceDate"></span>
                 </p>
@@ -74,82 +74,20 @@
                     Event title: <span id="eventTitle"></span> <br>
                     Event date: <span id="eventDate"></span> <br>
                 </p>
-
-                <h3>Services detail:</h3>
-                <table class="tableForm">
-                    <tr>
-                        <th>Description</th>
-                        <th>Quantity</th>
-                        <th>Rate</th>
-                        <th>Amount</th>
-                    </tr>
-                    <tr>
-                        <td>Package selected</td>
-                        <td>1</td>
-                        <td>€ 500</td>
-                        <td>€ 500</td>
-                    </tr>
-                    <tr>
-                        <td>Menu selected</td>
-                        <td>100</td>
-                        <td>€ 30</td>
-                        <td>€ 3000</td>
-                    </tr>
-                    <tr>
-                        <td>Additional 1</td>
-                        <td>100</td>
-                        <td>€ 12</td>
-                        <td>€ 1200</td>
-                    </tr>
-                    <tr>
-                        <td>Additional 2</td>
-                        <td>20</td>
-                        <td>€ 10</td>
-                        <td>€ 200</td>
-                    </tr>
-                </table>
-                <hr>
-                <table class="tableForm">
-                    <tr>
-                        <td>Subtotal</td>
-                        <td>€ 4900</td>
-                    </tr>
-                    <tr>
-                        <td>Tax (15%)</td>
-                        <td>€ 735</td>
-                    </tr>
-                    <tr>
-                        <td>GRAND TOTAL</td>
-                        <td>€ 5635</td>
-                    </tr>
-                </table>
-                <h3>Terms and Conditions</h3>
-
-                <p>
-                    First payment (60% of Grand Total): € 3381 <br>
-                    To be paid 40 days before the event
-                </p>
-                <p>
-                    Second payment (40% of Grand Total): € 2254 <br>
-                    To be paid 7 days before the event
-                </p>
-                <p>
-                    Bank account: 345 678 946 0241 <br>
-                    IBAN Code: SSWXXCT <br>
-                    For any additional enquiries contact us on info@chefpro.com
-                </p>
+                <div id="invoiceDetails">
+                    
+                </div>
             </div>
         </div>
-    </div>
     </main>
     <footer id="footer">
         <span>© 2024 CaterPro / All copyrigths reserved.</span>
     </footer>
     <!-- JavaScipt file import-->
+    <script src="./js/data.js"></script>
     <script src="./js/script.js"></script>
+    <script src="./js/quotation.js"></script>
     <script src="https://kit.fontawesome.com/0cc55d25c2.js" crossorigin="anonymous"></script>
-   
-
 </body>
 
 </html>

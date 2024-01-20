@@ -1,9 +1,11 @@
 /**
  * Updates the innerHTML of the specified element
  */
-function updateHTMLElement(elementId, innerHTML) {
-    document.getElementById(elementId).innerHTML = innerHTML
-  }
+function updateHTMLElement(elementId, newInnerHTML) {
+    if (document.getElementById(elementId)) {
+        document.getElementById(elementId).innerHTML = newInnerHTML;
+    }
+}
 
 const values = Object.fromEntries(new URLSearchParams(window.location.search))
 
@@ -20,11 +22,3 @@ Object.keys(values).forEach(
     }
 )
 
-// updateHTMLElement("contractSignatureDate", values.contractSignatureDate) 
-
-
-
-
-
-/* Initial Values for the templates.html page
-*/
