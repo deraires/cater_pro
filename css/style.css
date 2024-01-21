@@ -247,6 +247,7 @@ footer {
 .upcomingEventCard {
   width: 100%;
   padding: 2rem 4rem;
+  margin: 2rem;
   border-radius: 4px;
   box-shadow: 0 0 0 2px rgb(255, 255, 255), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
 }
@@ -716,7 +717,7 @@ legend {
 
   /* Adjusting the visual properties of the toolbar to fit small screen devices */
   .toolBar {
-    margin-top: 5rem;
+    margin-top: 8rem;
   }
 
   .toolTip .toolTipText {
@@ -753,6 +754,7 @@ legend {
 
   .upcomingEventCard {
     padding: 2rem 1rem;
+    margin: 0;
   }
 
   .upcomingEventCard h3 {
