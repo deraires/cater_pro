@@ -1,84 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home page</title>
     <!-- Add favicon-->
-    <link rel="icon" href="/resources/logos/favicon.png">
+    <link rel="icon" href="/resources/logos/favicon.png" />
     <!-- Style Sheet import-->
-    <link rel="stylesheet" href="./css/style.css">
-</head>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
 
-<body>
+  <body>
     <!-- Nav Bar section-->
     <nav id="navBigScreen">
-        <div>
-            <a href="index.html"><img src="/resources/logos/logoIsotypeDark.png" alt="home logo"></a>
-            <div id="navLinksBigScreen">
-                <a href="http://127.0.0.1:5500/templates.html">Templates</a>
-                <button class="navButton" href="http://127.0.0.1:5500/index.html">Log out</button>
-                <a href="index.html" class="navButton">LogoutNew</a>
-            </div>
+      <div>
+        <a href="index.html"><img src="/resources/logos/logoIsotypeDark.png" alt="home logo" /></a>
+        <div id="navLinksBigScreen">
+          <a href="templates.html">Templates</a>
+          <a href="index.html"><button class="navButton">Log out</button></a>
         </div>
+      </div>
     </nav>
     <nav id="navSmallScreen">
-        <a href="index.html" id="navSmallScreenLogo">
-            <img src="/resources/logos/logoIsotypeDark.png" alt="home logo">
-        </a>
-        <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-        <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
-            <i class="fa-solid fa-bars"></i>
-        </a>
-        <div id="navLinksSmallScreen">
-            <a href="http://127.0.0.1:5500/templates.html">Templates</a>
-            <a href="index.html">Log out</a>
-        </div>
+      <a href="index.html" id="navSmallScreenLogo">
+        <img src="/resources/logos/logoIsotypeDark.png" alt="home logo" />
+      </a>
+      <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+      <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
+        <i class="fa-solid fa-bars"></i>
+      </a>
+      <div id="navLinksSmallScreen">
+        <a href="templates.html">Templates</a>
+        <a href="index.html">Log out</a>
+      </div>
     </nav>
     <!-- Main content section -->
     <main>
-        <!-- Hero section -->
-        <div id="heroWelcomeContainer" class="gradient">
-            <div>
-                <h1>Welcome to Cater Pro</h1>
-                <p>We take immense pride in crafting extraordinary experiences through our dedication to exceptional
-                    service and exquisite cuisine</p>
-            </div>
+      <!-- Hero section -->
+      <div id="heroWelcomeContainer" class="gradient">
+        <div>
+          <h1>Welcome to Cater Pro</h1>
+          <p>
+            We take immense pride in crafting extraordinary experiences through our dedication to exceptional service
+            and exquisite cuisine
+          </p>
         </div>
-        <!-- Today´s events section -->
-        <div id="todayEventsWelcome">
-            <h2>Today's events</h2>
-            <div id="flipCardsContainer">
-            </div>
+      </div>
+      <!-- Today´s events section -->
+      <div id="todayEventsWelcome">
+        <h2>Today's events</h2>
+        <div id="flipCardsContainer"></div>
+      </div>
+      <!-- Upcoming events section -->
+      <div id="upcomingEvents">
+        <h2>Upcoming events</h2>
+        <div class="center maxWidth550px">
+          <label for="selectDate">Select event date</label>
+          <select name="selectDate" id="selectDate">
+            <option value=""></option>
+          </select>
         </div>
-        <!-- Upcoming events section -->
-        <div id="upcomingEvents">
-            <h2>Upcoming events</h2>
-            <div class="center maxWidth550px">
-                <label for="selectDate">Select event date</label>
-                <select name="selectDate" id="selectDate">
-                    <option value=""></option>
-                </select>
-            </div>
-            <div id="upcomingEventsCardsContainer">
-            </div>
-        </div>
-        <!-- Gallery section -->
-        <div id="galleryContainer">
-            <h2>Gallery</h2>
-            <div id="carouselContainer"></div>
-        </div>
-        <div id="galleryDots" ></div>
+        <div id="upcomingEventsCardsContainer"></div>
+      </div>
+      <!-- Gallery section -->
+      <div id="galleryContainer">
+        <h2>Gallery</h2>
+        <div id="carouselContainer"></div>
+      </div>
+      <div id="galleryDots"></div>
     </main>
     <!-- Footer section -->
     <footer id="footer">
-        <span>© 2024 CaterPro / All copyrigths reserved.</span>
+      <span>© 2024 CaterPro / All copyrigths reserved.</span>
     </footer>
     <!-- JavaScipt file import-->
     <script src="/js/data.js"></script>
     <script src="/js/welcome.js"></script>
     <script src="https://kit.fontawesome.com/0cc55d25c2.js" crossorigin="anonymous"></script>
-</body>
-
+  </body>
 </html>

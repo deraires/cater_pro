@@ -1,127 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contract template</title>
     <!-- Add favicon-->
-    <link rel="icon" href="/resources/logos/favicon.png">
+    <link rel="icon" href="/resources/logos/favicon.png" />
     <!-- Style Sheet import-->
-    <link rel="stylesheet" href="./css/style.css">
-</head>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
 
-<body>
+  <body>
     <!-- Nav Bar section-->
     <nav id="navBigScreen">
-        <div>
-            <a href="index.html"><img src="/resources/logos/logoIsotypeDark.png" alt="home logo"></a>
-            <div id="navLinksBigScreen">
-                <a href="http://127.0.0.1:5500/templates.html">Templates</a>
-                <button class="navButton" href="http://127.0.0.1:5500/index.html">Log out</button>
-            </div>
+      <div>
+        <a href="index.html"><img src="/resources/logos/logoIsotypeDark.png" alt="home logo" /></a>
+        <div id="navLinksBigScreen">
+          <a href="templates.html">Templates</a>
+          <a href="index.html"><button class="navButton">Log out</button></a>
         </div>
+      </div>
     </nav>
     <nav id="navSmallScreen">
-        <a href="index.html" id="navSmallScreenLogo"><img src="/resources/logos/logoIsotypeDark.png"
-                alt="home logo"></a>
-        <div id="navLinksSmallScreen">
-            <a href="http://127.0.0.1:5500/templates.html">Templates</a>
-            <a href="http://127.0.0.1:5500/index.html">Log out</a>
-        </div>
-        <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-        <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
-            <i class="fa-solid fa-bars"></i>
-        </a>
+      <a href="index.html" id="navSmallScreenLogo"
+        ><img src="/resources/logos/logoIsotypeDark.png" alt="home logo"
+      /></a>
+      <div id="navLinksSmallScreen">
+        <a href="templates.html">Templates</a>
+        <a href="index.html">Log out</a>
+      </div>
+      <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+      <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
+        <i class="fa-solid fa-bars"></i>
+      </a>
     </nav>
     <!-- Main content section -->
-    <main class="templatesMain ">
-        <div class="templateView maxWidth900px center">
-            <!-- Toolbar section -->
-            <div class="toolBar">
-                <div class="toolTip">
-                    <button class="btnIcon"><i class="fa-solid fa-file-arrow-down fa-2xl"></i></button>
-                    <span class="toolTipText">Download</span>
-                </div>
-                <div class="toolTip">
-                    <button class="btnIcon"><i class="fa-solid fa-file-export fa-2xl"></i></button>
-                    <span class="toolTipText">Export</span>
-                </div>
-                <div class="toolTip">
-                    <button class="btnIcon"><i class="fa-solid fa-share fa-2xl"></i></button>
-                    <span class="toolTipText">Share</span>
-                </div>
-                <div class="toolTip">
-                    <button class="btnIcon"><i class="fa-solid fa-floppy-disk fa-2xl"></i></button>
-                    <span class="toolTipText">Save</span>
-                </div>
-            </div>
-            <!-- Contract template preview section -->
-            <div class="templatePreview">
-                <img class="center" src="./resources/logos/logoFullWhite.png" alt="logoFullWhite">
-                <h2 class="center">CONTRACT</h2>
-                <p>This Catering Service Agreement is made on <span id="contractSignatureDate"></span>, between Chef
-                    Pro,
-                    located at Charm Street,
-                    #567, Valencia, Spain ("Provider"), and <span id="clientName"></span>, contact information
-                    e-mail<span id="clientEmail"></span> and phone number
-                    <span id="clientPhone"></span> ("Client").
-                </p>
-                <h3>Services:</h3>
-                <p>Scope of Services: Provider agrees to render catering services for the event detailed below,
-                    including but not limited to food preparation, service, and cleanup.
-                </p>
-
-                <p>Event Details: The catering services will be provided for the event titled <span
-                        id="eventTitle"></span>
-                    scheduled
-                    to take place at <span id="eventLocation"></span> on <span id="eventDate"></span> from <span
-                        id="startEventTime"></span>
-                    to <span id="endEventTime"></span>.
-                </p>
-
-                <p>Menu Selection: Menu #<span id="eventMenu"></span><br>
-                    Number of guests: <span id="guestsEventQuantity"></span> people
-                </p>
-                <h3>Payment</h3>
-                <p>Fees and Payment Schedule: Client agrees to pay Provider the total agreed-upon fee of € <span
-                        id="eventCost"></span> for the catering services. Payment shall be made in the following
-                    installments: <br>
-                    60% of the total amount: Due upon signing this Agreement.<br>
-                    40% of the total amount: Due no later than 7 days before the event.<br>
-                    Additional Costs: Any additional services or items requested by the Client outside the agreed
-                    scope will incur extra charges as mutually agreed upon by both parties.
-                </p>
-                <h3>Terms and Conditions</h3>
-                <p>Cancellation Policy: In the event of cancellation by the Client, the following terms apply: <br>
-                    Cancellation 30 days before the event: 50% refund of the total fee.<br>
-                    Cancellation within 15 days of the event: No refund provided.<br>
-                    Liability: Provider shall not be liable for any allergic reactions, health issues, or damages
-                    resulting from consumption or handling of the food provided.
-                </p>
-                <h3>Signatures</h3>
-                <p>IN WITNESS WHEREOF, the parties hereto have executed this Agreement as of the date first above
-                    written. <br>
-                </p>
-                <p>
-                    Chef Pro: __________________ [Date] <br>
-                    <span>Signed by Mr. Matthew Miller, CEO</span>
-                </p>
-                <p>
-                    Client:__________________ [Date] <br>
-                    Signed by <span id="clientName"></span>
-                </p>
-            </div>
+    <main class="templatesMain">
+      <div class="templateView maxWidth900px center">
+        <!-- Toolbar section -->
+        <div class="toolBar">
+          <div class="toolTip">
+            <button class="btnIcon"><i class="fa-solid fa-file-arrow-down fa-2xl"></i></button>
+            <span class="toolTipText">Download</span>
+          </div>
+          <div class="toolTip">
+            <button class="btnIcon"><i class="fa-solid fa-file-export fa-2xl"></i></button>
+            <span class="toolTipText">Export</span>
+          </div>
+          <div class="toolTip">
+            <button class="btnIcon"><i class="fa-solid fa-share fa-2xl"></i></button>
+            <span class="toolTipText">Share</span>
+          </div>
+          <div class="toolTip">
+            <button class="btnIcon"><i class="fa-solid fa-floppy-disk fa-2xl"></i></button>
+            <span class="toolTipText">Save</span>
+          </div>
         </div>
+        <!-- Contract template preview section -->
+        <div class="templatePreview">
+          <img class="center" src="./resources/logos/logoFullWhite.png" alt="logoFullWhite" />
+          <h2 class="center">CONTRACT</h2>
+          <p>
+            This Catering Service Agreement is made on <span id="contractSignatureDate"></span>, between Chef Pro,
+            located at Charm Street, #567, Valencia, Spain ("Provider"), and <span id="clientName"></span>, contact
+            information e-mail<span id="clientEmail"></span> and phone number <span id="clientPhone"></span> ("Client").
+          </p>
+          <h3>Services:</h3>
+          <p>
+            Scope of Services: Provider agrees to render catering services for the event detailed below, including but
+            not limited to food preparation, service, and cleanup.
+          </p>
+
+          <p>
+            Event Details: The catering services will be provided for the event titled
+            <span id="eventTitle"></span> scheduled to take place at <span id="eventLocation"></span> on
+            <span id="eventDate"></span> from <span id="startEventTime"></span> to <span id="endEventTime"></span>.
+          </p>
+
+          <p>
+            Menu Selection: Menu #<span id="eventMenu"></span><br />
+            Number of guests: <span id="guestsEventQuantity"></span> people
+          </p>
+          <h3>Payment</h3>
+          <p>
+            Fees and Payment Schedule: Client agrees to pay Provider the total agreed-upon fee of €
+            <span id="eventCost"></span> for the catering services. Payment shall be made in the following installments:
+            <br />
+            60% of the total amount: Due upon signing this Agreement.<br />
+            40% of the total amount: Due no later than 7 days before the event.<br />
+            Additional Costs: Any additional services or items requested by the Client outside the agreed scope will
+            incur extra charges as mutually agreed upon by both parties.
+          </p>
+          <h3>Terms and Conditions</h3>
+          <p>
+            Cancellation Policy: In the event of cancellation by the Client, the following terms apply: <br />
+            Cancellation 30 days before the event: 50% refund of the total fee.<br />
+            Cancellation within 15 days of the event: No refund provided.<br />
+            Liability: Provider shall not be liable for any allergic reactions, health issues, or damages resulting from
+            consumption or handling of the food provided.
+          </p>
+          <h3>Signatures</h3>
+          <p>
+            IN WITNESS WHEREOF, the parties hereto have executed this Agreement as of the date first above written.
+            <br />
+          </p>
+          <p>
+            Chef Pro: __________________ [Date] <br />
+            <span>Signed by Mr. Matthew Miller, CEO</span>
+          </p>
+          <p>
+            Client:__________________ [Date] <br />
+            Signed by <span id="clientName"></span>
+          </p>
+        </div>
+      </div>
     </main>
     <!-- Footer section -->
     <footer id="footer">
-        <span>© 2024 CaterPro / All copyrigths reserved.</span>
+      <span>© 2024 CaterPro / All copyrigths reserved.</span>
     </footer>
     <!-- JavaScipt file import-->
     <script src="./js/contract.js"></script>
     <script src="https://kit.fontawesome.com/0cc55d25c2.js" crossorigin="anonymous"></script>
-
-</body>
-
+  </body>
 </html>

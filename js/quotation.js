@@ -1,83 +1,103 @@
 /**
- * JAVA SCRIPT FOR QUOTATION PAGE
+ * JAVASCRIPT FOR QUOTATION PAGE
  */
 
-/* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
+/**
+ * Toggles the display of the navigation menu links when the user clicks on the hamburger menu bar icon
+ */
 function toggleMenu() {
-    var x = document.getElementById("navLinksSmallScreen");
-    if (x.style.display === "block") {
-        x.style.display = "none";
-    } else {
-        x.style.display = "block";
-    }
+  const navLinksSmallScreen = document.getElementById("navLinksSmallScreen");
+  if (!navLinksSmallScreen) return;
+
+  if (navLinksSmallScreen.style.display === "block") {
+    navLinksSmallScreen.style.display = "none";
+  } else {
+    navLinksSmallScreen.style.display = "block";
+  }
 }
+
+addEventListener("scroll", () => {
+  const navLinksSmallScreen = document.getElementById("navLinksSmallScreen");
+  if (!navLinksSmallScreen) return;
+
+  if (navLinksSmallScreen.style.display === "block") {
+    navLinksSmallScreen.style.display = "none";
+  }
+});
 
 /**
  * Updates the innerHTML of the specified element
  */
 function updateHTMLElement(elementId, newInnerHTML) {
-    if (document.getElementById(elementId)) {
-        document.getElementById(elementId).innerHTML = newInnerHTML;
-    }
+  if (document.getElementById(elementId)) {
+    document.getElementById(elementId).innerHTML = newInnerHTML;
+  }
 }
 
 /**
- * Sets a defaul value to control possible failure errors 
+ * Sets a default number value to control possible failure errors
  */
-function getValueWithDefault(value, defaultValue) {
-    if (value) return value;
-    return defaultValue;
+function getNumberValueWithDefault(value, defaultNumberValue) {
+  if (value) return Number(value);
+  return defaultNumberValue;
 }
 
 /**
- * Gives format to the corresponding amounts in euro currency
+ * Formats to the corresponding amounts in euro currency
  */
 function formatCurrency(ammount) {
-    return ammount.toLocaleString('en-DE', {
-        style: 'currency',
-        currency: 'EUR',
-    })
+  return ammount.toLocaleString("en-DE", {
+    style: "currency",
+    currency: "EUR",
+  });
 }
 
 // Gets key values from URL
-const values = Object.fromEntries(new URLSearchParams(window.location.search))
+const values = Object.fromEntries(new URLSearchParams(window.location.search));
 
-// Calculating data for Service detail chart in invoice preview (invoice.html) page 
-const persons = getValueWithDefault(values.guestsEventQuantity, 1)
+// Calculating data for the Service detail chart in quotation preview (quotation.html) page
+const persons = getNumberValueWithDefault(values.guestsEventQuantity, 1);
+
 // Calculating subtotal for Package selection
 const pricePerPersonPackage = packageDB[values.eventPackage].pricePerPerson;
 const subTotalPackage = persons * pricePerPersonPackage;
-// Calculating subtotal for Menu selection
-const pricePerPersonMenu = menuDB[values.eventMenu].pricePerPerson
-const subTotalMenu = persons * pricePerPersonMenu;
-// Calculating subtotal for Additional items
-const quantityAdditional1 = getValueWithDefault(values.quantityAdditional1, 0)
-const subTotalAdditional1 = values.rateAdditional1 * quantityAdditional1
-const quantityAdditional2 = getValueWithDefault(values.quantityAdditional2, 0)
-const subTotalAdditional2 = values.rateAdditional2 * quantityAdditional2
-// Calculating grossTotal for all items in invoice
-const grossTotal = subTotalMenu + subTotalPackage + subTotalAdditional1 + subTotalAdditional2
-// Calculating Tax amount (15%)
-const tax = grossTotal * 0.15
-// Calculating Grand Total for invoice
-const grandTotal = grossTotal + tax
-// Calculating First payment (60% of Grand Total)
-const firstPayment = grandTotal * 0.6
-// Calculating Second payment
-const secondPayment = grandTotal - firstPayment
 
-Object.keys(values).forEach(
-    key => {
-        updateHTMLElement(key, values[key].toString())
-    }
-)
+// Calculating subtotal for Menu selection
+const pricePerPersonMenu = menuDB[values.eventMenu].pricePerPerson;
+const subTotalMenu = persons * pricePerPersonMenu;
+
+// Calculating subtotal for Additional items
+const quantityAdditional1 = getNumberValueWithDefault(values.quantityAdditional1, 0);
+const subTotalAdditional1 = values.rateAdditional1 * quantityAdditional1;
+const quantityAdditional2 = getNumberValueWithDefault(values.quantityAdditional2, 0);
+const subTotalAdditional2 = values.rateAdditional2 * quantityAdditional2;
+
+// Calculating grossTotal for all items in invoice
+const grossTotal = subTotalMenu + subTotalPackage + subTotalAdditional1 + subTotalAdditional2;
+
+// Calculating Tax amount (15%)
+const tax = grossTotal * 0.15;
+
+// Calculating Grand Total for invoice
+const grandTotal = grossTotal + tax;
+
+// Calculating First payment (60% of Grand Total)
+const firstPayment = grandTotal * 0.6;
+
+// Calculating Second payment
+const secondPayment = grandTotal - firstPayment;
+
+Object.keys(values).forEach((key) => {
+  updateHTMLElement(key, values[key].toString());
+});
 
 // Saves tableForm div to use it later
-const invoiceDetails = document.getElementById("invoiceDetails")
+const invoiceDetails = document.getElementById("invoiceDetails");
 
 // Generates tableForm HTML
 const tableForm = `
-                    <h3>Services detail:</h3>
+                    <h2>Services detail:</h2>
+                    <div class="placeholder"></div>
                     <table class="tableForm">
                         <tr>
                             <th>Description</th>
@@ -140,5 +160,5 @@ const tableForm = `
                         IBAN Code: SSWXXCT <br>
                         For any additional enquiries contact us on info@chefpro.com
                     </p>
-`
+`;
 invoiceDetails.innerHTML = tableForm;

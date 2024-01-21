@@ -27,7 +27,6 @@ body {
 
 h1 {
     font-size: 4.5rem;
-    text-decoration-style: bold;
     text-align: center;
     line-height: 5rem;
     margin-bottom: 1rem;
@@ -35,17 +34,14 @@ h1 {
 
 h2 {
     font-size: 3rem;
-    text-decoration-style: bold;
 }
 
 h3 {
     font-size: 2.3rem;
-    text-decoration-style: bold;
 }
 
 h4 {
     font-size: 1.5rem;
-    text-decoration-style: bold;
 }
 
 /* Navigation bar for laptop and big screens */
@@ -53,7 +49,6 @@ h4 {
     background-color: var(--dark-background);
     overflow: hidden;
     height: 60px;
-    position: fixed;
     top: 0;
     width: 100%;
     font-weight: bold;
@@ -98,7 +93,6 @@ h4 {
 #navSmallScreen {
     overflow: hidden;
     background-color: var(--dark-background);
-    position: fixed;
     width: 100%;
     height: 45px;
 }
@@ -113,14 +107,14 @@ h4 {
 
 #navSmallScreen #navLinksSmallScreen {
     display: none;
-    position: fixed;
+    position: absolute;
     background-color: black;
     width: 100%;
 }
 
 #navSmallScreen a {
     color: white;
-    padding: 15px 30px;
+    padding: 11px 30px;
     text-decoration: none;
     font-size: 1.1rem;
     display: block;
@@ -242,8 +236,9 @@ footer {
 
 #upcomingEventsCardsContainer {
     display: flex;
+    gap: 1rem;
     width: 100%;
-    padding: 0 1rem 1rem;
+    padding: 1rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -251,7 +246,6 @@ footer {
 
 .upcomingEventCard {
     width: 100%;
-    margin: 2rem;
     padding: 2rem 4rem;
     border-radius: 4px;
     box-shadow:
@@ -268,7 +262,6 @@ footer {
     justify-content: end;
     flex-wrap: wrap;
     gap: 0.5rem;
-    margin-right: -2rem;
 }
 
 .cardTag {
@@ -389,10 +382,6 @@ img {
 
 .templatesMain h1 {
     margin-bottom: 2rem;
-}
-
-.templatePreview h3 {
-    font-size: 1.9rem;
 }
 
 .templatePreview p {
@@ -678,10 +667,27 @@ legend {
     padding: 1rem;
 }
 
+.placeholder {
+    display: none;
+}
+
 /* All media query */
 
 /* Styles for small screen devices, less than 600 pixels */
 @media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 2rem;
+        line-height: unset;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
 
     /* Media query for Nav bars */
     #navBigScreen {
@@ -707,12 +713,18 @@ legend {
         margin-top: 60px;
     }
 
+    .tableForm {
+        display: none;
+    }
+
     #heroWelcomeContainer {
         height: 70vh;
     }
 
+
     #flipCardsContainer {
         padding: 0 1rem 5rem;
+        transform: scale(90%);
     }
 
     /* Adjusting the visual properties of the toolbar to fit small screen devices */
@@ -723,6 +735,10 @@ legend {
     .toolTip .toolTipText {
         left: 10%;
         font-size: 1rem;
+    }
+
+    .btnIcon {
+        font-size: 50%;
     }
 
     /* Adjusting the visual properties of Welcome page to fit small screen devices */
@@ -747,8 +763,11 @@ legend {
         justify-content: center;
     }
 
+    .upcomingEventCard {
+        padding: 2rem 1rem
+    }
+
     .upcomingEventCard h3 {
-        font-size: 2rem;
         line-height: 2.1rem;
         margin: 10px 0 10px;
     }
@@ -767,6 +786,17 @@ legend {
         grid-template-columns: 1fr;
     }
 
+    #galleryDots {
+        display: none;
+    }
+
+    .placeholder {
+        display: block;
+        height: 30vh;
+        width: 100%;
+        background-color: var(--light-gray);
+        margin-bottom: 1rem;
+    }
 
 }
 
@@ -776,10 +806,6 @@ legend {
     /*Media query for Nav bar*/
     #navSmallScreen {
         display: none;
-    }
-
-    main {
-        margin-top: 60px;
     }
 
     #loginCardSmallScreen {

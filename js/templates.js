@@ -1,69 +1,76 @@
 /**
- * JAVA SCRIPT FOR TEMPLATES PAGE
+ * JAVASCRIPT FOR TEMPLATES PAGE
  */
 
-/* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
+/**
+ * Toggles the display of the navigation menu links when the user clicks on the hamburger menu bar icon
+ */
 function toggleMenu() {
-    var x = document.getElementById("navLinksSmallScreen");
-    if (x.style.display === "block") {
-        x.style.display = "none";
-    } else {
-        x.style.display = "block";
-    }
+  const navLinksSmallScreen = document.getElementById("navLinksSmallScreen");
+  if (!navLinksSmallScreen) return;
+
+  if (navLinksSmallScreen.style.display === "block") {
+    navLinksSmallScreen.style.display = "none";
+  } else {
+    navLinksSmallScreen.style.display = "block";
+  }
 }
+
+addEventListener("scroll", () => {
+  const navLinksSmallScreen = document.getElementById("navLinksSmallScreen");
+  if (!navLinksSmallScreen) return;
+
+  if (navLinksSmallScreen.style.display === "block") {
+    navLinksSmallScreen.style.display = "none";
+  }
+});
 
 /**
  * Updates the innerHTML of the specified element
  */
-function updateHTMLElement(elementId, innerHTML) {
-    console.log(elementId)
-    document.getElementById(elementId).innerHTML = innerHTML
+function updateHTMLElement(elementId, newInnerHTML) {
+  if (document.getElementById(elementId)) {
+    document.getElementById(elementId).innerHTML = newInnerHTML;
+  }
 }
 
 /**
  * Updates the action of the specified form element
  */
 function updateFormAction(elementId, action) {
-    document.getElementById(elementId).action = action
+  if (!document.getElementById(elementId)) return;
+  document.getElementById(elementId).action = action;
 }
 
 /**
- * On Select Form change, displays on screen template input and preview information in templates.html page
+ * On the select template input change, displays on screen the template input and the preview information in templates.html page
  */
 function changeSelectedTemplate(event) {
-    const selectedTemplate = event.target.value;
-    if (selectedTemplate === "Contract") {
-        // grab the container of the form and replace the innerHTML inputInformationForm with the form selected
-        updateHTMLElement("inputInformationForm", contractFormInnerHTML)
-        updateHTMLElement("templatePreview", contractTemplateInnerHTML)
-        updateFormAction("inputInformationForm", "contract.html")
-    } else
-        if (selectedTemplate === "Invoice") {
-            console.log("invoice selected");
-            updateHTMLElement("inputInformationForm", invoiceFormInnerHTML)
-            updateHTMLElement("templatePreview", invoiceTemplateInnerHTML)
-            updateFormAction("inputInformationForm", "invoice.html")
-        }
-        else
-            if (selectedTemplate === "Quotation") {
-                console.log("invoice selected");
-                updateHTMLElement("inputInformationForm", quotationFormInnerHTML)
-                updateHTMLElement("templatePreview", quotationTemplateInnerHTML)
-                updateFormAction("inputInformationForm", "quotation.html")
-            }
+  const selectedTemplate = event.target.value;
+  if (selectedTemplate === "Contract") {
+    // grab the container of the form and replace the innerHTML inputInformationForm with the form selected
+    updateHTMLElement("inputInformationForm", contractFormInnerHTML);
+    updateHTMLElement("templatePreview", contractTemplateInnerHTML);
+    updateFormAction("inputInformationForm", "contract.html");
+  } else if (selectedTemplate === "Invoice") {
+    updateHTMLElement("inputInformationForm", invoiceFormInnerHTML);
+    updateHTMLElement("templatePreview", invoiceTemplateInnerHTML);
+    updateFormAction("inputInformationForm", "invoice.html");
+  } else if (selectedTemplate === "Quotation") {
+    updateHTMLElement("inputInformationForm", quotationFormInnerHTML);
+    updateHTMLElement("templatePreview", quotationTemplateInnerHTML);
+    updateFormAction("inputInformationForm", "quotation.html");
+  }
 }
 
-if (document.getElementById("selectTemplate")) document.getElementById("selectTemplate").addEventListener(
-    "change",
-    changeSelectedTemplate
-)
+// Add the event listener to the select template input
+if (document.getElementById("selectTemplate"))
+  document.getElementById("selectTemplate").addEventListener("change", changeSelectedTemplate);
 
+// Saves the information from input variables detailed in the URL
+const values = Object.fromEntries(new URLSearchParams(window.location.search));
 
-/** Saves the information from input variables detailed in the URL*/
-const values = Object.fromEntries(new URLSearchParams(window.location.search))
-
-/* Initial values for the templates.html page
-/* HTML for inputInformationForm section, in particular for "Quotation" option */
+// HTML for the quotation template form
 const quotationFormInnerHTML = `
                     <label for="invoiceDate">Quotation date</label>
                     <input type="date" name="invoiceDate" id="invoiceDate" placeholder="MM/DD/YYYY" required>
@@ -147,13 +154,14 @@ const quotationFormInnerHTML = `
                         </div>
                     </fieldset>
                     <input class="buttonSubmit" type="submit" value="Generate Invoice">
-`
-/*HTML for templatePreview section, in particular for "Quotation" option*/
+`;
+
+// HTML for the quotation template preview
 const quotationTemplateInnerHTML = `
                 <img class="center" src="./resources/logos/logoFullWhite.png" alt="logoFullWhite">
                 <h2 class="center">QUOTATION</h2>
                 <p class="right">Quotation Number 98675 <br>
-                    Date: [Today´s date]
+                    Date: [Today's date]
                 </p>
                 <strong class="smallText">Chef Pro Catering Services</strong>
                 <p class="smallText">Charm Street, #567, Valencia, Spain <br>
@@ -170,7 +178,8 @@ const quotationTemplateInnerHTML = `
                     Event date: [Event date] <br>
                 </p>
 
-                <h3>Services detail:</h3>
+                <h2>Services detail:</h2>
+                <div class="placeholder"></div>
                 <table class="tableForm">
                     <tr>
                         <th>Description</th>
@@ -233,9 +242,9 @@ const quotationTemplateInnerHTML = `
                     IBAN Code: SSWXXCT <br>
                     For any additional enquiries contact us on info@chefpro.com
                 </p>
-`
+`;
 
-/*HTML for inputInformationForm section, in particular for "Invoice" option*/
+// HTML for the invoice template form
 const invoiceFormInnerHTML = `
                     <label for="invoiceDate">Invoice date</label>
                     <input type="date" name="invoiceDate" id="invoiceDate" placeholder="MM/DD/YYYY" required>
@@ -319,13 +328,14 @@ const invoiceFormInnerHTML = `
                         </div>
                     </fieldset>
                     <input class="buttonSubmit" type="submit" value="Generate Invoice">
-`
-/*HTML for templatePreview section, in particular for "Invoice" option*/
+`;
+
+// HTML for invoice template preview
 const invoiceTemplateInnerHTML = `
                 <img class="center" src="./resources/logos/logoFullWhite.png" alt="logoFullWhite">
                 <h2 class="center">INVOICE</h2>
                 <p class="right">Invoice Number 98675 <br>
-                    Date: [Today´s date]
+                    Date: [Today's date]
                 </p>
                 <strong class="smallText">Chef Pro Catering Services</strong>
                 <p class="smallText">Charm Street, #567, Valencia, Spain <br>
@@ -343,6 +353,7 @@ const invoiceTemplateInnerHTML = `
                 </p>
 
                 <h3>Services detail:</h3>
+                <div class="placeholder"></div>
                 <table class="tableForm">
                     <tr>
                         <th>Description</th>
@@ -383,7 +394,7 @@ const invoiceTemplateInnerHTML = `
                     </tr>
                     <tr>
                         <td>Tax (15%)</td>
-                        <td>€  </td>
+                        <td>€ </td>
                     </tr>
                     <tr>
                         <td>GRAND TOTAL</td>
@@ -405,9 +416,9 @@ const invoiceTemplateInnerHTML = `
                     IBAN Code: SSWXXCT <br>
                     For any additional enquiries contact us on info@chefpro.com
                 </p>
-`
+`;
 
-/*HTML for inputInformationForm section, in particular for "Contract" option*/
+// HTML for the contract template form
 const contractFormInnerHTML = `
                     <label for="contractSignatureDate">Contract signature date</label>
                     <input type="date" name="contractSignatureDate" id="contractSignatureDate" placeholder="MM/DD/YYYY"
@@ -483,8 +494,8 @@ const contractFormInnerHTML = `
                         </div>
                     </fieldset>
                     <input class="buttonSubmit" type="submit" value="Generate Contract"> 
-`
-/*HTML for templatePreview section, in particular for "Contract" option*/
+`;
+// HTML for contract template preview
 const contractTemplateInnerHTML = `
 <img class="center" src="./resources/logos/logoFullWhite.png" alt="logoFullWhite">
 <h2 class="center">CONTRACT</h2>
@@ -531,5 +542,4 @@ const contractTemplateInnerHTML = `
    Client:__________________ [Date] <br>
    <span class="tab">[Client Name]</span>
 </p>
-`
-
+`;

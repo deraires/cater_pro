@@ -1,96 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Invoice template</title>
     <!-- Add favicon-->
-    <link rel="icon" href="/resources/logos/favicon.png">
+    <link rel="icon" href="/resources/logos/favicon.png" />
     <!-- Style Sheet import-->
-    <link rel="stylesheet" href="./css/style.css">
-</head>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
 
-<body>
+  <body>
     <!-- Nav Bar section-->
     <nav id="navBigScreen">
-        <div>
-            <a href="index.html"><img src="/resources/logos/logoIsotypeDark.png" alt="home logo"></a>
-            <div id="navLinksBigScreen">
-                <a href="http://127.0.0.1:5500/templates.html">Templates</a>
-                <button class="navButton" href="http://127.0.0.1:5500/index.html">Log out</button>
-            </div>
+      <div>
+        <a href="index.html"><img src="/resources/logos/logoIsotypeDark.png" alt="home logo" /></a>
+        <div id="navLinksBigScreen">
+          <a href="templates.html">Templates</a>
+          <a href="index.html"><button class="navButton">Log out</button></a>
         </div>
+      </div>
     </nav>
     <nav id="navSmallScreen">
-        <a href="index.html" id="navSmallScreenLogo"><img src="/resources/logos/logoIsotypeDark.png"
-                alt="home logo"></a>
-        <div id="navLinksSmallScreen">
-            <a href="http://127.0.0.1:5500/templates.html">Templates</a>
-            <a href="http://127.0.0.1:5500/index.html">Log out</a>
-        </div>
-        <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-        <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
-            <i class="fa-solid fa-bars"></i>
-        </a>
+      <a href="index.html" id="navSmallScreenLogo"
+        ><img src="/resources/logos/logoIsotypeDark.png" alt="home logo"
+      /></a>
+      <div id="navLinksSmallScreen">
+        <a href="templates.html">Templates</a>
+        <a href="index.html">Log out</a>
+      </div>
+      <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+      <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
+        <i class="fa-solid fa-bars"></i>
+      </a>
     </nav>
     <!-- Main content section -->
-    <main class="templatesMain ">
-        <div class="templateView maxWidth900px center">
-            <!-- Toolbar section -->
-            <div class="toolBar">
-                <div class="toolTip">
-                    <button class="btnIcon"><i class="fa-solid fa-file-arrow-down fa-2xl"></i></button>
-                    <span class="toolTipText">Download</span>
-                </div>
-                <div class="toolTip">
-                    <button class="btnIcon"><i class="fa-solid fa-file-export fa-2xl"></i></button>
-                    <span class="toolTipText">Export</span>
-                </div>
-                <div class="toolTip">
-                    <button class="btnIcon"><i class="fa-solid fa-share fa-2xl"></i></button>
-                    <span class="toolTipText">Share</span>
-                </div>
-                <div class="toolTip">
-                    <button class="btnIcon"><i class="fa-solid fa-floppy-disk fa-2xl"></i></button>
-                    <span class="toolTipText">Save</span>
-                </div>
-            </div>
-            <!-- Quotation template preview section -->
-            <div class="templatePreview">
-                <img class="center" src="./resources/logos/logoFullWhite.png" alt="logoFullWhite">
-                <h2 class="center">QUOTATION</h2>
-                <p class="right">Quotation Number 98675 <br>
-                    Date: <span id="invoiceDate"></span>
-                </p>
-                <strong class="smallText">Chef Pro Catering Services</strong>
-                <p class="smallText">Charm Street, #567, Valencia, Spain <br>
-                    Phone: 888 00 00 00 <br>
-                    E-mail: info@chefpro.com
-                </p>
-
-                <strong class="smallText">Client information</strong>
-                <p class="smallText">
-                    Client name: <span id="clientName"></span> <br>
-                    Client E-mail: <span id="clientEmail"></span> <br>
-                    Client Phone: <span id="clientPhone"></span> <br>
-                    Event title: <span id="eventTitle"></span> <br>
-                    Event date: <span id="eventDate"></span> <br>
-                </p>
-                <div id="invoiceDetails">
-
-                </div>
-            </div>
+    <main class="templatesMain">
+      <div class="templateView maxWidth900px center">
+        <!-- Toolbar section -->
+        <div class="toolBar">
+          <div class="toolTip">
+            <button class="btnIcon"><i class="fa-solid fa-file-arrow-down fa-2xl"></i></button>
+            <span class="toolTipText">Download</span>
+          </div>
+          <div class="toolTip">
+            <button class="btnIcon"><i class="fa-solid fa-file-export fa-2xl"></i></button>
+            <span class="toolTipText">Export</span>
+          </div>
+          <div class="toolTip">
+            <button class="btnIcon"><i class="fa-solid fa-share fa-2xl"></i></button>
+            <span class="toolTipText">Share</span>
+          </div>
+          <div class="toolTip">
+            <button class="btnIcon"><i class="fa-solid fa-floppy-disk fa-2xl"></i></button>
+            <span class="toolTipText">Save</span>
+          </div>
         </div>
+        <!-- Quotation template preview section -->
+        <div class="templatePreview">
+          <img class="center" src="./resources/logos/logoFullWhite.png" alt="logoFullWhite" />
+          <h2 class="center">QUOTATION</h2>
+          <p class="right">
+            Quotation Number 98675 <br />
+            Date: <span id="invoiceDate"></span>
+          </p>
+          <strong class="smallText">Chef Pro Catering Services</strong>
+          <p class="smallText">
+            Charm Street, #567, Valencia, Spain <br />
+            Phone: 888 00 00 00 <br />
+            E-mail: info@chefpro.com
+          </p>
+
+          <strong class="smallText">Client information</strong>
+          <p class="smallText">
+            Client name: <span id="clientName"></span> <br />
+            Client E-mail: <span id="clientEmail"></span> <br />
+            Client Phone: <span id="clientPhone"></span> <br />
+            Event title: <span id="eventTitle"></span> <br />
+            Event date: <span id="eventDate"></span> <br />
+          </p>
+          <div id="invoiceDetails"></div>
+        </div>
+      </div>
     </main>
     <!-- Footer section -->
     <footer id="footer">
-        <span>© 2024 CaterPro / All copyrigths reserved.</span>
+      <span>© 2024 CaterPro / All copyrigths reserved.</span>
     </footer>
     <!-- JavaScipt file import-->
     <script src="./js/data.js"></script>
     <script src="./js/quotation.js"></script>
     <script src="https://kit.fontawesome.com/0cc55d25c2.js" crossorigin="anonymous"></script>
-</body>
-
+  </body>
 </html>

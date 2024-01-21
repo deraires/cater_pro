@@ -1,71 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Templates</title>
     <!-- Add favicon-->
-    <link rel="icon" href="/resources/logos/favicon.png">
+    <link rel="icon" href="/resources/logos/favicon.png" />
     <!-- Style Sheet import-->
-    <link rel="stylesheet" href="./css/style.css">
-</head>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
 
-<body>
+  <body>
     <!-- Nav Bar section-->
     <nav id="navBigScreen">
-        <div>
-            <a href="index.html"><img src="/resources/logos/logoIsotypeDark.png" alt="home logo"></a>
-            <div id="navLinksBigScreen">
-                <a href="http://127.0.0.1:5500/templates.html">Templates</a>
-                <button class="navButton" href="http://127.0.0.1:5500/index.html">Log out</button>
-            </div>
+      <div>
+        <a href="index.html"><img src="/resources/logos/logoIsotypeDark.png" alt="home logo" /></a>
+        <div id="navLinksBigScreen">
+          <a href="templates.html">Templates</a>
+          <a href="index.html"><button class="navButton">Log out</button></a>
         </div>
+      </div>
     </nav>
     <nav id="navSmallScreen">
-        <a href="index.html" id="navSmallScreenLogo"><img src="/resources/logos/logoIsotypeDark.png"
-                alt="home logo"></a>
-        <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-        <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
-            <i class="fa-solid fa-bars"></i>
-        </a>
-        <div id="navLinksSmallScreen">
-            <a href="http://127.0.0.1:5500/templates.html">Templates</a>
-            <a href="http://127.0.0.1:5500/index.html">Log out</a>
-        </div>
+      <a href="index.html" id="navSmallScreenLogo"
+        ><img src="/resources/logos/logoIsotypeDark.png" alt="home logo"
+      /></a>
+      <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+      <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
+        <i class="fa-solid fa-bars"></i>
+      </a>
+      <div id="navLinksSmallScreen">
+        <a href="templates.html">Templates</a>
+        <a href="index.html">Log out</a>
+      </div>
     </nav>
     <!-- Main content section -->
-    <main class="templatesMain ">
-        <h1>Templates editor</h1>
-        <div class="templatesContainer">
-            <!-- Templates input section -->
-            <div class="customizeTemplateForms">
-                <div class="selectTemplateForm">
-                    <label for="selectTemplate">Select the document to edit</label>
-                    <select name="selectTemplate" id="selectTemplate">
-                        <option value=""></option>
-                        <option value="Invoice">Invoice</option>
-                        <option value="Quotation">Quotation</option>
-                        <option value="Contract">Contract</option>
-                    </select>
-                </div>
-                <form id="inputInformationForm">
-                </form>
-            </div>
-            <!-- Templates preview section -->
-            <div id="templatePreview" class="templatePreview">
-                <h3 class="textAlignCenter">Preview your template here</h3>
-            </div>
+    <main class="templatesMain">
+      <h1>Templates editor</h1>
+      <div class="templatesContainer">
+        <!-- Templates input section -->
+        <div class="customizeTemplateForms">
+          <div class="selectTemplateForm">
+            <label for="selectTemplate">Select the document to edit</label>
+            <select name="selectTemplate" id="selectTemplate">
+              <option value=""></option>
+              <option value="Invoice">Invoice</option>
+              <option value="Quotation">Quotation</option>
+              <option value="Contract">Contract</option>
+            </select>
+          </div>
+          <form id="inputInformationForm"></form>
         </div>
+        <!-- Templates preview section -->
+        <div id="templatePreview" class="templatePreview">
+          <h3 class="textAlignCenter">Preview your template here</h3>
+        </div>
+      </div>
     </main>
     <!-- Footer section -->
     <footer id="footer">
-        <span>© 2024 CaterPro / All copyrigths reserved.</span>
+      <span>© 2024 CaterPro / All copyrigths reserved.</span>
     </footer>
     <!--Java Script import-->
     <script src="./js/templates.js"></script>
     <script src="https://kit.fontawesome.com/0cc55d25c2.js" crossorigin="anonymous"></script>
     <!--<script src="./js/contract.js"></script>-->
-</body>
-
+  </body>
 </html>

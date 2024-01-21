@@ -1,14 +1,36 @@
 /**
- * JAVA SCRIPT FOR WELCOME PAGE
+ * JAVASCRIPT FOR WELCOME PAGE
  */
 
-/* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
+/**
+ * Toggles the display of the navigation menu links when the user clicks on the hamburger menu bar icon
+ */
 function toggleMenu() {
-  var x = document.getElementById("navLinksSmallScreen");
-  if (x.style.display === "block") {
-    x.style.display = "none";
+  const navLinksSmallScreen = document.getElementById("navLinksSmallScreen");
+  if (!navLinksSmallScreen) return;
+
+  if (navLinksSmallScreen.style.display === "block") {
+    navLinksSmallScreen.style.display = "none";
   } else {
-    x.style.display = "block";
+    navLinksSmallScreen.style.display = "block";
+  }
+}
+
+addEventListener("scroll", () => {
+  const navLinksSmallScreen = document.getElementById("navLinksSmallScreen");
+  if (!navLinksSmallScreen) return;
+
+  if (navLinksSmallScreen.style.display === "block") {
+    navLinksSmallScreen.style.display = "none";
+  }
+});
+
+/**
+ * Updates the innerHTML of the specified element
+ */
+function updateHTMLElement(elementId, newInnerHTML) {
+  if (document.getElementById(elementId)) {
+    document.getElementById(elementId).innerHTML = newInnerHTML;
   }
 }
 
@@ -66,31 +88,33 @@ const calculateDuration = (startTime, endTime) => {
   return `${durationHours}:${durationMinutes}`;
 };
 
-// Function to organize dates for the upcoming section selector in the welcome.html page
+// Saving the dates in correct format and order for the upcoming section selector in the welcome.html page
 let dateOptions = eventsDB
   .map((event) => {
     return new Date(event.eventDate);
   })
-  // Organizes dates chronologically //
+  // Organizes dates chronologically
   .sort((a, b) => a - b)
-  // Extracts unique dates for a duplicate-free listing //
+  // Extracts unique dates for a duplicate-free listing
   .map(
     (date) =>
-      // Adds a zero before the month number to standardize the date to the original format //
+      // Adds a zero before the month number to match the original format
       `${date.getFullYear()}-${(date.getMonth() + 1).toLocaleString("en-US", {
         minimumIntegerDigits: 2,
         useGrouping: false,
       })}-${date.getDate().toLocaleString("en-US", {
         minimumIntegerDigits: 2,
         useGrouping: false,
-      })}`,
+      })}`
   );
 
-// Generates an array of unique dates for later use //
+// Removes duplicates, adds html and joins into a string to use later
 dateOptions = [...new Set(dateOptions)].map((date) => `<option value="${date}">${date}</option>`).join("");
 
-const selectDate = document.getElementById("selectDate");
-selectDate.innerHTML = dateOptions;
+// const selectDate = document.getElementById("selectDate");
+// selectDate.innerHTML = dateOptions;
+updateHTMLElement("selectDate", dateOptions);
+
 selectDate.addEventListener("change", (e) => {
   updateEventCards(searchEvents(e.target.value));
 });
@@ -102,20 +126,31 @@ const sanitizedEventsDB = eventsDB.map((event) => ({
 }));
 
 /**
- * Generates upcomingEventCards in HTML from data.js
+ * Updates the upcomingEventsCardsContainer with new upcomingEventCards generated from given events data
  */
 const updateEventCards = (events) => {
   // Saves upcomingEventsCardsContainer to use it later
-  const upcomingEventsCardsContainer = document.getElementById("upcomingEventsCardsContainer");
+  // const upcomingEventsCardsContainer = document.getElementById("upcomingEventsCardsContainer");
+  if (!upcomingEventsCardsContainer) return;
+
   const eventCards = events
     .map((event) => {
       return `
                       <div class="upcomingEventCard">
                           <div class="tagContainer">
-                              <p class="cardTag tagDate"><i class="fa-regular fa-calendar-days fa-lg" style="color: #000000;"></i><span >${event.eventDate}</span></p>
-                              <p class="cardTag tagTime"><i class="fa-solid fa-clock fa-lg" style="color: #000000;"></i><span>${event.startEventTime}</span></p>
-                              <p class="cardTag tagLocation"><i class="fa-solid fa-location-dot fa-lg" style="color: #000000;"></i><span>${event.eventLocationShort}</span></p>                          
-                              <p class="cardTag tagDuration"><i class="fa-solid fa-hourglass-half fa-lg" style="color: #000000;"></i><span>${calculateDuration(event.startEventTime, event.endEventTime)}h</span></p>
+                              <p class="cardTag tagDate"><i class="fa-regular fa-calendar-days fa-lg" style="color: #000000;"></i><span >${
+                                event.eventDate
+                              }</span></p>
+                              <p class="cardTag tagTime"><i class="fa-solid fa-clock fa-lg" style="color: #000000;"></i><span>${
+                                event.startEventTime
+                              }</span></p>
+                              <p class="cardTag tagLocation"><i class="fa-solid fa-location-dot fa-lg" style="color: #000000;"></i><span>${
+                                event.eventLocationShort
+                              }</span></p>                          
+                              <p class="cardTag tagDuration"><i class="fa-solid fa-hourglass-half fa-lg" style="color: #000000;"></i><span>${calculateDuration(
+                                event.startEventTime,
+                                event.endEventTime
+                              )}h</span></p>
                           </div>
                           <h3>${event.eventTitle}</h3>
                           <p>Date: ${event.eventDate}</p>
@@ -129,21 +164,29 @@ const updateEventCards = (events) => {
                   `;
     })
     .join("");
-  upcomingEventsCardsContainer.innerHTML = eventCards;
+  // upcomingEventsCardsContainer.innerHTML = eventCards;
+  updateHTMLElement("upcomingEventsCardsContainer", eventCards);
 };
+
+/**
+ * Filters the sanitizedEventsDB array by matching events for a given date
+ */
 const searchEvents = (searchedDate) => sanitizedEventsDB.filter((event) => event.eventDate === searchedDate);
+
 const initialDate = "2024-02-09";
 updateEventCards(searchEvents(initialDate));
 
 /**
  * Logic for Gallery carousel
  */
-// Saves carouselContainer to use it later//
+
+// Saves carouselContainer to use it later
 const carouselContainer = document.getElementById("carouselContainer");
+
 // Saves galleryDots to use it later
 const galleryDots = document.getElementById("galleryDots");
 
-// Generates gallery carousel slides //
+// Generates gallery carousel slides
 const imagesCarousel = galleryDB
   .map((imageDetail) => {
     return `
@@ -158,7 +201,8 @@ const imagesCarousel = galleryDB
   })
   .join("");
 
-carouselContainer.innerHTML = imagesCarousel;
+// carouselContainer.innerHTML = imagesCarousel;
+updateHTMLElement("carouselContainer", imagesCarousel);
 
 // Generates gallery carousel dots //
 const carouselDots = galleryDB
@@ -169,7 +213,8 @@ const carouselDots = galleryDB
   })
   .join("");
 
-galleryDots.innerHTML = carouselDots;
+// galleryDots.innerHTML = carouselDots;
+updateHTMLElement("galleryDots", carouselDots);
 
 let imageIndex = 1;
 showImage(imageIndex);
@@ -182,23 +227,28 @@ function currentImage(i) {
   showImage((imageIndex = i));
 }
 
-// Logic that alows to display next image in carousel 
+// Logic that alows displaying the next image in carousel
 function showImage(imageNumber) {
   let i;
   let images = document.getElementsByClassName("imageCarousel");
   let dots = document.getElementsByClassName("dotCarousel");
+
   if (imageNumber > images.length) {
     imageIndex = 1;
   }
+
   if (imageNumber < 1) {
     imageIndex = images.length;
   }
+
   for (i = 0; i < images.length; i++) {
     images[i].style.display = "none";
   }
+
   for (i = 0; i < dots.length; i++) {
     dots[i].className = dots[i].className.replace(" active", "");
   }
+
   images[imageIndex - 1].style.display = "block";
   dots[imageIndex - 1].className += " active";
 }
