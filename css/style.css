@@ -686,7 +686,8 @@ legend {
 
   /* Adjusting templates content (inputInformationForm and templatePreview) to fit small screen devices */
   .templatesMain {
-    min-height: calc(100vh - 65px);
+    height: fit-content;
+    min-height: calc(100vh - 110px);
     padding: 1rem 1rem 2rem;
   }
 
