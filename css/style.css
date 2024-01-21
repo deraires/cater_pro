@@ -555,6 +555,7 @@ table {
 /* Styles for Index page */
 #loginContainer {
   height: calc(100vh - 125px);
+  overflow: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
