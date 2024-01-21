@@ -120,13 +120,13 @@ const tableForm = `
                         <tr>
                             <td>${values.descriptionAdditional1}</td>
                             <td>${values.quantityAdditional1}</td>
-                            <td>${formatCurrency(values.rateAdditional1)}</td>
+                            <td>€${formatCurrency(values.rateAdditional1)}</td>
                             <td>${formatCurrency(subTotalAdditional1)}</td>
                         </tr>
                         <tr>
                         <td>${values.descriptionAdditional2}</td>
                         <td>${values.quantityAdditional2}</td>
-                        <td>${formatCurrency(values.rateAdditional2)}</td>
+                        <td>€${formatCurrency(values.rateAdditional2)}</td>
                         <td>${formatCurrency(subTotalAdditional2)}</td>
                         </tr>
                     </table>

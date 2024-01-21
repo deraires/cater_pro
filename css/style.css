@@ -1,815 +1,798 @@
 /* Initial format */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-    list-style: none;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
 }
 
 /* Import text fonts*/
 
 /* General content styles */
 body {
-    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
-    font-size: 1.1rem;
+  font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
+  font-size: 1.1rem;
 }
 
 :root {
-    --dark-background: black;
-    --light-background: white;
-    --accent-yellow: #FEB837;
-    --light-gray: #C6C9CD;
-    --dark-gray: #37444C;
-    --button-background-gray: #F0F0F0;
-    --button-hover-gray: #e0dfdf;
+  --dark-background: black;
+  --light-background: white;
+  --accent-yellow: #feb837;
+  --light-gray: #c6c9cd;
+  --dark-gray: #37444c;
+  --button-background-gray: #f0f0f0;
+  --button-hover-gray: #e0dfdf;
 }
 
 h1 {
-    font-size: 4.5rem;
-    text-align: center;
-    line-height: 5rem;
-    margin-bottom: 1rem;
+  font-size: 4.5rem;
+  text-align: center;
+  line-height: 5rem;
+  margin-bottom: 1rem;
 }
 
 h2 {
-    font-size: 3rem;
+  font-size: 3rem;
 }
 
 h3 {
-    font-size: 2.3rem;
+  font-size: 2.3rem;
 }
 
 h4 {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 /* Navigation bar for laptop and big screens */
 #navBigScreen {
-    background-color: var(--dark-background);
-    overflow: hidden;
-    height: 60px;
-    top: 0;
-    width: 100%;
-    font-weight: bold;
+  background-color: var(--dark-background);
+  overflow: hidden;
+  height: 60px;
+  top: 0;
+  width: 100%;
+  font-weight: bold;
 }
 
-#navBigScreen>div {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 2rem;
+#navBigScreen > div {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
 }
 
 #navBigScreen a {
-    color: white;
-    padding: 0 20px;
-    cursor: pointer;
+  color: white;
+  padding: 0 20px;
+  cursor: pointer;
 }
 
 .navButton {
-    border: none;
-    border-radius: 4px;
-    padding: 7px 15px;
-    cursor: pointer;
-    background-color: var(--accent-yellow);
-    color: black;
-    font-size: 0.9em;
-    font-weight: bold;
-    z-index: 5;
+  border: none;
+  border-radius: 4px;
+  padding: 7px 15px;
+  cursor: pointer;
+  background-color: var(--accent-yellow);
+  color: black;
+  font-size: 0.9em;
+  font-weight: bold;
+  z-index: 5;
 }
 
 #navButton:hover {
-    background-color: white;
-    color: black;
+  background-color: white;
+  color: black;
 }
 
 #navBigScreen img {
-    height: 60px;
+  height: 60px;
 }
 
 /* Navigation bar for phones and small screens */
 #navSmallScreen {
-    overflow: hidden;
-    background-color: var(--dark-background);
-    width: 100%;
-    height: 45px;
+  overflow: hidden;
+  background-color: var(--dark-background);
+  width: 100%;
+  height: 45px;
 }
 
 #navSmallScreenLogo {
-    padding: 0px 4px !important;
+  padding: 0px 4px !important;
 }
 
 #navSmallScreenLogo img {
-    height: 40px;
+  height: 40px;
 }
 
 #navSmallScreen #navLinksSmallScreen {
-    display: none;
-    position: absolute;
-    background-color: black;
-    width: 100%;
+  display: none;
+  position: absolute;
+  background-color: black;
+  width: 100%;
 }
 
 #navSmallScreen a {
-    color: white;
-    padding: 11px 30px;
-    text-decoration: none;
-    font-size: 1.1rem;
-    display: block;
+  color: white;
+  padding: 11px 30px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  display: block;
 }
 
 #navSmallScreen a.icon {
-    background: black;
-    display: block;
-    position: absolute;
-    right: 0;
-    top: 0;
+  background: black;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 #navSmallScreen a:hover {
-    background-color: var(--dark-background);
-    color: white;
+  background-color: var(--dark-background);
+  color: white;
 }
 
 /* Styles for footer */
 footer {
-    font-size: 1rem;
-    width: 100%;
-    padding: 1rem 2rem;
-    background-color: var(--dark-background);
-    color: white;
-    text-align: center;
-    height: 65px;
+  font-size: 1rem;
+  width: 100%;
+  padding: 1rem 2rem;
+  background-color: var(--dark-background);
+  color: white;
+  text-align: center;
+  height: 65px;
 }
 
 /* Styles for Welcome page */
 #heroWelcomeContainer {
-    height: 50vh;
-    color: white;
-    display: grid;
-    place-items: center;
-    padding: 2rem;
-    text-align: center;
+  height: 50vh;
+  color: white;
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+  text-align: center;
 }
 
 .gradient {
-    background-image: linear-gradient(var(--dark-background), rgb(94, 93, 93));
+  background-image: linear-gradient(var(--dark-background), rgb(94, 93, 93));
 }
 
 /* Styles for "Today's events" section in Welcome page */
 #heroWelcomeContainer h1 {
-    color: var(--accent-yellow)
+  color: var(--accent-yellow);
 }
 
 #todayEventsWelcome h2 {
-    padding: 2rem 1.5rem 0rem 3rem;
+  padding: 2rem 1.5rem 0rem 3rem;
 }
 
 /* Styles for flip cards for "Today's events" section in Welcome page */
 #flipCardsContainer {
-    display: flex;
-    padding: 0 3rem 5rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+  display: flex;
+  padding: 0 3rem 5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .flipCard {
-    background: transparent;
-    width: 300px;
-    height: 200px;
-    perspective: 1000px;
-    margin: 80px 30px;
+  background: transparent;
+  width: 300px;
+  height: 200px;
+  perspective: 1000px;
+  margin: 80px 30px;
 }
 
 .flipCardContent {
-    position: relative;
-    width: 300px;
-    height: 300px;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
+  position: relative;
+  width: 300px;
+  height: 300px;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
 }
 
 .flipCardContent h4 {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .flipCard:hover .flipCardContent {
-    transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
 
 .flipCardFront,
 .flipCardBack {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .flipCardFront {
-    background-color: rgb(38, 38, 39);
-    color: white;
-    padding: 30px;
-    text-align: center;
+  background-color: rgb(38, 38, 39);
+  color: white;
+  padding: 30px;
+  text-align: center;
 }
 
 .flipCardBack {
-    background-color: rgb(38, 38, 39);
-    color: white;
-    transform: rotateY(180deg);
-    padding: 30px;
+  background-color: rgb(38, 38, 39);
+  color: white;
+  transform: rotateY(180deg);
+  padding: 30px;
 }
 
 /* Styles for Upcoming Events section and cards in Welcome page */
 #upcomingEvents {
-    padding: 0 0 2rem;
+  padding: 0 0 2rem;
 }
 
 #upcomingEvents h2 {
-    padding: 2rem 1.5rem 0rem 3rem;
+  padding: 2rem 1.5rem 0rem 3rem;
 }
 
 #upcomingEventsCardsContainer {
-    display: flex;
-    gap: 1rem;
-    width: 100%;
-    padding: 1rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .upcomingEventCard {
-    width: 100%;
-    padding: 2rem 4rem;
-    border-radius: 4px;
-    box-shadow:
-        0 0 0 2px rgb(255, 255, 255),
-        0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+  width: 100%;
+  padding: 2rem 4rem;
+  border-radius: 4px;
+  box-shadow: 0 0 0 2px rgb(255, 255, 255), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
 }
 
 .upcomingEventCard p {
-    line-height: 1.7rem;
+  line-height: 1.7rem;
 }
 
 .tagContainer {
-    display: flex;
-    justify-content: end;
-    flex-wrap: wrap;
-    gap: 0.5rem;
+  display: flex;
+  justify-content: end;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .cardTag {
-    padding: 5px 10px;
-    text-align: center;
-    font-size: 0.9rem;
-    border-radius: 4px;
+  padding: 5px 10px;
+  text-align: center;
+  font-size: 0.9rem;
+  border-radius: 4px;
 }
 
 .cardTag i {
-    margin-right: 5px;
+  margin-right: 5px;
 }
 
 .tagDate {
-    background-color: #feb837c4;
+  background-color: #feb837c4;
 }
 
 .tagLocation {
-    background-color: #feb83757;
+  background-color: #feb83757;
 }
 
 .tagTime {
-    background-color: #feb83796;
+  background-color: #feb83796;
 }
 
 .tagDuration {
-    background-color: #feb83736;
+  background-color: #feb83736;
 }
 
 /* Styles for Gallery section in Welcome page*/
 #galleryContainer h2 {
-    padding: 2rem 1.5rem 1rem 2rem;
+  padding: 2rem 1.5rem 1rem 2rem;
 }
 
 #galleryContainer {
-    padding: 1rem;
+  padding: 1rem;
 }
 
 .imageCarousel {
-    display: none
+  display: none;
 }
 
 img {
-    vertical-align: middle;
+  vertical-align: middle;
 }
 
 #carouselContainer {
-    max-width: 1000px;
-    position: relative;
-    margin: auto;
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
 }
 
 /* Next & previous buttons in carousel */
 .previousImage,
 .nextImage {
-    padding: 1rem;
-    margin-top: -2rem;
-    border-radius: 0 3px 3px 0;
-    position: absolute;
-    top: 50%;
-    width: auto;    
-    transition: 0.6s ease;    
-    user-select: none;
-    cursor: pointer;
+  padding: 1rem;
+  margin-top: -2rem;
+  border-radius: 0 3px 3px 0;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  transition: 0.6s ease;
+  user-select: none;
+  cursor: pointer;
 }
 
 /* Position the "next button" to the right of the carousel */
 .nextImage {
-    right: 0;
+  right: 0;
 }
 
 .previousImage:hover,
 .nextImage:hover {
-    background-color: rgba(0, 0, 0, 0.308);
+  background-color: rgba(0, 0, 0, 0.308);
 }
 
 #galleryDots {
-    text-align: center;
-    padding-bottom: 4rem;
+  text-align: center;
+  padding-bottom: 4rem;
 }
 .dotCarousel {
-    cursor: pointer;
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: var(--dark-gray);
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: var(--dark-gray);
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
 }
 
 .active,
 .dotCarousel:hover {
-    background-color: var(--accent-yellow);
+  background-color: var(--accent-yellow);
 }
 
 /* Styles for fading animation in carousel*/
 .fade {
-    animation-name: fade;
-    animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
 }
 
 @keyframes fade {
-    from {
-        opacity: .4
-    }
+  from {
+    opacity: 0.4;
+  }
 
-    to {
-        opacity: 1
-    }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Styles for Templates input section */
 .templatesMain {
-    padding: 4rem;
-    min-height: calc(100vh - 125px);
+  padding: 4rem;
+  min-height: calc(100vh - 125px);
 }
 
 .templatesMain h1 {
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 
 .templatePreview p {
-    margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .templatesContainer {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
 }
 
 .customizeTemplateForms {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    padding: 2rem;
-    border-radius: 4px;
-    box-shadow:
-        0 0 0 2px rgb(255, 255, 255),
-        0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
-    gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 2rem;
+  border-radius: 4px;
+  box-shadow: 0 0 0 2px rgb(255, 255, 255), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+  gap: 1rem;
 }
 
 .selectTemplateForm {
-    width: 100%;
-    position: relative;
-    margin-bottom: 30px;
-
+  width: 100%;
+  position: relative;
+  margin-bottom: 30px;
 }
 
 input,
 select,
 textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-    resize: vertical;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  resize: vertical;
 }
 
 label {
-    padding: 12px 12px 12px 0;
-    display: list-item;
+  padding: 12px 12px 12px 0;
+  display: list-item;
 }
 
 #inputInformationForm ::placeholder {
-    font-size: 1.1em;
+  font-size: 1.1em;
 }
 
 .uploadFile {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 1rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1rem;
 }
 
 /* Styles for Template View section in Templates page*/
 .templateView {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
 }
 
 .buttonSubmit {
-    margin-top: 1rem;
-    font-weight: bold;
-    font-size: 1.2rem;
+  margin-top: 1rem;
+  font-weight: bold;
+  font-size: 1.2rem;
 }
 
 .buttonSubmit:hover {
-    cursor: pointer;
-    background-color: #e0dfdf;
+  cursor: pointer;
+  background-color: #e0dfdf;
 }
 
 /* Styles for Tool Bar in templates page */
 .toolBar {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    width: 100%;
-    gap: 1rem;
-    margin-bottom: 1rem;
-
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+  gap: 1rem;
+  margin-bottom: 1rem;
 }
 
 .btnIcon {
-    background-color: var(--button-background-gray);
-    border: none;
-    padding: 12px 16px;    
-    border-radius: 4px;
-    width: 100%;
-    cursor: pointer;
+  background-color: var(--button-background-gray);
+  border: none;
+  padding: 12px 16px;
+  border-radius: 4px;
+  width: 100%;
+  cursor: pointer;
 }
 
 .btnIcon:hover {
-    background-color: var(--button-hover-gray);
+  background-color: var(--button-hover-gray);
 }
 
 /* Styles for Button Tooltip in Templates preview pages */
 .toolTip {
-    position: relative;
-    display: inline;
+  position: relative;
+  display: inline;
 }
 
 .toolTip .toolTipText {
-    visibility: hidden;
-    background-color: rgba(0, 0, 0, 0.4);
-    color: #fff;
-    text-align: center;
-    padding: 3px 5px;
-    border-radius: 6px;
-    position: absolute;
-    z-index: 1;
-    bottom: 90%;
-    left: 50%
+  visibility: hidden;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  text-align: center;
+  padding: 3px 5px;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  bottom: 90%;
+  left: 50%;
 }
 
 .toolTip:hover .toolTipText {
-    visibility: visible;
+  visibility: visible;
 }
 
 /* Styles for Templates in preview pages */
 .templatePreview {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    width: 100%;
-    padding: 2rem;
-    border-radius: 4px;
-    box-shadow:
-        0 0 0 2px rgb(255, 255, 255),
-        0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  width: 100%;
+  padding: 2rem;
+  border-radius: 4px;
+  box-shadow: 0 0 0 2px rgb(255, 255, 255), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
 }
 
 .templatePreview img {
-    width: 200px;
-    padding: 10px;
-    text-align: left;
+  width: 200px;
+  padding: 10px;
+  text-align: left;
 }
 
 .templatePreview h2 {
-    margin-bottom: 40px;
+  margin-bottom: 40px;
 }
 
 #invoiceDetails {
-    width: 100%;
+  width: 100%;
 }
 
 /* Styles for the table in the Invoice and Quotation forms */
 .tableForm {
-    vertical-align: middle;
-    padding: 10px;
-    line-height: 2rem;
-    width: 100%;
+  vertical-align: middle;
+  padding: 10px;
+  line-height: 2rem;
+  width: 100%;
 }
 
 .tableForm th {
-    text-align: left;
-    padding: 5px 10px;
+  text-align: left;
+  padding: 5px 10px;
 }
 
 .tableForm td {
-    padding: 5px 10px;
+  padding: 5px 10px;
 }
 
 .tableForm tr:nth-child(odd) {
-    background-color: var(--light-background);
-
+  background-color: var(--light-background);
 }
 
 .tableForm tr:nth-child(even) {
-    background-color: var(--button-background-gray);
-
+  background-color: var(--button-background-gray);
 }
 
 table {
-    overflow-x: auto;
+  overflow-x: auto;
 }
 
 /* Styles for Index page */
 #loginContainer {
-    height: calc(100vh - 125px);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
-    width: 100%;
+  height: calc(100vh - 125px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  width: 100%;
 }
 
 #loginContainer h1 {
-    font-size: 3.5rem;
-    padding: 2.5rem;
+  font-size: 3.5rem;
+  padding: 2.5rem;
 }
 
 #loginCardBigScreen {
-    max-width: 600px;
-    padding: 2rem;
-    border-radius: 4px;
-    box-shadow:
-        0 0 0 2px rgb(255, 255, 255),
-        0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+  max-width: 600px;
+  padding: 2rem;
+  border-radius: 4px;
+  box-shadow: 0 0 0 2px rgb(255, 255, 255), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
 }
 
 #loginContainer h2 {
-    font-size: 2.5rem;
-    text-align: center;
+  font-size: 2.5rem;
+  text-align: center;
 }
 
 #loginContainer label {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 #loginContainer a {
-    color: gray;
+  color: gray;
 }
 
 #loginContainer .buttonSubmit {
-    background-color: var(--accent-yellow);
+  background-color: var(--accent-yellow);
 }
 
 #loginCardSmallScreen {
-    width: 100%;
+  width: 100%;
 }
 
 /* Utility styles */
 .center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 .textAlignCenter {
-    text-align: center;
+  text-align: center;
 }
 
 br {
-    line-height: 150px;
+  line-height: 150px;
 }
 
 .tab {
-    margin-left: 4em;
+  margin-left: 4em;
 }
 
 .maxWidth900px {
-    max-width: 900px;
+  max-width: 900px;
 }
 .maxWidth550px {
-    max-width: 550px;
+  max-width: 550px;
 }
 
 .right {
-    text-align: right;
+  text-align: right;
 }
 
 .smallText {
-    font-size: 0.9rem;
+  font-size: 0.9rem;
 }
 
 .sectionThreeColumns {
-    display: grid;
-    columns: 1fr 1fr 1fr;
-
+  display: grid;
+  columns: 1fr 1fr 1fr;
 }
 
 hr {
-    border: 1px solid var(--light-gray);
+  border: 1px solid var(--light-gray);
 }
 
 .twoColumns {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
 }
 
 fieldset {
-    border-color: var(--button-hover-gray);
-    border-radius: 4px;
-    padding: 0 1rem 1rem;
+  border-color: var(--button-hover-gray);
+  border-radius: 4px;
+  padding: 0 1rem 1rem;
 }
 
 legend {
-    padding: 1rem;
+  padding: 1rem;
 }
 
 .placeholder {
-    display: none;
+  display: none;
 }
 
 /* All media query */
 
 /* Styles for small screen devices, less than 600 pixels */
 @media only screen and (max-width: 600px) {
-    h1 {
-        font-size: 2rem;
-        line-height: unset;
-    }
+  h1 {
+    font-size: 2rem;
+    line-height: unset;
+  }
 
-    h2 {
-        font-size: 1.8rem;
-    }
+  h2 {
+    font-size: 1.8rem;
+  }
 
-    h3 {
-        font-size: 1.5rem;
-    }
+  h3 {
+    font-size: 1.5rem;
+  }
 
+  /* Media query for Nav bars */
+  #navBigScreen {
+    display: none;
+  }
 
-    /* Media query for Nav bars */
-    #navBigScreen {
-        display: none;
-    }
+  #navSmallScreen {
+    height: 45px;
+  }
 
-    #navSmallScreen {
-        height: 45px;
-    }
+  /* Adjusting templates content (inputInformationForm and templatePreview) to fit small screen devices */
+  .templatesMain {
+    min-height: calc(100vh - 65px);
+    padding: 1rem 1rem 2rem;
+  }
 
-    /* Adjusting templates content (inputInformationForm and templatePreview) to fit small screen devices */
-    .templatesMain {
-        min-height: calc(100vh - 65px);
-        padding: 1rem 1rem 2rem;
-    }
+  .templatesContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
 
-    .templatesContainer {
-        display: grid;
-        grid-template-columns: 1fr;
-    }
+  .templatesMain h1 {
+    margin-top: 60px;
+  }
 
-    .templatesMain h1 {
-        margin-top: 60px;
-    }
+  .tableForm {
+    display: none;
+  }
 
-    .tableForm {
-        display: none;
-    }
+  #heroWelcomeContainer {
+    height: 70vh;
+  }
 
-    #heroWelcomeContainer {
-        height: 70vh;
-    }
+  #flipCardsContainer {
+    padding: 0 1rem 5rem;
+    transform: scale(90%);
+  }
 
+  /* Adjusting the visual properties of the toolbar to fit small screen devices */
+  .toolBar {
+    margin-top: 5rem;
+  }
 
-    #flipCardsContainer {
-        padding: 0 1rem 5rem;
-        transform: scale(90%);
-    }
+  .toolTip .toolTipText {
+    left: 10%;
+    font-size: 1rem;
+  }
 
-    /* Adjusting the visual properties of the toolbar to fit small screen devices */
-    .toolBar {
-        margin-top: 4rem;
-    }
+  .btnIcon {
+    font-size: 50%;
+  }
 
-    .toolTip .toolTipText {
-        left: 10%;
-        font-size: 1rem;
-    }
+  /* Adjusting the visual properties of Welcome page to fit small screen devices */
+  #loginContainer {
+    height: fit-content;
+    min-height: calc(100vh - 110px);
+    padding: 1.5rem;
+  }
 
-    .btnIcon {
-        font-size: 50%;
-    }
+  #loginContainer h1 {
+    font-size: 3rem;
+    line-height: 3rem;
+    padding: 1rem;
+  }
 
-    /* Adjusting the visual properties of Welcome page to fit small screen devices */
-    #loginContainer {
-        height: fit-content;
-        min-height: calc(100vh - 65px);
-        padding: 1.5rem;
-    }
+  #loginCardBigScreen {
+    display: none;
+  }
 
-    #loginContainer h1 {
-        font-size: 3rem;
-        line-height: 3rem;
-    }
+  #upcomingEvents {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
-    #loginCardBigScreen {
-        display: none;
-    }
+  .upcomingEventCard {
+    padding: 2rem 1rem;
+  }
 
-    #upcomingEvents {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
+  .upcomingEventCard h3 {
+    line-height: 2.1rem;
+    margin: 10px 0 10px;
+  }
 
-    .upcomingEventCard {
-        padding: 2rem 1rem
-    }
+  .upcomingEventCard p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
 
-    .upcomingEventCard h3 {
-        line-height: 2.1rem;
-        margin: 10px 0 10px;
-    }
+  .tableForm {
+    font-size: 50%;
+  }
 
-    .upcomingEventCard p {
-        font-size: 1rem;
-        line-height: 1.5rem;
-    }
+  .twoColumns {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
 
-    .tableForm {
-        font-size: 50%;
-    }
+  #galleryDots {
+    display: none;
+  }
 
-    .twoColumns {
-        display: grid;
-        grid-template-columns: 1fr;
-    }
-
-    #galleryDots {
-        display: none;
-    }
-
-    .placeholder {
-        display: block;
-        height: 30vh;
-        width: 100%;
-        background-color: var(--light-gray);
-        margin-bottom: 1rem;
-    }
-
+  .placeholder {
+    display: block;
+    height: 30vh;
+    width: 100%;
+    background-color: var(--light-gray);
+    margin-bottom: 1rem;
+  }
 }
 
 /*Styles for big screen devices, 601 pixels and more*/
-@media only screen and (min-width:601px) {
+@media only screen and (min-width: 601px) {
+  /*Media query for Nav bar*/
+  #navSmallScreen {
+    display: none;
+  }
 
-    /*Media query for Nav bar*/
-    #navSmallScreen {
-        display: none;
-    }
-
-    #loginCardSmallScreen {
-        display: none;
-    }
-
+  #loginCardSmallScreen {
+    display: none;
+  }
 }
