@@ -12,6 +12,7 @@
 </head>
 
 <body>
+    <!-- Nav Bar section-->
     <nav id="navBigScreen">
         <div>
             <a href="index.html"><img src="/resources/logos/logoIsotypeDark.png" alt="home logo"></a>
@@ -29,12 +30,14 @@
             <a href="http://127.0.0.1:5500/index.html">Log out</a>
         </div>
         <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
             <i class="fa-solid fa-bars"></i>
         </a>
     </nav>
+    <!-- Main content section -->
     <main class="templatesMain ">
         <div class="templateView maxWidth900px center">
+            <!-- Toolbar section -->
             <div class="toolBar">
                 <div class="toolTip">
                     <button class="btnIcon"><i class="fa-solid fa-file-arrow-down fa-2xl"></i></button>
@@ -53,14 +56,15 @@
                     <span class="toolTipText">Save</span>
                 </div>
             </div>
+            <!-- Contract template preview section -->
             <div class="templatePreview">
                 <img class="center" src="./resources/logos/logoFullWhite.png" alt="logoFullWhite">
                 <h2 class="center">CONTRACT</h2>
                 <p>This Catering Service Agreement is made on <span id="contractSignatureDate"></span>, between Chef
                     Pro,
                     located at Charm Street,
-                    #567, Valencia, Spain ("Provider"), and <span id="clientName"></span>, contact information e-mail<span
-                        id="clientEmail"></span> and phone number
+                    #567, Valencia, Spain ("Provider"), and <span id="clientName"></span>, contact information
+                    e-mail<span id="clientEmail"></span> and phone number
                     <span id="clientPhone"></span> ("Client").
                 </p>
                 <h3>Services:</h3>
@@ -80,7 +84,9 @@
                     Number of guests: <span id="guestsEventQuantity"></span> people
                 </p>
                 <h3>Payment</h3>
-                <p>Fees and Payment Schedule: Client agrees to pay Provider the total agreed-upon fee of € <span id="eventCost"></span> for the catering services. Payment shall be made in the following installments: <br>
+                <p>Fees and Payment Schedule: Client agrees to pay Provider the total agreed-upon fee of € <span
+                        id="eventCost"></span> for the catering services. Payment shall be made in the following
+                    installments: <br>
                     60% of the total amount: Due upon signing this Agreement.<br>
                     40% of the total amount: Due no later than 7 days before the event.<br>
                     Additional Costs: Any additional services or items requested by the Client outside the agreed
@@ -108,11 +114,11 @@
             </div>
         </div>
     </main>
+    <!-- Footer section -->
     <footer id="footer">
         <span>© 2024 CaterPro / All copyrigths reserved.</span>
     </footer>
     <!-- JavaScipt file import-->
-    <script src="./js/script.js"></script>
     <script src="./js/contract.js"></script>
     <script src="https://kit.fontawesome.com/0cc55d25c2.js" crossorigin="anonymous"></script>
 

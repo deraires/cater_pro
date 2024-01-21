@@ -1,4 +1,4 @@
-/* Initial format*/
+/* Initial format */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -7,7 +7,7 @@
     list-style: none;
 }
 
-/*Import text fonts*/
+/* Import text fonts*/
 
 /* General content styles */
 body {
@@ -48,7 +48,7 @@ h4 {
     text-decoration-style: bold;
 }
 
-/*Navigation bar for laptop and big screens*/
+/* Navigation bar for laptop and big screens */
 #navBigScreen {
     background-color: var(--dark-background);
     overflow: hidden;
@@ -82,6 +82,7 @@ h4 {
     color: black;
     font-size: 0.9em;
     font-weight: bold;
+    z-index: 5;
 }
 
 #navButton:hover {
@@ -93,7 +94,7 @@ h4 {
     height: 60px;
 }
 
-/*Navigation bar for pads and phones*/
+/* Navigation bar for phones and small screens */
 #navSmallScreen {
     overflow: hidden;
     background-color: var(--dark-background);
@@ -138,12 +139,7 @@ h4 {
     color: white;
 }
 
-.active {
-    background-color: #04AA6D;
-    color: white;
-}
-
-/*Styles for footer*/
+/* Styles for footer */
 footer {
     font-size: 1rem;
     width: 100%;
@@ -154,7 +150,7 @@ footer {
     height: 65px;
 }
 
-/*Styles for Welcome page content*/
+/* Styles for Welcome page */
 #heroWelcomeContainer {
     height: 50vh;
     color: white;
@@ -168,7 +164,7 @@ footer {
     background-image: linear-gradient(var(--dark-background), rgb(94, 93, 93));
 }
 
-/*Styles for "Eventos de hoy"*/
+/* Styles for "Today's events" section in Welcome page */
 #heroWelcomeContainer h1 {
     color: var(--accent-yellow)
 }
@@ -177,7 +173,7 @@ footer {
     padding: 2rem 1.5rem 0rem 3rem;
 }
 
-/*Cards for events seen on Home page*/
+/* Styles for flip cards for "Today's events" section in Welcome page */
 #flipCardsContainer {
     display: flex;
     padding: 0 3rem 5rem;
@@ -235,7 +231,7 @@ footer {
     padding: 30px;
 }
 
-/* Styles for Upcoming Events section and cards */
+/* Styles for Upcoming Events section and cards in Welcome page */
 #upcomingEvents {
     padding: 0 0 2rem;
 }
@@ -302,7 +298,7 @@ footer {
     background-color: #feb83736;
 }
 
-/* Styles for Gallery section */
+/* Styles for Gallery section in Welcome page*/
 #galleryContainer h2 {
     padding: 2rem 1.5rem 1rem 2rem;
 }
@@ -325,32 +321,30 @@ img {
     margin: auto;
 }
 
-/* Next & previous buttons */
+/* Next & previous buttons in carousel */
 .previousImage,
 .nextImage {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
     padding: 1rem;
     margin-top: -2rem;
-    transition: 0.6s ease;
     border-radius: 0 3px 3px 0;
+    position: absolute;
+    top: 50%;
+    width: auto;    
+    transition: 0.6s ease;    
     user-select: none;
+    cursor: pointer;
 }
 
-/* Position the "next button" to the right */
+/* Position the "next button" to the right of the carousel */
 .nextImage {
     right: 0;
 }
 
-/* On hover, add a black background color with a little bit see-through */
 .previousImage:hover,
 .nextImage:hover {
     background-color: rgba(0, 0, 0, 0.308);
 }
 
-/* The dots/bullets/indicators */
 #galleryDots {
     text-align: center;
     padding-bottom: 4rem;
@@ -371,7 +365,7 @@ img {
     background-color: var(--accent-yellow);
 }
 
-/* Fading animation */
+/* Styles for fading animation in carousel*/
 .fade {
     animation-name: fade;
     animation-duration: 1.5s;
@@ -387,7 +381,7 @@ img {
     }
 }
 
-/* Styles for templates pages input */
+/* Styles for Templates input section */
 .templatesMain {
     padding: 4rem;
     min-height: calc(100vh - 125px);
@@ -456,7 +450,7 @@ label {
     gap: 1rem;
 }
 
-/* Styles for Template View in templates page*/
+/* Styles for Template View section in Templates page*/
 .templateView {
     display: flex;
     flex-direction: column;
@@ -488,18 +482,17 @@ label {
 .btnIcon {
     background-color: var(--button-background-gray);
     border: none;
-    padding: 12px 16px;
-    cursor: pointer;
-    /* Mouse pointer on hover */
+    padding: 12px 16px;    
     border-radius: 4px;
     width: 100%;
+    cursor: pointer;
 }
 
 .btnIcon:hover {
     background-color: var(--button-hover-gray);
 }
 
-/*Tooltip styles */
+/* Styles for Button Tooltip in Templates preview pages */
 .toolTip {
     position: relative;
     display: inline;
@@ -522,7 +515,7 @@ label {
     visibility: visible;
 }
 
-/* Styles for Template Preview in templates page*/
+/* Styles for Templates in preview pages */
 .templatePreview {
     display: flex;
     flex-direction: column;
@@ -549,7 +542,7 @@ label {
     width: 100%;
 }
 
-/*Styles for the table in the Invoice and Quotation forms*/
+/* Styles for the table in the Invoice and Quotation forms */
 .tableForm {
     vertical-align: middle;
     padding: 10px;
@@ -580,7 +573,7 @@ table {
     overflow-x: auto;
 }
 
-/*Styles for index.html page*/
+/* Styles for Index page */
 #loginContainer {
     height: calc(100vh - 125px);
     display: flex;
@@ -626,11 +619,14 @@ table {
     width: 100%;
 }
 
-/*Utility classes*/
+/* Utility styles */
 .center {
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+.textAlignCenter {
+    text-align: center;
 }
 
 br {
@@ -682,12 +678,12 @@ legend {
     padding: 1rem;
 }
 
-/*All media query */
+/* All media query */
 
-/*Styles for small screen devices, less than 600 pixels*/
+/* Styles for small screen devices, less than 600 pixels */
 @media only screen and (max-width: 600px) {
 
-    /*Media query for Nav bar*/
+    /* Media query for Nav bars */
     #navBigScreen {
         display: none;
     }
@@ -696,7 +692,7 @@ legend {
         height: 45px;
     }
 
-    /*Adjusting templates content (inputInformationForm and templatePreview) to fit small screen devices*/
+    /* Adjusting templates content (inputInformationForm and templatePreview) to fit small screen devices */
     .templatesMain {
         min-height: calc(100vh - 65px);
         padding: 1rem 1rem 2rem;
@@ -719,7 +715,7 @@ legend {
         padding: 0 1rem 5rem;
     }
 
-    /*Adjusting the visual properties of the toolbar to fit small screen devices*/
+    /* Adjusting the visual properties of the toolbar to fit small screen devices */
     .toolBar {
         margin-top: 4rem;
     }
@@ -729,7 +725,7 @@ legend {
         font-size: 1rem;
     }
 
-    /* Adjusting the visual properties of welcome.html page*/
+    /* Adjusting the visual properties of Welcome page to fit small screen devices */
     #loginContainer {
         height: fit-content;
         min-height: calc(100vh - 65px);

@@ -1,3 +1,7 @@
+/**
+ * JAVA SCRIPT FOR TEMPLATES PAGE
+ */
+
 /* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
 function toggleMenu() {
     var x = document.getElementById("navLinksSmallScreen");
@@ -23,6 +27,9 @@ function updateFormAction(elementId, action) {
     document.getElementById(elementId).action = action
 }
 
+/**
+ * On Select Form change, displays on screen template input and preview information in templates.html page
+ */
 function changeSelectedTemplate(event) {
     const selectedTemplate = event.target.value;
     if (selectedTemplate === "Contract") {
@@ -38,12 +45,12 @@ function changeSelectedTemplate(event) {
             updateFormAction("inputInformationForm", "invoice.html")
         }
         else
-        if (selectedTemplate === "Quotation") {
-            console.log("invoice selected");
-            updateHTMLElement("inputInformationForm", quotationFormInnerHTML)
-            updateHTMLElement("templatePreview", quotationTemplateInnerHTML)
-            updateFormAction("inputInformationForm", "quotation.html")
-        }
+            if (selectedTemplate === "Quotation") {
+                console.log("invoice selected");
+                updateHTMLElement("inputInformationForm", quotationFormInnerHTML)
+                updateHTMLElement("templatePreview", quotationTemplateInnerHTML)
+                updateFormAction("inputInformationForm", "quotation.html")
+            }
 }
 
 if (document.getElementById("selectTemplate")) document.getElementById("selectTemplate").addEventListener(
@@ -55,8 +62,8 @@ if (document.getElementById("selectTemplate")) document.getElementById("selectTe
 /** Saves the information from input variables detailed in the URL*/
 const values = Object.fromEntries(new URLSearchParams(window.location.search))
 
-/* Initial Values for the templates.html page
-/*HTML for inputInformationForm section, in particular for "Invoice" option*/
+/* Initial values for the templates.html page
+/* HTML for inputInformationForm section, in particular for "Quotation" option */
 const quotationFormInnerHTML = `
                     <label for="invoiceDate">Quotation date</label>
                     <input type="date" name="invoiceDate" id="invoiceDate" placeholder="MM/DD/YYYY" required>
@@ -141,7 +148,7 @@ const quotationFormInnerHTML = `
                     </fieldset>
                     <input class="buttonSubmit" type="submit" value="Generate Invoice">
 `
-/*HTML for templatePreview section, in particular for "Invoice" option*/
+/*HTML for templatePreview section, in particular for "Quotation" option*/
 const quotationTemplateInnerHTML = `
                 <img class="center" src="./resources/logos/logoFullWhite.png" alt="logoFullWhite">
                 <h2 class="center">QUOTATION</h2>
@@ -228,7 +235,6 @@ const quotationTemplateInnerHTML = `
                 </p>
 `
 
-/* Initial Values for the templates.html page
 /*HTML for inputInformationForm section, in particular for "Invoice" option*/
 const invoiceFormInnerHTML = `
                     <label for="invoiceDate">Invoice date</label>

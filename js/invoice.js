@@ -1,4 +1,22 @@
 /**
+ * JAVASCRIPT FOR INVOICE PAGE
+ */
+
+/**
+ * Toggles the display of the navigation menu links when the user clicks on the hamburger menu bar icon
+ */
+function toggleMenu() {
+    const navLinksSmallScreen = document.getElementById("navLinksSmallScreen");
+    if (!navLinksSmallScreen) return;
+
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
+  }
+
+/** 
  * Updates the innerHTML of the specified element
  */
 function updateHTMLElement(elementId, newInnerHTML) {
@@ -18,13 +36,14 @@ function getValueWithDefault(value, defaultValue) {
 /**
  * Gives format to the corresponding amounts in euro currency
  */
-function formatCurrency (ammount) {
+function formatCurrency(ammount) {
     return ammount.toLocaleString('en-DE', {
         style: 'currency',
         currency: 'EUR',
     })
 }
 
+// Gets key values from URL
 const values = Object.fromEntries(new URLSearchParams(window.location.search))
 
 // Calculating data for Service detail chart in invoice preview (invoice.html) page 
@@ -45,7 +64,7 @@ const grossTotal = subTotalMenu + subTotalPackage + subTotalAdditional1 + subTot
 // Calculating Tax amount (15%)
 const tax = grossTotal * 0.15
 // Calculating Grand Total for invoice
-const grandTotal =  grossTotal + tax
+const grandTotal = grossTotal + tax
 // Calculating First payment (60% of Grand Total)
 const firstPayment = grandTotal * 0.6
 // Calculating Second payment
@@ -129,5 +148,4 @@ const tableForm = `
                         For any additional enquiries contact us on info@chefpro.com
                     </p>
 `
-
 invoiceDetails.innerHTML = tableForm;
