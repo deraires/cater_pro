@@ -152,7 +152,7 @@ const quotationFormInnerHTML = `
                             <input type="text" name="rateAdditional2" id="rateAdditional2" placeholder="10">
                         </div>
                     </fieldset>
-                    <input class="buttonSubmit" type="submit" value="Generate Invoice">
+                    <input class="buttonSubmit" type="submit" value="Generate Quotation">
 `;
 
 // HTML for the quotation template preview
