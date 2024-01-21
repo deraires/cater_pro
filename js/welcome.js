@@ -263,7 +263,7 @@ const generateInitialEventCards = () => {
   updateEventCards(searchEvents(initialDate));
 };
 
-const url = "/resources/events.json";
+const url = "https://raw.githubusercontent.com/deraires/cater_pro/main/resources/events.json";
 
 fetch(url)
   .then((response) => response.json())
