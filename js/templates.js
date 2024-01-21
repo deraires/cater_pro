@@ -78,7 +78,6 @@ const quotationFormInnerHTML = `
                         <input type="text" name="eventTitle" id="eventTitle"
                             placeholder="Birthday party for Mr. Johnson" required>
                     <fieldset class="twoColumns">
-                        
                         <legend>Client details:</legend>
                         <div>
                             <label for="clientName">Client name</label>
@@ -158,7 +157,7 @@ const quotationFormInnerHTML = `
 
 // HTML for the quotation template preview
 const quotationTemplateInnerHTML = `
-                <img class="center" src="./resources/logos/logoFullWhite.png" alt="logoFullWhite">
+                <img class="center" src="https://raw.githubusercontent.com/deraires/cater_pro/main/resources/logos/logoFullWhite.png" alt="logoFullWhite">
                 <h2 class="center">QUOTATION</h2>
                 <p class="right">Quotation Number 98675 <br>
                     Date: [Today's date]
@@ -332,7 +331,7 @@ const invoiceFormInnerHTML = `
 
 // HTML for invoice template preview
 const invoiceTemplateInnerHTML = `
-                <img class="center" src="./resources/logos/logoFullWhite.png" alt="logoFullWhite">
+                <img class="center" src="https://raw.githubusercontent.com/deraires/cater_pro/main/resources/logos/logoFullWhite.png" alt="logoFullWhite">
                 <h2 class="center">INVOICE</h2>
                 <p class="right">Invoice Number 98675 <br>
                     Date: [Today's date]
@@ -497,7 +496,7 @@ const contractFormInnerHTML = `
 `;
 // HTML for contract template preview
 const contractTemplateInnerHTML = `
-<img class="center" src="./resources/logos/logoFullWhite.png" alt="logoFullWhite">
+<img class="center" src="https://raw.githubusercontent.com/deraires/cater_pro/main/resources/logos/logoFullWhite.png" alt="logoFullWhite">
 <h2 class="center">CONTRACT</h2>
 <p>This Catering Service Agreement is made on [Date], between Chef Pro, located at Charm Street,
    #567, Valencia, Spain ("Provider"), and [Client Name], contact information [E-mail] and
